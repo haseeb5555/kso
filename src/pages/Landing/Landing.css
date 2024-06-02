@@ -1,0 +1,596 @@
+.landingpage {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 3764px;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--font-size-17xl);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  
+  .group-child {
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 630px);
+    /* background-color: var(--color-gainsboro); */
+    /* border: 1px solid var(--color-black); */
+    box-sizing: border-box;
+    width: 1260px;
+    height: 500px;
+  }
+  
+  .banner {
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 60px);
+  }
+  
+  .rectangle-parent {
+    position: absolute;
+    top: calc(50% - 1567px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 500px;
+  }
+  
+  .group-item {
+    position: absolute;
+  
+    top: calc(50% - 142.5px);
+    left: calc(50% - 630px);
+    /* background-color: var(--color-gainsboro); */
+    /* border: 1px solid var(--color-black); */
+    box-sizing: border-box;
+    height: 285px;
+    width: 1260px;
+  
+  }
+  
+  .image-cta-news {
+    position: absolute;
+    top: calc(50% - 21.5px);
+    left: calc(50% - 158px);
+  }
+  
+  .group-inner,
+  .rectangle-group {
+    position: absolute;
+    top: calc(50% - 71px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 285px;
+  }
+  
+  .group-inner {
+    top: calc(50% - 50px);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    height: 100px;
+  }
+  
+  .foworks {
+    margin: 0;
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 570px);
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+  }
+  
+  .home {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% - 90px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  
+  .about-us,
+  .home,
+  .jobs {
+    position: absolute;
+    color: var(--color-white);
+  }
+  
+  .about-us {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% + 20px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  
+  .jobs {
+    left: calc(50% + 130px);
+  }
+  
+  .classes,
+  .contact-us,
+  .jobs {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  
+  .classes {
+    position: absolute;
+    left: calc(50% + 240px);
+    color: var(--color-white);
+  }
+  
+  .contact-us {
+    left: calc(50% + 350px);
+  }
+  
+  .contact-us,
+  
+  .rectangle-container {
+    position: absolute;
+    color: var(--color-white);
+  }
+  
+  .login1000 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% + 460px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-white);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  
+  .rectangle-container {
+    top: calc(50% - 1882px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 100px;
+    text-align: left;
+  }
+  
+  .about-us1 {
+    position: center;
+    top: calc(50% - 108px);
+    left: calc(50% - 76px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+  }
+  
+  .about-us-parent,
+  .lorem-ipsum-dol {
+    position: absolute;
+    left: calc(50% - 321px);
+    width: 642px;
+  }
+  
+  .lorem-ipsum-dol {
+    top: calc(50% - 32px);
+    font-size: var(--font-size-xl);
+    display: inline-block;
+    height: 140px;
+  }
+  
+  .about-us-parent {
+    top: calc(50% - 957px);
+    height: 216px;
+  }
+  
+  .course-name,
+  .lorem-ipsum-dolor {
+    margin: 0;
+    position: absolute;
+    left: calc(50% - 114px);
+    display: inline-block;
+  }
+  
+  .course-name {
+    top: calc(50% + 41px);
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    width: 122px;
+    height: 26px;
+  }
+  
+  .lorem-ipsum-dolor {
+    top: calc(50% + 67px);
+    font-size: var(--font-size-3xs);
+    width: 224px;
+    height: 31px;
+  }
+  
+  .course-name-parent,
+  .rectangle-div,
+  .rectangle-icon {
+    position: absolute;
+    left: calc(50% - 143px);
+    width: 286px;
+  }
+  
+  .rectangle-div {
+    top: calc(50% + 21px);
+    border-radius: 0 0 var(--br-xl) var(--br-xl);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    height: 150px;
+  }
+  
+  .course-name-parent,
+  .rectangle-icon {
+    top: calc(50% - 171px);
+  }
+  
+  .rectangle-icon {
+    border-radius: var(--br-xl) var(--br-xl) 0 0;
+    height: 193px;
+    object-fit: cover;
+  }
+  
+  .course-name-parent {
+    height: 342px;
+  }
+  
+  .rectangle-button {
+    cursor: pointer;
+    border: 1px solid var(--color-black);
+    padding: 0;
+    background-color: var(--color-gainsboro);
+    border-radius: var(--br-3xs);
+    box-sizing: border-box;
+  }
+  
+  .rectangle-button,
+  .rectangle-wrapper {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 53.5px);
+    width: 107px;
+    height: 30px;
+  }
+  
+  .enroll,
+  .group-div {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 21.5px);
+  }
+  
+  .group-div {
+    top: calc(50% + 117px);
+    left: calc(50% - 114px);
+    width: 107px;
+    height: 30px;
+    text-align: center;
+  }
+  
+  .group-icon,
+  .postive-reviews {
+    position: absolute;
+    left: calc(50% + 3px);
+  }
+  
+  .group-icon {
+    top: calc(50% + 120px);
+    width: 68px;
+    height: 11px;
+  }
+  
+  .postive-reviews {
+    top: calc(50% + 131px);
+    font-size: var(--font-size-3xs);
+  }
+  
+  .group-container,
+  .group-parent1,
+  .group-parent3 {
+    position: absolute;
+    top: calc(50% - 165.5px);
+    left: calc(50% - 451px);
+    width: 286px;
+    height: 342px;
+  }
+  
+  .group-parent1,
+  .group-parent3 {
+    left: calc(50% - 143px);
+  }
+  
+  .group-parent3 {
+    left: calc(50% + 165px);
+  }
+  
+  .see-all-classes {
+    position: absolute;
+    text-align: center;
+  }
+  
+  .see-all-classes {
+    cursor: pointer;
+    top: calc(50% + 223.5px);
+    left: calc(50% - 128px);
+    font-size: var(--font-size-xl);
+    display: inline-block;
+    width: 256px;
+    height: 26px;
+  }
+  
+  .courses {
+    margin: 0;
+    /* position: absolute; */
+    text-align: center;
+    top: calc(50% - 249.5px);
+    left: calc(50% - 71px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+  }
+  
+  .group-parent {
+    position: absolute;
+    top: calc(50% - 671px);
+    left: calc(50% - 450px);
+    width: 902px;
+    height: 499px;
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  
+  .jobs1 {
+    margin: 0;
+    top: calc(50% - 142px);
+    left: calc(50% - 41px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+    text-align: center;
+  }
+  
+  .job-title,
+  .lorem-ipsum-dolor3 {
+    margin: 0;
+    position: absolute;
+    left: calc(50% - 114px);
+    display: inline-block;
+  }
+  
+  .job-title {
+    top: calc(50% - 55px);
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    width: 122px;
+    height: 26px;
+  }
+  
+  .lorem-ipsum-dolor3 {
+    top: calc(50% - 29px);
+    font-size: var(--font-size-3xs);
+    width: 224px;
+    height: 31px;
+  }
+  
+  .group-child9 {
+    border-radius: var(--br-xl);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  
+  .group-child9,
+  .job-title-parent {
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 143px);
+    width: 286px;
+    height: 150px;
+  }
+  
+  .apply,
+  .group-parent6 {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 22.5px);
+  }
+  
+  .group-parent6 {
+    top: calc(50% + 21px);
+    left: calc(50% - 114px);
+    width: 107px;
+    height: 30px;
+    text-align: center;
+  }
+  
+  .p {
+    margin: 0;
+  }
+  
+  .application-submited {
+    position: absolute;
+    top: calc(50% + 24px);
+    left: calc(50% + 3px);
+    font-size: var(--font-size-3xs);
+  }
+  
+  .group-parent5,
+  .group-parent7,
+  .group-parent9,
+  .see-all-jobs {
+    position: absolute;
+    top: calc(50% - 66px);
+    left: calc(50% - 447px);
+    width: 286px;
+    height: 150px;
+  }
+  
+  .group-parent7,
+  .group-parent9,
+  .see-all-jobs {
+    left: calc(50% - 141px);
+  }
+  
+  .group-parent9,
+  .see-all-jobs {
+    left: calc(50% + 161px);
+  }
+  
+  .see-all-jobs {
+    cursor: pointer;
+    top: calc(50% + 116px);
+    left: calc(50% - 61px);
+    font-size: var(--font-size-xl);
+    text-align: center;
+    display: inline-block;
+    width: 122px;
+    height: 26px;
+  }
+  
+  .jobs-parent {
+    position: absolute;
+    top: calc(50% + 308px);
+    left: calc(50% - 447px);
+    width: 894px;
+    height: 284px;
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  
+  .group-child16 {
+    position: absolute;
+    top: calc(50% - 94px);
+    left: calc(50% - 385px);
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 760px;
+    height: 260px;
+  }
+  
+  .lorem-ipsum-dolor-container {
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 299px);
+    display: inline-block;
+    width: 584px;
+    height: 119px;
+  }
+  
+  .testimonials {
+    position: absolute;
+    top: calc(50% - 206px);
+    left: calc(50% - 106px);
+    font-size: var(--font-size-17xl);
+  }
+  
+  .ellipse-div {
+    position: absolute;
+    top: calc(50% - 128px);
+    left: calc(50% - 39px);
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 68px;
+    height: 68px;
+  }
+  
+  .group-child17,
+  .rectangle-parent1 {
+    position: absolute;
+    left: calc(50% - 720px);
+    width: 1440px;
+  }
+  
+  .rectangle-parent1 {
+    top: calc(50% + 726px);
+    height: 500px;
+    font-size: var(--font-size-xl);
+  }
+  
+  .group-child17 {
+    top: calc(50% - 186px);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    height: 372px;
+  }
+  
+  .contact-helpdomaincom-1-container,
+  .sitemap-link-1-container {
+    position: absolute;
+    top: calc(50% - 102px);
+    left: calc(50% + 235px);
+    display: inline-block;
+    width: 95px;
+    height: 151px;
+  }
+  
+  .contact-helpdomaincom-1-container {
+    left: calc(50% + 379px);
+    width: 191px;
+    height: 132px;
+  }
+  
+  .foworks1 {
+    position: absolute;
+    top: calc(50% - 107px);
+    left: calc(50% - 570px);
+    font-size: var(--font-size-17xl);
+  }
+  
+  .rectangle-parent2 {
+    position: absolute;
+    top: calc(50% + 1510px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 372px;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--color-white);
+  }
+  
+  .footerbanner2-copy-1,
+  .header-copy-2 {
+    position: absolute;
+    top: calc(50% + 1226px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 284px;
+    object-fit: cover;
+  }
+  
+  .header-copy-2 {
+    top: calc(50% - 1782px);
+    height: 215px;
+  }
+  
+  
+  
+  

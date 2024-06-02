@@ -1,0 +1,452 @@
+.group-child48 {
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 630px);
+    /* background-color: var(--color-gainsboro); */
+    /* border: 1px solid var(--color-black); */
+    box-sizing: border-box;
+    width: 1260px;
+    height: 500px;
+  }
+  .banner1 {
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 60px);
+  }
+  
+  .a_rectangle-parent5 {
+    position: absolute;
+    top: calc(50% - 1416.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 500px;
+  }
+  .group-child49 {
+    top: calc(50% - 142.5px);
+    left: calc(50% - 630px);
+    /* background-color: var(--color-gainsboro); */
+    /* border: 1px solid var(--color-black); */
+    box-sizing: border-box;
+    height: 285px;
+    width: 1260px;
+  }
+  .image-cta-news1 {
+    position: absolute;
+    top: calc(50% - 21.5px);
+    left: calc(50% - 158px);
+  }
+  .group-child50,
+  .a_rectangle-parent6 {
+    position: absolute;
+    top: calc(50% - 510.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 285px;
+  }
+  .group-child50 {
+    top: calc(50% - 50px);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    height: 100px;
+  }
+  .foworks3 {
+    margin: 0;
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 570px);
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+  }
+  .home1 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% - 90px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  .about-us2,
+  .home1,
+  .jobs2 {
+    position: absolute;
+    color: var(--color-white);
+  }
+  .about-us2 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% + 20px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  .jobs2 {
+    left: calc(50% + 130px);
+  }
+  .classes1,
+  .contact-us1,
+  .jobs2 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  .classes1 {
+    position: absolute;
+    left: calc(50% + 240px);
+    color: var(--color-white);
+  }
+  .contact-us1 {
+    left: calc(50% + 350px);
+  }
+  .contact-us1,
+  .login3,
+  .a_rectangle-parent7 {
+    position: absolute;
+    color: var(--color-white);
+  }
+  .login3 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% + 460px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  .a_rectangle-parent7 {
+    top: calc(50% - 1731.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 100px;
+    text-align: left;
+  }
+  .about-us3 {
+    position: absolute;
+    top: calc(50% - 108px);
+    left: calc(50% - 76px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+  }
+  .about-us-group,
+  .lorem-ipsum-dol1 {
+    position: absolute;
+    left: calc(50% - 321px);
+    width: 642px;
+  }
+  .lorem-ipsum-dol1 {
+    top: calc(50% - 32px);
+    font-size: var(--font-size-xl);
+    display: inline-block;
+    height: 140px;
+  }
+  .about-us-group {
+    top: calc(50% - 806.5px);
+    height: 216px;
+  }
+  .why-us {
+    position: absolute;
+    top: calc(50% - 108px);
+    left: calc(50% - 71px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+  }
+  .group-child52,
+  .why-us-parent {
+    position: absolute;
+    top: calc(50% - 115.5px);
+    left: calc(50% - 321px);
+    width: 642px;
+    height: 216px;
+  }
+  .group-child52 {
+    top: calc(50% - 94px);
+    left: calc(50% - 385px);
+    border-radius: var(--br-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 760px;
+    height: 260px;
+  }
+  .lorem-ipsum-dolor10 {
+    margin: 0;
+  }
+  .lorem-ipsum-dolor-container1 {
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 299px);
+    display: inline-block;
+    width: 584px;
+    height: 119px;
+  }
+  .testimonials1 {
+    position: absolute;
+    top: calc(50% - 206px);
+    left: calc(50% - 106px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+  }
+  .group-child53 {
+    position: absolute;
+    top: calc(50% - 128px);
+    left: calc(50% - 39px);
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 68px;
+    height: 68px;
+  }
+  .group-child54,
+  .a_rectangle-parent8 {
+    position: absolute;
+    left: calc(50% - 720px);
+    width: 1440px;
+  }
+  .a_rectangle-parent8 {
+    top: calc(50% + 575.5px);
+    height: 500px;
+    font-size: var(--font-size-xl);
+  }
+  .group-child54 {
+    top: calc(50% - 186px);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    height: 372px;
+  }
+  .contact-helpdomaincom-1-container2,
+  .sitemap-link-1-container2 {
+    position: absolute;
+    top: calc(50% - 102px);
+    left: calc(50% + 235px);
+    display: inline-block;
+    width: 95px;
+    height: 151px;
+  }
+  .contact-helpdomaincom-1-container2 {
+    left: calc(50% + 379px);
+    width: 191px;
+    height: 132px;
+  }
+  .foworks4 {
+    position: absolute;
+    top: calc(50% - 107px);
+    left: calc(50% - 570px);
+    font-size: var(--font-size-17xl);
+  }
+  .a_rectangle-parent9 {
+    position: absolute;
+    top: calc(50% + 1359.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 372px;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--color-white);
+  }
+  .footerbanner2-copy-12,
+  .header-copy-21 {
+    position: absolute;
+    top: calc(50% + 1075.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 284px;
+    object-fit: cover;
+  }
+  .header-copy-21 {
+    top: calc(50% - 1631.5px);
+    height: 215px;
+  }
+  .group-child55 {
+    position: absolute;
+    top: calc(50% - 101.5px);
+    left: calc(50% - 101.5px);
+    border-radius: var(--br-smi);
+    background-color: var(--color-gainsboro);
+    width: 203px;
+    height: 203px;
+  }
+  .group-child56 {
+    position: absolute;
+    top: calc(50% - 75.2px);
+    left: calc(50% - 79.2px);
+    border-radius: 50%;
+    background-color: var(--color-black);
+    width: 46.7px;
+    height: 46.7px;
+  }
+  .lorem-ipsum-dolor11,
+  .usp {
+    position: absolute;
+    top: calc(50% + 16.5px);
+    left: calc(50% - 75.6px);
+    display: inline-block;
+    width: 161px;
+    height: 18px;
+    
+  }
+  .lorem-ipsum-dolor11 {
+    top: calc(50% + 43px);
+    left: calc(50% - 75.2px);
+    font-size: var(--font-size-3xs);
+    width: 160.6px;
+    height: 58.4px;
+  }
+  .group-child58,
+  .a_rectangle-parent10 {
+    position: absolute;
+    top: calc(50% - 59px);
+    left: calc(50% - 424.6px);
+    width: 203px;
+    height: 203px;
+  }
+  .group-child58 {
+    top: calc(50% - 75.2px);
+    left: calc(50% - 79.3px);
+    border-radius: 50%;
+    background-color: var(--color-black);
+    width: 46.7px;
+    height: 46.7px;
+  }
+  .lorem-ipsum-dolor12,
+  .usp1 {
+    position: absolute;
+    top: calc(50% + 16.5px);
+    left: calc(50% - 75.5px);
+    display: inline-block;
+    width: 161px;
+    height: 18px;
+  }
+  .lorem-ipsum-dolor12 {
+    top: calc(50% + 43px);
+    left: calc(50% - 75.3px);
+    font-size: var(--font-size-3xs);
+    width: 160.6px;
+    height: 58.4px;
+  }
+  .a_group-child60,
+  .a_rectangle-parent11 {
+    position: absolute;
+    top: calc(50% - 59px);
+    left: calc(50% + 6.2px);
+    width: 203px;
+    height: 203px;
+  }
+  .a_group-child60 {
+    top: calc(50% - 75.2px);
+    left: calc(50% - 77px);
+    border-radius: 50%;
+    background-color: var(--color-black);
+    width: 46.7px;
+    height: 46.7px;
+  }
+  .lorem-ipsum-dolor13,
+  .usp2 {
+    position: absolute;
+    top: calc(50% + 16.5px);
+    left: calc(50% - 73px);
+    display: inline-block;
+    width: 161px;
+    height: 18px;
+  }
+  .lorem-ipsum-dolor13 {
+    top: calc(50% + 43px);
+    font-size: var(--font-size-3xs);
+    width: 160.6px;
+    height: 58.4px;
+  }
+  .a_group-child62,
+  .a_rectangle-parent12 {
+    position: absolute;
+    top: calc(50% - 59px);
+    left: calc(50% - 209.2px);
+    width: 203px;
+    height: 203px;
+  }
+  .a_group-child62 {
+    top: calc(50% - 75.2px);
+    left: calc(50% - 77.1px);
+    border-radius: 50%;
+    background-color: var(--color-black);
+    width: 46.7px;
+    height: 46.7px;
+  }
+  .lorem-ipsum-dolor14,
+  .usp3 {
+    position: absolute;
+    top: calc(50% + 16.5px);
+    left: calc(50% - 72.9px);
+    display: inline-block;
+    width: 160px;
+    height: 18px;
+  }
+  .lorem-ipsum-dolor14 {
+    top: calc(50% + 43px);
+    left: calc(50% - 73.1px);
+    font-size: var(--font-size-3xs);
+    width: 160.6px;
+    height: 58.4px;
+  }
+  .a_rectangle-parent13 {
+    position: absolute;
+    top: calc(50% - 59px);
+    left: calc(50% + 221.6px);
+    width: 203px;
+    height: 203px;
+  }
+  .group-parent24,
+  .our-usps {
+    position: absolute;
+    top: calc(50% - 144px);
+    left: calc(50% - 81.7px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+    text-align: center;
+  }
+  .group-parent24 {
+    top: calc(50% + 153.5px);
+    left: calc(50% - 424.9px);
+    width: 849.2px;
+    height: 288px;
+    text-align: left;
+    font-size: var(--font-size-base);
+  }
+  .aboutus {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 3463px;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--font-size-17xl);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  

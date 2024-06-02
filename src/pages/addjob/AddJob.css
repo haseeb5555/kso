@@ -1,0 +1,789 @@
+.addjob {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 100vh;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  
+  .python2,
+  .rectangle-input {
+    position: absolute;
+    left: calc(50% - 146.7px);
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .rectangle-input {
+    cursor: pointer;
+      border: 1px solid var(--color-black);
+      padding: 0;
+      background-color: var(--color-white);
+      top: calc(50% - 21px);
+      border-radius: var(--br-3xs);
+      box-sizing: border-box;
+      width: 293.4px;
+      height: 42px;
+  }
+  
+  .python2 {
+    top: calc(50% - 10px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: center;
+    display: inline-block;
+    width: 293px;
+  }
+  
+  .group-child66,
+  .rectangle-parent12 {
+    position: absolute;
+    top: calc(50% - 116.5px);
+    left: calc(50% - 450.5px);
+    width: 293.4px;
+    height: 42px;
+  }
+  
+  .group-child66 {
+    border: 1px solid var(--color-black);
+    outline: 0;
+    background-color: var(--color-white);
+    top: calc(50% - 21px);
+    left: calc(50% - 451px);
+    border-radius: var(--br-3xs);
+    box-sizing: border-box;
+    width: 902px;
+  }
+  
+  .group-child67,
+  .rectangle-wrapper18 {
+    position: absolute;
+    top: calc(50% - 205.5px);
+    left: calc(50% - 450.5px);
+    width: 902px;
+    height: 42px;
+  }
+  
+  .group-child67 {
+    border: 1px solid var(--color-black);
+    outline: 0;
+    background-color: var(--color-white);
+    top: calc(50% - 69px);
+    left: calc(50% - 451px);
+    border-radius: var(--br-3xs);
+    box-sizing: border-box;
+    height: 138px;
+  }
+  
+  .rectangle-parent13,
+  .rectangle-wrapper19 {
+    position: absolute;
+    top: calc(50% + 76.5px);
+    left: calc(50% - 450.5px);
+    width: 902px;
+    height: 138px;
+  }
+  
+  .rectangle-parent13 {
+    top: calc(50% - 64.5px);
+    width: 293.4px;
+    height: 42px;
+  }
+  
+  .artificial-intelligence2 {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 147px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: center;
+    display: inline-block;
+    width: 294px;
+  }
+  
+  .group-child72,
+  .rectangle-parent14,
+  .rectangle-parent15,
+  .rectangle-parent16 {
+    position: absolute;
+    top: calc(50% - 116.5px);
+    left: calc(50% - 146.5px);
+    width: 294px;
+    height: 42px;
+  }
+  
+  .group-child72,
+  .rectangle-parent15,
+  .rectangle-parent16 {
+    top: calc(50% - 64.5px);
+  }
+  
+  .group-child72,
+  .rectangle-parent16 {
+    top: calc(50% - 12.5px);
+    left: calc(50% - 451.5px);
+  }
+  
+  .group-child72 {
+    cursor: pointer;
+    margin: 0;
+    top: calc(50% - 21px);
+    left: calc(50% - 146.7px);
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gainsboro);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 293.4px;
+  }
+  
+  .graphic-design4 {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 146.3px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: center;
+    display: inline-block;
+    width: 293px;
+  }
+  
+  .rectangle-parent17,
+  .rectangle-parent18 {
+    position: absolute;
+    top: calc(50% - 116.5px);
+    left: calc(50% + 158.1px);
+    width: 293.4px;
+    height: 42px;
+  }
+  
+  .rectangle-parent18 {
+    top: calc(50% - 64.5px);
+  }
+  
+  .job-description,
+  .job-title9 {
+    left: calc(50% - 451.5px);
+    width: 293px;
+  }
+  
+  .job-title9 {
+    position: absolute;
+    top: calc(50% - 227.5px);
+    font-size: var(--font-size-3xs);
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .job-description {
+    cursor: pointer;
+    top: calc(50% + 54.5px);
+  }
+  
+  .job-cotegory,
+  .job-description,
+  .job-description1,
+  .job-title10 {
+    position: absolute;
+    font-size: var(--font-size-3xs);
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .job-cotegory {
+    cursor: pointer;
+    top: calc(50% - 138.5px);
+    left: calc(50% - 451.5px);
+    width: 293px;
+  }
+  
+  .job-description1,
+  .job-title10 {
+    top: calc(50% - 190.5px);
+    left: calc(50% - 425.5px);
+    width: 862px;
+  }
+  
+  .job-description1 {
+    top: calc(50% + 91.5px);
+  }
+  
+  .group-child74 {
+    cursor: pointer;
+    border: 1px solid var(--color-black);
+    padding: 0;
+    background-color: var(--color-gainsboro);
+    position: absolute;
+    top: calc(50% - 21px);
+    left: calc(50% - 146.5px);
+    border-radius: var(--br-3xs);
+    box-sizing: border-box;
+    width: 293px;
+    height: 42px;
+  }
+  
+  .submit {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 50.2px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: center;
+    display: inline-block;
+    width: 100.5px;
+  }
+  
+  .add-job-parent,
+  .rectangle-parent19 {
+    position: absolute;
+    top: calc(50% + 261.5px);
+    left: calc(50% - 146.5px);
+    width: 293px;
+    height: 42px;
+  }
+  
+  .add-job-parent {
+    margin: 0;
+    top: calc(50% - 496px);
+    left: calc(50% - 451px);
+    width: 903px;
+    height: 607px;
+  }
+  
+  .group-child75 {
+    position: absolute;
+    top: calc(50% - 186px);
+    left: calc(50% - 720px);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 1440px;
+    height: 372px;
+  }
+  
+  .sitemap3 {
+    margin: 0;
+  }
+  
+  .contact-helpdomaincom-1-container3,
+  .sitemap-link-1-container3 {
+    position: absolute;
+    top: calc(50% - 102px);
+    left: calc(50% + 235px);
+    display: inline-block;
+    width: 95px;
+    height: 151px;
+  }
+  
+  .contact-helpdomaincom-1-container3 {
+    left: calc(50% + 379px);
+    width: 191px;
+    height: 132px;
+  }
+  
+  .foworks6 {
+    position: absolute;
+    top: calc(50% - 107px);
+    left: calc(50% - 570px);
+    font-size: var(--font-size-17xl);
+  }
+  
+  .rectangle-parent20 {
+    position: absolute;
+    top: calc(50% + 492px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 372px;
+  }
+  
+  .footerbanner2-copy-13 {
+    top: calc(50% + 208px);
+    height: 284px;
+    object-fit: cover;
+  }
+  
+  .footerbanner2-copy-13,
+  .group-child76,
+  .header-copy-23 {
+    position: absolute;
+    left: calc(50% - 720px);
+    width: 1440px;
+  }
+  
+  .header-copy-23 {
+    top: calc(50% - 764px);
+    height: 215px;
+    object-fit: cover;
+  }
+  
+  .group-child76 {
+    top: calc(50% - 50px);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    height: 100px;
+  }
+  
+  .foworks7 {
+    margin: 0;
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 570px);
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+  }
+  
+  .about-us4,
+  .classes3,
+  .contact-us3,
+  .home3,
+  .jobs4,
+  .log-out2,
+  .profile2 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: calc(50% - 9px);
+    left: calc(50% - 90px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-white);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+  
+  .about-us4,
+  .classes3,
+  .contact-us3,
+  .jobs4,
+  .log-out2,
+  .profile2 {
+    left: calc(50% - 200px);
+  }
+  
+  .about-us4,
+  .classes3,
+  .contact-us3,
+  .jobs4,
+  .log-out2 {
+    left: calc(50% + 20px);
+  }
+  
+  .classes3,
+  .contact-us3,
+  .jobs4,
+  .log-out2 {
+    left: calc(50% + 130px);
+  }
+  
+  .classes3,
+  .contact-us3,
+  .log-out2 {
+    left: calc(50% + 240px);
+  }
+  
+  .contact-us3,
+  .log-out2 {
+    left: calc(50% + 350px);
+  }
+  
+  .log-out2 {
+    left: calc(50% + 460px);
+  }
+  
+  .rectangle-parent21 {
+    position: absolute;
+    top: calc(50% - 864px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 100px;
+    font-size: var(--font-size-17xl);
+  }
+  
+  .addjob {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 1728px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--color-white);
+    font-family: var(--font-inter);
+  }
+  
+   /* Ensure radio buttons are styled like the buttons */
+   .rectangle-input,
+   .group-child101 {
+     appearance: none; /* Remove default styling */
+     background: none; /* Remove background */
+     border: none; /* Remove border */
+     width: 100%; /* Full width */
+     height: 100%; /* Full height */
+     cursor: pointer; /* Pointer cursor */
+   }
+  
+  /* Optionally, add custom styling to the radio buttons when selected */
+  input[type="radio"]:checked + label {
+    /* Custom styling for selected radio button */
+    font-weight: bold; /* Example: make selected option bold */
+  }
+  
+  /* Additional custom styling for labels if needed */
+  label.python2,
+  label.artificial-intelligence2,
+  label.graphic-design4 {
+    display: block; /* Ensure label is block-level */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor */
+  }
+
+
+/* // make input description and redio button mobile responsive */
+
+@media screen and (max-width: 768px) {
+    .group-child66,
+    .rectangle-parent12 {
+     
+      width: 293.4px;
+      height: 42px;
+    }
+    .artificial-intelligence2 {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 147px);
+        font-size: var(--font-size-base);
+        font-family: var(--font-inter);
+        color: var(--color-black);
+        text-align: center;
+        display: inline-block;
+        
+      }
+    .group-child66 {
+      border: 1px solid var(--color-black);
+      outline: 0;
+      background-color: var(--color-white);
+      border-radius: var(--br-3xs);
+      box-sizing: border-box;
+      width: 400px;
+    }
+  
+    .group-child67,
+    .rectangle-wrapper18 {
+      top: calc(50% - 205.5px);
+      left: calc(50% - 450.5px);
+      width: 400px;
+      height: 42px;
+      margin-left: 490px;
+    }
+  
+    .group-child67 {
+      border: 1px solid var(--color-black);
+      outline: 0;
+      background-color: var(--color-white);
+      top: calc(50% - 69px);
+      left: calc(50% - 451px);
+      border-radius: var(--br-3xs);
+      box-sizing: border-box;
+      height: 138px;
+    }
+  
+    .rectangle-parent13,
+    .rectangle-wrapper19 {
+      top: calc(50% + 76.5px);
+      left: calc(50% - 450.5px);
+      width: 400px;
+      height: 138px;
+    }
+  
+    .rectangle-parent13 {
+      top: calc(50% - 64.5px);
+      width: 293.4px;
+      height: 42px;
+    }
+  
+    .artificial-intelligence2 {
+      top: calc(50% - 10px);
+      left: calc(50% - 147px);
+      font-size: var(--font-size-base);
+      font-family: var(--font-inter);
+      color: var(--color-black);
+      text-align: center;
+      display: inline-block;
+   
+    }
+  
+    .group-child72,
+    .rectangle-parent14,
+    .rectangle-parent15,
+    .rectangle-parent16 {
+      top: calc(50% - 116.5px);
+      left: calc(50% - 146.5px);
+      width: 294px;
+      height: 42px;
+    }
+
+    .group-child72,
+    .rectangle-parent15,
+    .rectangle-parent16 {
+      top: calc(50% - 64.5px);
+    }
+
+    .group-child72,
+    .rectangle-parent16 {
+      top: calc(50% - 12.5px);
+      left: calc(50% - 451.5px);
+    }
+
+    .group-child72 {
+      cursor: pointer;
+      margin: 0;
+      top: calc(50% - 21px);
+      left: calc(50% - 146.7px);
+      border-radius: var(--br-3xs);
+      background-color: var(--color-gainsboro);
+      border: 1px solid var(--color-black);
+      box-sizing: border-box;
+    
+    }
+
+    .graphic-design4 {
+      top: calc(50% - 10px);
+      left: calc(50% - 146.3px);
+      font-size: var(--font-size-base);
+      font-family: var(--font-inter);
+      color: var(--color-black);
+      text-align: center;
+      display: inline-block;
+   
+    }
+
+    .rectangle-parent17,
+    .rectangle-parent18 {
+      top: calc(50% - 116.5px);
+      left: calc(50% + 158.1px);
+      width: 293.4px;
+      height: 42px;
+    }
+
+    .rectangle-parent18 {
+      top: calc(50% - 64.5px);
+    }
+
+    .job-description,
+    .job-title9 {
+      left: calc(50% - 451.5px);
+      width: 293px;
+    }
+
+    .job-title9 {
+      top: calc(50% - 227.5px);
+      font-size: var(--font-size-3xs);
+      font-family: var(--font-inter);
+      color: var(--color-black);
+      text-align: left;
+      display: inline-block;
+    }
+
+    .job-description {
+      cursor: pointer;
+      top: calc(50% + 54.5px);
+    }
+
+    .job-cotegory,
+    .job-description,
+    .job-description1,
+    .job-title10 {
+      font-size: var(--font-size-3xs);
+      font-family: var(--font-inter);
+      color: var(--color-black);
+      text-align: left;
+      display: inline-block;
+    }
+
+    .job-cotegory {
+      cursor: pointer;
+      top: calc(50% - 138.5px);
+      left: calc(50% - 451.5px);
+      width: 293px;
+    }
+
+    .job-description1,
+    .job-title10 {
+      top: calc(50% - 190.5px);
+      left: calc(50% - 425.5px);
+      width: 20px
+    }
+
+    .job-description1 {
+      top: calc(50% + 91.5px);
+    }
+
+    .group-child74 {
+      cursor: pointer;
+      border: 1px solid var(--color-black);
+      padding: 0;
+      background-color: var(--color-gainsboro);
+      position: absolute;
+      top: calc(50% - 21px);
+      left: calc(50% - 146.5px);
+      border-radius: var(--br-3xs);
+      box-sizing: border-box;
+      width: 293px;
+      height: 42px;
+    }
+
+    .submit {
+      top: calc(50% - 10px);
+      left: calc(50% - 50.2px);
+      font-size: var(--font-size-base);
+      font-family: var(--font-inter);
+      color: var(--color-black);
+      text-align: center;
+      display: inline-block;
+      width: 100.5px;
+    }
+
+    .add-job-parent,
+    .rectangle-parent19 {
+      top: calc(50% + 261.5px);
+      left: calc(50% - 146.5px);
+      width: 293px;
+      height: 42px;
+    }
+
+    .add-job-parent {
+      margin: 0;
+      top: calc(50% - 496px);
+      left: calc(50% - 451px);
+      width: 903px;
+      height: 607px;
+    }
+
+    .group-child75 {
+      top: calc(50% - 186px);
+      left: calc(50% - 720px);
+      background-color: var(--color-black);
+      border: 1px solid var(--color-black);
+      box-sizing: border-box;
+      width: 1440px;
+      height: 372px;
+    }
+
+    .sitemap3 {
+      margin: 0;
+    }
+
+    .contact-helpdomaincom-1-container3,
+    .sitemap-link-1-container3 {
+      top: calc(50% - 102px);
+      left: calc(50% + 235px);
+      display: inline-block;
+      width: 95px;
+      height: 151px;
+    }
+
+    .contact-helpdomaincom-1-container3 {
+      left: calc(50% + 379px);
+      width: 191px;
+      height: 132px;
+    }
+
+    .foworks6 {
+      top: calc(50% - 107px);
+      left: calc(50% - 570px);
+      font-size: var(--font-size-17xl);
+    }
+
+    .rectangle-parent20 {
+      top: calc(50% + 492px);
+      left: calc(50% - 720px);
+      width: 1440px;
+      height: 372px;
+    }
+
+    .footerbanner2-copy-13 {
+      top: calc(50% + 208px);
+      height: 284px;
+      object-fit: cover;
+    }
+
+    .footerbanner2-copy-13,
+    .group-child76,
+    .header-copy-23 {
+      left: calc(50% - 720px);
+      width: 1440px;
+    }
+
+    .header-copy-23 {
+      top: calc(50% - 764px);
+      height: 215px;
+      object-fit: cover;
+    }
+
+    .group-child76 {
+      top: calc(50% - 50px);
+      background-color: var(--color-black);
+      border: 1px solid var(--color-black);
+      box-sizing: border-box;
+      height: 100px;
+    }
+
+    .foworks7 {
+      margin: 0;
+      top: calc(50% - 22px);
+      left: calc(50% - 570px);
+      font-size: inherit;
+      font-weight: 400;
+      font-family: inherit;
+    }
+
+    .about-us4,
+    .classes3,
+    .contact-us3,
+    .home3,
+
+    .jobs4,
+    .log-out2,
+    
+    .profile2 {
+      cursor: pointer;
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      position: absolute;
+      top: calc(50% - 9px);
+      left: calc(50% - 90px);
+      font-size: var(--font-size-base);
+      font-family: var(--font-inter);
+      color: var(--color-white);
+      text-align: center;
+      display: inline-block;
+      width: 110px;
+    }
+
+    .about-us4,
+    .classes3,
+    .contact-us3,
+    .jobs4,
+    .log-out2 {
+      left: calc(50% - 200px);
+    }
+}
