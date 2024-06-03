@@ -11,6 +11,10 @@ import AddJob from "./pages/addjob/add-job"
 import TeacherProfile from "./pages/TeacherProfile/teacher-profile"
 import CompanyProfile from "./pages/CompanyProfile/comany-profile"
 import StudentProfile from "./pages/StudentProfile/student-profile"
+import Courses from "./pages/Courses/courses"
+import CourseInfoPage from "./pages/CourseInfoPage/course-info"
+import ExploreJobs from "./pages/Jobs/explore-jobs"
+import JobInfoPage from "./pages/JobInfoPage/job-info"
 
 function App() {
 
@@ -24,14 +28,12 @@ function App() {
       <Route path="/TeacherProfile" element={<TeacherProfile />} />
       <Route path="/" element={<LandingPage />} />
       <Route path="/aboutus" element={<AboutUs />} />
-      {/* <Route path="/jobs" element={<Jobs />} />
-      <Route path="/courses" element={<Courses/>} /> */}
+      <Route path="/jobs" element={<ExploreJobs />} />
+      <Route path="/courses" element={<Courses/>} />
       <Route path="/contactus" element={<ContactUs />} />
       <Route path="/addjob" element={<AddJob />} />
-      {/* <Route path="/hire/:jobId" element={<Hire />} />
       <Route path="/jobinfopage/:jobId" element={<JobInfoPage />} />
       <Route path="/courseInfoPage/:courseId" element={<CourseInfoPage />} />
-      <Route path="/navba" element={<Stu />}/> */} 
       <Route path="/footer" element={<Footer />} />
     </Routes>
   )

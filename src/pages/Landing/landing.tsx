@@ -60,14 +60,14 @@ const LandingPage = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <div className="flex justify-between items-center">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring">Enroll</button>
+                <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring">Enroll</button>
                 <span>563+ Positive Reviews</span>
               </div>
             </div>
           ))}
         </div>
         <div className="text-center mt-8">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring">See All Classes</button>
+          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg focus:outline-none focus:ring">See All Classes</button>
         </div>
       </div>
 
@@ -81,14 +81,14 @@ const LandingPage = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <div className="flex justify-between items-center">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring">Apply</button>
+                <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring">Apply</button>
                 <span>563+ Applications Submitted</span>
               </div>
             </div>
           ))}
         </div>
         <div className="text-center mt-8">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring" onClick={userType === 'student' ? handleJobsClick : handleLoginClick}>See All Jobs</button>
+          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring" onClick={userType === 'student' ? handleJobsClick : handleLoginClick}>See All Jobs</button>
         </div>
       </div>
 
@@ -110,8 +110,9 @@ const LandingPage = () => {
     </div>
     <div className='mt-80 max-sm:mt-0'>
 
-    <Footer />
     </div>
+    <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />
+    <Footer />
     </>
   );
 };

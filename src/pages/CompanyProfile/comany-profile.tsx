@@ -43,7 +43,7 @@ const CompanyProfile = () => {
     }, []);
 
 
-    const handleViewClick = (jobId) => {
+    const handleViewClick = (jobId:any) => {
         // Navigate to the login page ("/login")
         navigate(`/hire/${jobId}`);
     };
@@ -61,7 +61,7 @@ const CompanyProfile = () => {
             <h1 className="text-2xl font-bold mt-5">Merhaba</h1>
             <div className="my-5 flex flex-col md:flex-row items-start md:items-center">
                 <div className="flex items-center mb-5 md:mb-0 md:mr-5">
-                    <div className="w-80 h-80 bg-gray-200 rounded-full flex items-center justify-center">
+                    <div className="w-80 h-80 bg-gray-200 rounded-full flex items-center justify-center  max-sm:ml-28">
                         <img className="w-10 h-10" alt="profile icon" src="/vector.svg" />
                     </div>
                 </div>
@@ -94,7 +94,7 @@ const CompanyProfile = () => {
 {addedJobs.length === 0 ? (
     <p>Henüz bir ilanınız yok.</p>
 ) : (
-    addedJobs.slice(0, 3).map((job, index) => (
+    addedJobs.slice(0, 3).map((job:any, index) => (
         <div className={`com_group-parent${index}`}
         
         // key={job.id}
@@ -129,7 +129,7 @@ const CompanyProfile = () => {
 </div>
 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16  mx-60 max-sm:mx-0">
-                <div className="border flex flex-col px-6 py-6 w-[250px] space-x-6">
+                <div className="border flex flex-col px-6 py-6 w-[250px] space-x-6 text-black">
                     <div className="flex flex-col">
                         <h3 className="text-semibold text-[18px]">İlan başlığı</h3>
                         <p className="text-sm">
@@ -139,7 +139,7 @@ const CompanyProfile = () => {
                         <div className="" />
                     </div>
                     <div className="">
-                        <div className="px-4 py-2 bg-gray-200 w-[100px] rounded-2xl border">
+                        <div className="px-4 py-2 bg-[#D9D9D9]  text-black w-[100px] rounded-2xl border">
                             <button className="">İşe alındı</button>
                         </div>
                         {/* <div className="com_hired">Hired</div> */}
@@ -156,7 +156,7 @@ const CompanyProfile = () => {
                         <div className="" />
                     </div>
                     <div className="">
-                        <div className="px-4 py-2 bg-gray-200 w-[100px] rounded-2xl border">
+                        <div className="px-4 py-2 bg-[#D9D9D9] text-black w-[100px] rounded-2xl border">
                             <button className="">İşe alındı</button>
                         </div>
                         {/* <div className="com_hired">Hired</div> */}
@@ -173,7 +173,7 @@ const CompanyProfile = () => {
                         <div className="" />
                     </div>
                     <div className="">
-                        <div className="px-4 py-2 bg-gray-200 w-[100px] rounded-2xl border">
+                        <div className="px-4 py-2 bg-[#D9D9D9] text-black w-[100px] rounded-2xl border">
                             <button className="">İşe alındı</button>
                         </div>
                         {/* <div className="com_hired">Hired</div> */}

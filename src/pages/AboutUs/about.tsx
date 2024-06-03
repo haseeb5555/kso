@@ -3,6 +3,10 @@ import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
 import Footer from "@/components/footer";
+import Nav from "@/components/stuNac";
+import TeaNav from "@/components/teaNav";
+import SimpleNav from "@/components/simpleNav";
+import CompNav from "@/components/compNav";
 
 
 const AboutUs = () => {
@@ -26,6 +30,26 @@ const AboutUs = () => {
 
   return (
     <>
+    {
+      userType === 'student' && (
+        <Nav />
+      )
+    }
+    {
+      userType === 'teacher' && (
+        <TeaNav />
+      )
+    }
+    {
+      userType === null && (
+        <SimpleNav/>
+      )
+    }
+    {
+      userType === "company" && (
+        <CompNav/>
+      )
+    }
     <img className="w-full" src="/header-copy-2@2x.png" />
     <div className="aboutus px-20">
 

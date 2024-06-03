@@ -35,7 +35,7 @@ const TeacherProfile = () => {
             <h1 className="text-2xl font-bold mt-5">Merhaba</h1>
             <div className="my-5 flex flex-col md:flex-row items-start md:items-center">
                 <div className="flex items-center mb-5 md:mb-0 md:mr-5">
-                    <div className="w-80 h-80 bg-gray-200 rounded-full flex items-center justify-center">
+                    <div className="w-80 h-80 bg-gray-200 rounded-full flex items-center justify-center  max-sm:ml-28">
                         <img className="w-10 h-10" alt="profile icon" src="/vector.svg" />
                     </div>
                 </div>
