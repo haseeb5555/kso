@@ -42,12 +42,10 @@ const CourseInfoPage = () => {
         <>
             <Nav />
 
-            <img src="/header-copy-2@2x.png" alt="Header Copy" className="h-16" />
-            <div className="min-h-screen flex flex-col items-center bg-gray-100">
+            <img src="/header-copy-2@2x.png" alt="Header Copy" className="w-full mt-5" />
+            <div className="min-h-screen flex flex-col items-center">
                
-                <div className="w-full bg-gray-300 h-48 flex items-center justify-center">
-                    <span className="text-4xl">Banner</span>
-                </div>
+        
                 <div className="text-center py-8">
                     <h1 className="text-3xl font-bold">{courseInfo.title}</h1>
                     <p className="mt-4 max-w-2xl mx-auto">{courseInfo.description}</p>
