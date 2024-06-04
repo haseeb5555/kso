@@ -63,7 +63,7 @@ const CourseInfoPage = () => {
                 <div className="text-center mb-8">
                     <h2 className="text-2xl font-bold">Want to enroll?</h2>
                     <button
-                        className="mt-4 px-6 py-2 bg-blue-500 text-white rounded"
+                        className="mt-4 px-6 py-2 bg-[#D9D9D9] text-black rounded"
                         onClick={() => handleEnroll(courseId)}
                     >
                         Sign up
@@ -83,7 +83,7 @@ const CourseInfoPage = () => {
 
             </div>
 
-            <img src="/footerbanner2-copy-1@2x.png" alt="Footer Banner" className="h-16" />
+            <img src="/footerbanner2-copy-1@2x.png" alt="Footer Banner" className="mt-5 w-full" />
             <Footer />
         </>
     );

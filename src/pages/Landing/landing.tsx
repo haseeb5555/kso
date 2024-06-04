@@ -92,7 +92,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="rectangle-parent1 mt-40 max-sm:relative max-sm:flex max-sm:flex-wrap">
+      <div className="rectangle-parent1 max-sm:mt-10 max-sm:relative max-sm:flex max-sm:flex-wrap mt-[1000px]">
         <div className="group-child" />
         <div className="group-child16" />
         <div className="lorem-ipsum-dolor-container">
