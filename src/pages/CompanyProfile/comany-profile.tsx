@@ -7,6 +7,7 @@ import "./ComanyProfile.css"
 const CompanyProfile = () => {
     
     const [company, setCompany] = useState({
+        name: "",
         phone: "",
         email: "",
         address: "",
@@ -21,7 +22,7 @@ const CompanyProfile = () => {
             });
             setCompany(response.data);
         } catch (error) {
-            console.error(error);
+            navigate('/login');
         }
     };
 
@@ -58,7 +59,7 @@ const CompanyProfile = () => {
             <TeaNav  />
             <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
         <div className="mx-20 ">
-            <h1 className="text-2xl font-bold mt-5">Merhaba</h1>
+            <h1 className="text-2xl font-bold mt-5">Merhaba  {company.name}</h1>
             <div className="my-5 flex flex-col md:flex-row items-start md:items-center">
                 <div className="flex items-center mb-5 md:mb-0 md:mr-5">
                     <div className="w-80 h-80 bg-gray-200 rounded-full flex items-center justify-center  max-sm:ml-28">

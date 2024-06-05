@@ -1,5 +1,5 @@
 import Footer from "@/components/footer";
-import Nav from "@/components/stuNac";
+import Nav from "@/components/stuNav";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';

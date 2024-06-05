@@ -1,9 +1,9 @@
 import "./AboutUs.css"
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 import Footer from "@/components/footer";
-import Nav from "@/components/stuNac";
+import Nav from "@/components/stuNav";
 import TeaNav from "@/components/teaNav";
 import SimpleNav from "@/components/simpleNav";
 import CompNav from "@/components/compNav";
@@ -148,7 +148,7 @@ const AboutUs = () => {
       </div>
       </div>
       <img
-        className="w-full "
+        className="w-full"
         alt=""
         src="/footerbanner2-copy-1@2x.png"
       />

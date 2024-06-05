@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 
 import Footer from "../../components/footer";
 import axios from 'axios';
-import Nav from '@/components/stuNac';
-import "./Landing.css"
+import StuNav from '@/components/stuNav';
+import CompNav from '@/components/compNav';
+import TeaNav from '@/components/teaNav';
+import Nav from '@/components/simpleNav';
+// import "./Landing.css"
 
 const LandingPage = () => {
   const [userType, setUserType] = useState(null); // null, 'student', or 'company'
@@ -34,8 +38,10 @@ const LandingPage = () => {
   return (
     <>
     <div className=" min-h-screen">
-     <Nav />
-      
+    {userType === 'student' && <StuNav />}
+      {userType === 'company' && <CompNav />}
+      {userType === 'teacher' && <TeaNav />}
+      {userType === null && <Nav />}
 
       <div className="flex justify-center items-center py-10">
         <img className="w-full max-w-screen-lg" src="/banner.png" alt="Banner Image" />
@@ -67,7 +73,7 @@ const LandingPage = () => {
           ))}
         </div>
         <div className="text-center mt-8">
-          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg focus:outline-none focus:ring">See All Classes</button>
+          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg focus:outline-none focus:ring" onClick={userType === 'student' ? handleJobsClick : handleLoginClick}>See All Classes</button>
         </div>
       </div>
 

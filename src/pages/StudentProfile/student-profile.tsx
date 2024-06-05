@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import Footer from "@/components/footer";
-import Nav from "@/components/stuNac";
+import Nav from "@/components/stuNav";
 
 const StudentProfile = () => {
     const [student, setStudent] = useState({

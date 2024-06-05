@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import Nav from '@/components/stuNac';
+import Nav from '@/components/stuNav';
 import Footer from '@/components/footer';
 
 const CourseInfoPage = () => {
