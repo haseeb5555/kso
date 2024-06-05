@@ -1,0 +1,382 @@
+.detail_download-link {
+  position: absolute; /* Make the button absolutely positioned */
+  top: 10px; /* Adjust the position as needed */
+  right: 10px; /* Adjust the position as needed */
+  z-index: 10; /* Ensure it overlaps other elements */
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: grey;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.detail_download-link:hover {
+  background-color: #0056b3;
+}
+
+
+
+.detail_group-child116 {
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 720px);
+    background-color: var(--color-gainsboro);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 1440px;
+    height: 500px;
+  }
+ .detail_banner1 {
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 60px);
+  }
+ .detail_group-child117,
+ .detail_rectangle-parent29 {
+    position: absolute;
+    left: calc(50% - 720px);
+    width: 1440px;
+  }
+ .detail_rectangle-parent29 {
+    top: calc(50% - 1434.5px);
+    height: 500px;
+    text-align: center;
+  }
+ .detail_group-child117 {
+    top: calc(50% - 50px);
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    height: 100px;
+  }
+ .detail_foworks12 {
+    margin: 0;
+    position: absolute;
+    top: calc(50% - 22px);
+    left: calc(50% - 570px);
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+  }
+ .detail_home6 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% - 90px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+ .detail_about-us7,
+ .detail_home6,
+ .detail_jobs7 {
+    position: absolute;
+    color: var(--color-white);
+  }
+ .detail_about-us7 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% + 20px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+ .detail_jobs7 {
+    left: calc(50% + 130px);
+  }
+ .detail_classes6,
+ .detail_contact-us6,
+ .detail_jobs7 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+ .detail_classes6 {
+    position: absolute;
+    left: calc(50% + 240px);
+    color: var(--color-white);
+  }
+ .detail_contact-us6 {
+    left: calc(50% + 350px);
+  }
+ .detail_contact-us6,
+ .detail_login1,
+ .detail_rectangle-parent30 {
+    position: absolute;
+    color: var(--color-white);
+  }
+ .detail_login1 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: calc(50% - 9px);
+    left: calc(50% + 460px);
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+  }
+ .detail_rectangle-parent30 {
+    top: calc(50% - 1749.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 100px;
+  }
+ .detail_course-title {
+    position: absolute;
+    top: calc(50% - 108px);
+    left: calc(50% - 103px);
+  }
+ .detail_course-title-parent,
+ .detail_lorem-ipsum-dol1 {
+    position: absolute;
+    left: calc(50% - 321px);
+    width: 642px;
+  }
+ .detail_lorem-ipsum-dol1 {
+    top: calc(50% - 32px);
+    font-size: var(--font-size-xl);
+    display: inline-block;
+    height: 140px;
+  }
+ .detail_course-title-parent {
+    top: calc(50% - 824.5px);
+    height: 216px;
+    text-align: center;
+  }
+ .detail_group-child118 {
+    position: absolute;
+    top: calc(50% - 186px);
+    left: calc(50% - 720px);
+    background-color: var(--color-black);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 1440px;
+    height: 372px;
+  }
+ .detail_sitemap6 {
+    margin: 0;
+  }
+ .detail_contact-helpdomaincom-1-container6,
+ .detail_sitemap-link-1-container6 {
+    position: absolute;
+    top: calc(50% - 102px);
+    left: calc(50% + 235px);
+    display: inline-block;
+    width: 95px;
+    height: 151px;
+  }
+ .detail_contact-helpdomaincom-1-container6 {
+    left: calc(50% + 379px);
+    width: 191px;
+    height: 132px;
+  }
+ .detail_foworks13 {
+    position: absolute;
+    top: calc(50% - 107px);
+    left: calc(50% - 570px);
+    font-size: var(--font-size-17xl);
+  }
+ .detail_rectangle-parent31 {
+    position: absolute;
+    top: calc(50% + 1377.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 372px;
+    font-size: var(--font-size-base);
+    color: var(--color-white);
+  }
+ .detail_footerbanner2-copy-16,
+ .detail_header-copy-26 {
+    position: absolute;
+    top: calc(50% + 1093.5px);
+    left: calc(50% - 720px);
+    width: 1440px;
+    height: 284px;
+    object-fit: cover;
+  }
+ .detail_header-copy-26 {
+    top: calc(50% - 1649.5px);
+    height: 215px;
+  }
+ .detail_class-1,
+ .detail_classes7 {
+    margin: 0;
+    position: absolute;
+    font-weight: 400;
+    font-family: inherit;
+  }
+ .detail_classes7 {
+    top: calc(50% - 770.5px);
+    left: calc(50% - 66px);
+    font-size: 25px;
+    font-weight: 10000;
+    font-family: inherit;
+    text-align: center;
+  }
+ .detail_class-1 {
+    top: calc(50% - 102px);
+    left: calc(50% - 376.5px);
+    font-size: 13px;
+    display: inline-block;
+    width: 272px;
+    height: 26px;
+  }
+ .detail_document-name,
+ .detail_lorem-ipsum-dolor25 {
+    position: absolute;
+    display: inline-block;
+    width: 224px;
+  }
+ .detail_lorem-ipsum-dolor25 {
+    margin: 0;
+    top: calc(50% - 76px);
+    left: calc(50% - 376.5px);
+    height: 31px;
+  }
+ .detail_document-name {
+    text-decoration: none;
+    top: calc(50% - 6.75px);
+    left: calc(50% - 112px);
+    color: inherit;
+    height: 11px;
+  }
+  .detail_vector-icon27 {
+    position: absolute;
+    top: calc(50% - 5.75px);
+    left: calc(50% + 100px);
+    width: 12px;
+    height: 12px;
+    cursor: pointer; /* Add cursor:pointer to make it appear clickable */
+}
+
+ .detail_group-child119,
+ .detail_group-child120 {
+    position: absolute;
+    top: calc(50% - 12.25px);
+    left: calc(50% - 112.5px);
+    max-height: 100%;
+    width: 225px;
+  }
+ .detail_group-child120 {
+    top: calc(50% + 12.25px);
+  }
+ .detail_document-name-parent {
+    position: absolute; 
+    top: calc(50% + 80px);
+    left: calc(50% - 377px);
+    width: 225px;
+    height: 24.5px;
+    cursor: pointer;
+    /* background-color: black; */
+  }
+ .detail_group-child121 {
+    border-radius: var(--br-xl);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+ .detail_class-1-parent,
+ .detail_group-child121,
+ .detail_wrapper {
+    position: absolute;
+    top: calc(50% - 135px);
+    left: calc(50% - 413px);
+    width: 826px;
+    height: 270px;
+  }
+ .detail_wrapper {
+    top: calc(50% - 104.95px);
+    left: calc(50% - 205.4px);
+    border-radius: var(--br-6xs);
+    background-color: var(--color-gainsboro);
+    width: 410.8px;
+    height: 209.9px;
+  }
+ .detail_vector-icon28 {
+    position: absolute;
+    top: calc(50% - 39.85px);
+    left: calc(50% - 38.9px);
+    width: 79.6px;
+    height: 79.6px;
+  }
+ .detail_group-parent0,
+ .detail_rectangle-parent32 {
+    position: absolute;
+    top: calc(50% - 102px);
+    left: calc(50% - 25.8px);
+    width: 410.8px;
+    height: 209.9px;
+  }
+ .detail_group-parent0 {
+    top: calc(50% - 683.5px);
+    left: calc(50% - 413px);
+    width: 826px;
+    height: 270px;
+  }
+ .detail_classes-parent,
+ .detail_group-parent1,
+ .detail_group-parent2,
+ .detail_group-parent3,
+ .detail_group-parent4 {
+    position: absolute;
+    top: calc(50% - 387.5px);
+    left: calc(50% - 413px);
+    width: 826px;
+    height: 270px;
+  }
+ .detail_classes-parent,
+ .detail_group-parent2,
+ .detail_group-parent3,
+ .detail_group-parent4 {
+    top: calc(50% - 91.5px);
+  }
+ .detail_classes-parent,
+ .detail_group-parent3,
+ .detail_group-parent4 {
+    top: calc(50% + 204.5px);
+  }
+ .detail_classes-parent,
+ .detail_group-parent4 {
+    top: calc(50% + 500.5px);
+  }
+ .detail_classes-parent {
+    top: calc(50% - 560.5px);
+    height: 1541px;
+    font-size: var(--font-size-3xs);
+  }
+ .detail_detailcoursepage {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 3499px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-17xl);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+ 
+
+  
+
+  

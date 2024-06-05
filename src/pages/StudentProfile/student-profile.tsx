@@ -81,6 +81,30 @@ const StudentProfile = () => {
             alert("Error fetching enrollment details");
         }
     };
+
+    const handleChangePassword = async () => {
+        const newPassword = prompt("Enter your new password:");
+        if (newPassword) {
+            try {
+                const response = await axios.put("https://backend.foworks.com.tr/student/update", 
+                { password: newPassword }, {
+                    withCredentials: true,
+                });
+                if (response.data.success) {
+                    alert("Password changed successfully.");
+                    setStudent({ ...student, password: newPassword });
+                } else {
+                    alert("Failed to change password.");
+                }
+            } catch (error) {
+                console.error("Error updating password:", error);
+                alert("Error updating password.");
+            }
+        }
+    };
+
+
+
     if (!student) return null;
 
     const maskedPassword = (password) => '*'.repeat(password.length);
@@ -109,7 +133,7 @@ const StudentProfile = () => {
                             </p>
                             <div className="flex items-center">
                                 <span className="font-bold">Password:</span> {maskedPassword(student.password)}
-                                <img className="w-4 ml-2" alt="profile icon" src="/vector1.svg" />
+                                <img className="w-4 ml-2 cursor-pointer" alt="profile icon" src="/vector1.svg" onClick={handleChangePassword} />
                             </div>
                         </div>
                         <div>
