@@ -11,6 +11,7 @@ const StudentProfile = () => {
         phone: "",
         email: "",
         address: "",
+        password: "",
     });
     const [enrolledJobs, setEnrolledJobs] = useState([]);
     const [enrolledCourses, setEnrolledCourses] = useState([]);
@@ -68,7 +69,7 @@ const StudentProfile = () => {
         fetchEnrolledCourses();
     }, []);
 
-    const handleStatusClick = async (jobId:any) => {
+    const handleStatusClick = async (jobId: any) => {
         try {
             const response = await axios.get(`https://backend.foworks.com.tr/enrollement/getEnrollment/${jobId}`, {
                 withCredentials: true,
@@ -80,7 +81,9 @@ const StudentProfile = () => {
             alert("Error fetching enrollment details");
         }
     };
-if (!student) return null;
+    if (!student) return null;
+
+    const maskedPassword = (password) => '*'.repeat(password.length);
     return (
         <>
             <Nav />
@@ -94,33 +97,37 @@ if (!student) return null;
                         </div>
                     </div>
                     <div className="w-full flex justify-between  gap-16 max-sm:flex-col" >
-               <div className="text-lg">
-                    <p>
-                        <span className="font-bold">İletişim:</span> {student.phone}
-                    </p>
-                    <p>
-                        <span className="font-bold">Email:</span> {student.email}
-                    </p>
-                    <p>
-                        <span className="font-bold">Adres:</span> {student.address}
-                    </p>
+                        <div className="text-lg">
+                            <p>
+                                <span className="font-bold">İletişim:</span> {student.phone}
+                            </p>
+                            <p>
+                                <span className="font-bold">Email:</span> {student.email}
+                            </p>
+                            <p>
+                                <span className="font-bold">Adres:</span> {student.address}
+                            </p>
+                            <div className="flex items-center">
+                                <span className="font-bold">Password:</span> {maskedPassword(student.password)}
+                                <img className="w-4 ml-2" alt="profile icon" src="/vector1.svg" />
+                            </div>
+                        </div>
+                        <div>
+                            <div className="w-full flex justify-between">
+                                <label className="block mb-2 text-lg font-bold">Hakkında</label>
+                                <img className="w-4 " alt="profile icon" src="/vector1.svg" />
+                            </div>
+                            <textarea className="w-[400px]  max-sm:w-full p-2 border rounded h-24" readOnly />
+                        </div>
+                    </div>
                 </div>
-                <div>
-               <div className="w-full flex justify-between">
-                <label className="block mb-2 text-lg font-bold">Hakkında</label>
-                <img className="w-4 " alt="profile icon" src="/vector1.svg" />
-               </div>
-                <textarea className="w-[400px]  max-sm:w-full p-2 border rounded h-24"  readOnly />
-                </div>
-            </div>
-            </div>
                 <div className="mb-5">
                     <h1 className="text-2xl font-bold mb-5">Açılan kurslar</h1>
                     {enrolledCourses.length === 0 ? (
                         <p>Henüz kayıtlı kurs yok.</p>
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {enrolledCourses.map((course:any) => (
+                            {enrolledCourses.map((course: any) => (
                                 <div key={course.id} className="border p-5 rounded">
                                     <h3 className="text-lg font-bold mb-2">{course.title}</h3>
                                     <p className="mb-2">
@@ -141,7 +148,7 @@ if (!student) return null;
                         <p>Henüz başvurduğunuz iş yok.</p>
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {enrolledJobs.map((job:any) => (
+                            {enrolledJobs.map((job: any) => (
                                 <div key={job.id} className="border p-5 rounded">
                                     <h3 className="text-lg font-bold mb-2">{job.title}</h3>
                                     <p className="mb-2">{job.description}</p>
@@ -156,12 +163,12 @@ if (!student) return null;
                         </div>
                     )}
                 </div>
-        
-                
+
+
             </div>
-            
-                <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />
-           
+
+            <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />
+
             <Footer />
         </>
     );
