@@ -69,7 +69,7 @@ const JobInfoPage = () => {
           onClick={() => handleApply(jobId)}
           className="bg-[] text-black font-bold py-2 px-4 rounded"
         >
-          Signup/Apply
+          Apply
         </button>
       </div>
     </div>

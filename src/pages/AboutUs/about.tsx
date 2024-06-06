@@ -51,15 +51,15 @@ const AboutUs = () => {
       )
     }
     <img className="w-full" src="/header-copy-2@2x.png" />
-    <div className="aboutus px-20 ">
+    <div className="aboutus px-20">
 
 
       
-      <div className="a_rectangle-parent5">
+      <div className="a_rectangle-parent5 px-40">
         <img className="w-full" src="/aboutusBanner.png" alt="Banner Image" />
 
       </div>
-      <div className="a_rectangle-parent6">
+      <div className="a_rectangle-parent6 px-40">
         <img className="w-full " src = "/banner.png"></img>
       </div>
       <div className="about-us-group">
