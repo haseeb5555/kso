@@ -76,12 +76,12 @@ const JobInfoPage = () => {
         <p className="mt-10">Loading job details...</p>
       )}
       <div className="mt-10 flex flex-col gap-4">
-        <h2 className="text-2xl font-bold">Want to apply?</h2>
+        <h2 className="text-2xl font-bold">Başvurmak ister misiniz?</h2>
         <button
           onClick={() => handleApply(jobId)}
           className="bg-[] text-black font-bold py-2 px-4 rounded"
         >
-          Apply
+          Başvur
         </button>
       </div>
     </div>

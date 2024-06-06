@@ -68,12 +68,12 @@ const CourseInfoPage = () => {
                     ))}
                 </div>
                 <div className="text-center mb-8">
-                    <h2 className="text-2xl font-bold">Want to enroll?</h2>
+                    <h2 className="text-2xl font-bold">Kayıt olmak ister misiniz?</h2>
                     <button
                         className="mt-4 px-6 py-2 bg-[#D9D9D9] text-black rounded"
                         onClick={() => handleEnroll(courseId)}
                     >
-                       Enroll
+                       Kayıt ol
                     </button>
                 </div>
                 <div className="w-full bg-gray-200 py-8">

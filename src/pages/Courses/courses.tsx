@@ -56,7 +56,7 @@ const Courses = () => {
             <img className="mt-4 mx-auto" alt="" src="/header-copy-2@2x.png" />
         <div className="min-h-screen ">
             <div className="text-center py-8">
-                <h3 className="text-2xl font-bold">Explore Classes</h3>
+                <h3 className="text-2xl font-bold">dersleri keşfet</h3>
                 <div className="flex flex-wrap justify-center mt-4 space-x-2 space-y-2">
                     {['Python', 'Database', 'Artificial Intelligence', 'Graphic Design'].map((cat) => (
                         <div key={cat} className="flex items-center space-x-2">
@@ -95,7 +95,7 @@ const Courses = () => {
                                 className="bg-[#D9D9D9] text-black px-4 py-2 rounded"
                                 onClick={() => handleCourseinfoClick(course.id)}
                             >
-                                Enroll
+                                Kayıt ol
                             </button>
                         </div>
                     ))

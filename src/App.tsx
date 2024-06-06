@@ -17,6 +17,7 @@ import LandingPage from "./pages/Landing/landing"
 import StudentProfile from "./pages/StudentProfile/student-profile"
 import TeacherProfile from "./pages/TeacherProfile/teacher-profile"
 import AddJob from "./pages/addjob/add-job"
+import Etkinlik from "./pages/Etkinlik/Etkinlik"
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
       <Route path="/coursedetail/:courseId" element={<DetailCoursePage />} />
       <Route path="/courseInfoPage/:courseId" element={<CourseInfoPage />} />
       <Route path="/footer" element={<Footer />} />
+      <Route path="/etkinlik" element={<Etkinlik />} />
     </Routes>
   )
 }

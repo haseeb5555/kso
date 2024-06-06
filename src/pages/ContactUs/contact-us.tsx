@@ -41,9 +41,8 @@ const ContactUs = () => {
         <img className="w-full mt-5" alt="" src="/header-copy-2@2x.png" />
         <div className="rectangle-parent34 h-full">
           <img className="group-child133 px-40 w-full" src="/contactBanner.png" alt="Banner Image" />
-
         </div>
-        <div className="relative max-w-4xl mx-auto p-4 text-black mt-[800px] ">
+        <div className="relative max-w-4xl mx-auto p-4 text-black mt-[600px] mt-8 ">
           <h1 className="text-4xl font-bold text-center mb-6">Bize ulaşın</h1>
           <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
@@ -130,7 +129,7 @@ const ContactUs = () => {
           </div>
         </div>
       <img
-        className="w-full"
+        className="w-full mt-[120px]"
         alt=""
         src="/footerbanner2-copy-1@2x.png"
       />
