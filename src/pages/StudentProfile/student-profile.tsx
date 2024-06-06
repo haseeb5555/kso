@@ -103,6 +103,10 @@ const StudentProfile = () => {
         }
     };
 
+    const handleDetailCourseinfoClick = (courseId) => {
+        navigate(`/coursedetail/${courseId}`);
+    };
+
 
 
     if (!student) return null;
@@ -155,10 +159,9 @@ const StudentProfile = () => {
                                 <div key={course.id} className="border p-5 rounded">
                                     <h3 className="text-lg font-bold mb-2">{course.title}</h3>
                                     <p className="mb-2">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                       {course.description}
                                     </p>
-                                    <button className="bg-[#D9D9D9] text-white py-2 px-4 rounded">
+                                    <button className="bg-[#D9D9D9] text-white py-2 px-4 rounded" onClick={() => handleDetailCourseinfoClick(course.id)}>
                                         Görüntüle
                                     </button>
                                 </div>

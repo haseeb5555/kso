@@ -36,7 +36,7 @@ function App() {
       <Route path="/addjob" element={<AddJob />} />
       <Route path="/hire/:jobId" element={<VieweditJob />} />
       <Route path="/jobinfopage/:jobId" element={<JobInfoPage />} />
-      <Route path="/courseDetail" element={<DetailCoursePage />} />
+      <Route path="/coursedetail/:courseId" element={<DetailCoursePage />} />
       <Route path="/courseInfoPage/:courseId" element={<CourseInfoPage />} />
       <Route path="/footer" element={<Footer />} />
     </Routes>

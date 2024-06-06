@@ -28,13 +28,13 @@ const DetailCoursePage = () => {
         fetchCourseInfo();
     }, [courseId]);
 
-    // if (loading) {
-    //     return <div>Loading...</div>;
-    // }
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-    // if (!courseInfo) {
-    //     return <div>Course information not found.</div>;
-    // }
+    if (!courseInfo) {
+        return <div>Course information not found.</div>;
+    }
 
     const getYoutubeEmbedUrl = (url) => {
         const videoId = url.split('v=')[1];
@@ -45,24 +45,7 @@ const DetailCoursePage = () => {
         return `https://www.youtube.com/embed/${videoId}`;
     };
 
-    const dummyCourseInfo = {
-        title: "Dummy Course",
-        description: "This is a dummy course description.",
-        classes: [
-            {
-                title: "Class 1",
-                description: "This is a dummy class description",
-                pdfFile: "dummy.pdf",
-                videoLink: "https://www.youtube.com/watch?v=6JYIGclVQdw",
-            },
-            {
-                title: "Class 2",
-                description: "This is a dummy class description",
-                pdfFile: "dummy.pdf",
-                videoLink: "https://www.youtube.com/watch?v=6JYIGclVQdw",
-            },
-        ],
-    };
+
 
     return (
         <>
@@ -74,12 +57,12 @@ const DetailCoursePage = () => {
             
             <div className="my-8">
                 <div className="w-full bg-white p-4 rounded shadow-md mb-4 flex flex-col justify-center items-center">
-                    <div className="text-3xl font-bold mb-2">{dummyCourseInfo.title}</div>
-                    <div className="text-gray-700">{dummyCourseInfo.description}</div>
+                    <div className="text-3xl font-bold mb-2">{courseInfo.title}</div>
+                    <div className="text-gray-700">{courseInfo.description}</div>
                 </div>
 
                 <h1 className="text-2xl font-bold my-4 text-center">Classes</h1>
-                {dummyCourseInfo.classes.map((classItem, index) => (
+                {courseInfo.classes.map((classItem, index) => (
                     <div key={index} className="flex flex-col md:flex-row bg-white p-4 mb-4 rounded shadow-md w-[700px] max-sm:w-full">
                         <div className="flex-1 mb-4 md:mb-0 md:mr-4">
                             <h3 className="text-xl font-bold mb-2">{classItem.title}</h3>

@@ -66,13 +66,13 @@ const TeacherProfile = () => {
                 <div className="flex justify-between items-center  ">
 
                 <h1 className="text-2xl font-bold mb-5">Açılan kurslar</h1>
-                <div className="mt-5 flex gap-2 items-center cursor-pointer">
+                {/* <div className="mt-5 flex gap-2 items-center cursor-pointer">
                     <span className="text-blue-500 ">Ekle</span>
                     <img className="w-5 h-5" alt="add icon" src="/vector3.svg" />
-                </div>
+                </div> */}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 mx-60 max-sm:mx-0">
-                    {Array(6).fill().map((_, index) => (
+                    {/* {Array(6).fill().map((_, index) => (
                         <div key={index} className="w-[250px] border flex flex-col border-black pb-5 rounded-lg gap-2">
                             <div className=" bg-gray-200 px-20 py-20 border border-black"/>
                             <h3 className="text-lg font-bold mb-2 ml-4">Graphic Design 101</h3>
@@ -84,7 +84,7 @@ const TeacherProfile = () => {
                                 Görüntüle
                             </button>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
                 </div>
              
