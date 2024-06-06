@@ -1,5 +1,6 @@
 import Footer from '@/components/footer';
-import Nav from '@/components/stuNav';
+import StuNav from "@/components/stuNav";
+import Nav from "@/components/simpleNav";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -10,6 +11,7 @@ const JobInfoPage = () => {
 
   const [jobInfo, setJobInfo] = useState(null);
   const [companyInfo, setCompanyInfo] = useState(null);
+  const [userType, setUserType] = useState(null); // null, 'student', or 'company'
 
   useEffect(() => {
     const fetchJobInfo = async () => {
@@ -36,10 +38,19 @@ const JobInfoPage = () => {
 
   const handleApply = async (jobId) => {
     try {
-      await axios.post(`https://backend.foworks.com.tr/enrollement/enroll/${jobId}`, {}, {
-        withCredentials: true,
+
+       // Check if the user is logged in by making an authenticated request
+       const checkLoginResponse = await axios.get('https://backend.foworks.com.tr/auth/check', { withCredentials: true });
+      
+       if (!checkLoginResponse) {
+      const response = await axios.post(`https://backend.foworks.com.tr/enrollement/enroll/${jobId}`, {}, {
+        withCredentials: true, // Send cookies along with the request
       });
       alert('Successfully applied for the job!');
+    }
+    else{
+      navigate("/login");
+    }
     } catch (error) {
       console.error("Error applying for job:", error);
       alert('Failed to apply for the job. Please try again.');
@@ -48,7 +59,8 @@ const JobInfoPage = () => {
 
   return (
     <>
-      <Nav />
+       {userType === 'student' && <StuNav />}
+      {userType === null && <Nav />}
       <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
     <div className="min-h-screen flex flex-col items-center mx-20">
       {jobInfo && companyInfo ? (
@@ -69,7 +81,7 @@ const JobInfoPage = () => {
           onClick={() => handleApply(jobId)}
           className="bg-[] text-black font-bold py-2 px-4 rounded"
         >
-          Signup/Apply
+          Apply
         </button>
       </div>
     </div>

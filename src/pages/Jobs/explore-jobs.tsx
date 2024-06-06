@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
-import Nav from "@/components/stuNav";
+import StuNav from "@/components/stuNav";
+import Nav from "@/components/simpleNav";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
@@ -7,20 +8,45 @@ import { useNavigate } from 'react-router-dom';
 const ExploreJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Python");
+  const [userType, setUserType] = useState(null); // null, 'student', or 'company'
   const navigate = useNavigate();
 
-  const fetchJobs = async (category:any) => {
+  const fetchJobs = async (category) => {
     try {
-      const response = await axios.get(`https://backend.foworks.com.tr/job/get/${category}`, {
-        withCredentials: true,
-      });
-      setJobs(response.data);
+
+      // Check if the user is logged in by making an authenticated request
+      const checkLoginResponse = await axios.get('https://backend.foworks.com.tr/auth/check');
+
+      if (checkLoginResponse.data.loggedIn) {
+        const response = await axios.get(`https://backend.foworks.com.tr/job/get/${category}`, {
+          withCredentials: true, // Send cookies along with the request
+        });
+        setJobs(response.data);
+      }
+      else {
+        const response = await axios.get(`https://backend.foworks.com.tr/job/getAll/${category}`, {
+        });
+        setJobs(response.data);
+      }
     } catch (error) {
       console.error("Error fetching enrolled jobs:", error);
     }
   };
 
+
   useEffect(() => {
+    const checkUserType = async () => {
+      try {
+        const response = await axios.get('https://backend.foworks.com.tr/auth/check-session', { withCredentials: true });
+        const { userType } = response.data; // Assuming the server returns { userType: 'student' } or { userType: 'company' }
+        setUserType(userType);
+      } catch (error) {
+        console.error('Error checking session:', error);
+        setUserType(null); // No session or error occurred
+      }
+    };
+
+    checkUserType();
     fetchJobs(selectedCategory);
   }, [selectedCategory]);
 
@@ -34,7 +60,8 @@ const ExploreJobs = () => {
 
   return (
     <>
-   <Nav/>
+     {userType === 'student' && <StuNav />}
+      {userType === null && <Nav />}
    <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
     <div className="min-h-screen flex justify-center items-center ">
       <div className="container mx-auto -mt-80 flex justify-center items-center flex-col">

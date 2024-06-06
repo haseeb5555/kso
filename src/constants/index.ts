@@ -25,5 +25,7 @@ export const stunavlinks = [
   export const simpleNavLinks = [
     { label: 'Ana Sayfa', path: '/' },
     { label: 'Proje Hakkında', path: '/aboutus' },
+    { label: 'İş imkanları', path: '/jobs' },
+    { label: 'Dersler', path: '/courses' },
     { label: 'İletişim', path: '/contactus' },
   ];

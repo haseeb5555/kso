@@ -68,12 +68,12 @@ const AboutUs = () => {
           Kocaeli Sanayi Odası hakkında bilgiler
         </div>
       </div>
-      <div className="why-us-parent">
+      {/* <div className="why-us-parent">
         <div className="why-us">Neden biz?</div>
         <div className="lorem-ipsum-dol1">
         Çünkü biz eğitim alanında iddialıyız.
         </div>
-      </div>
+      </div> */}
       <div className="a_rectangle-parent8 max-sm:mt-[300px]">
         <div className="group-child48" />
         <div className="group-child52" />
@@ -124,23 +124,25 @@ const AboutUs = () => {
         <div className="flex flex-wrap justify-center gap-4">
             <div className="bg-gray-300 p-4 rounded-lg w-64 flex flex-col items-center">
                 <div className="bg-black rounded-full w-12 h-12 mb-4"></div>
-                <h3 className="text-lg font-semibold">USP</h3>
-                <p>Eğitmen kalitemiz</p>
+                {/* <h3 className="text-lg font-semibold">USP</h3> */}
+                <p>İzmit Mesleki ve Teknik Anadolu Lisesi’nde 21 kişilik bilişim laboratuvarı ve engelli lavabosu kuruldu. Kursiyerlerimiz; IOT Uygulamaları ve Siber Güvenlik konularında 300’er saatlik eğitim aldılar. 
+</p>
             </div>
             <div className="bg-gray-300 p-4 rounded-lg w-64 flex flex-col items-center">
                 <div className="bg-black rounded-full w-12 h-12 mb-4"></div>
-                <h3 className="text-lg font-semibold">USP</h3>
-                <p>Sektördeki bağlantılarımız</p>
+                {/* <h3 className="text-lg font-semibold">USP</h3> */}
+                <p>Hedef grupların teknoloji dünyasındaki son gelişmeler hakkında bilgi alması Bilişim firmaları temsilcileri ile tanışmaları adına Bilişim Vadisi’ne gezi düzenlendi.
+</p>
             </div>
             <div className="bg-gray-300 p-4 rounded-lg w-64 flex flex-col items-center">
                 <div className="bg-black rounded-full w-12 h-12 mb-4"></div>
-                <h3 className="text-lg font-semibold">USP</h3>
-                <p>Eğitmen kalitemiz</p>
+                {/* <h3 className="text-lg font-semibold">USP</h3> */}
+                <p>Bilişim firmalarının katılımı ile “Yeşil Bilişim, Endüstri 4.0” Eğitimi düzenlendi</p>
             </div>
             <div className="bg-gray-300 p-4 rounded-lg w-64 flex flex-col items-center">
                 <div className="bg-black rounded-full w-12 h-12 mb-4"></div>
-                <h3 className="text-lg font-semibold">USP</h3>
-                <p>Sektördeki bağlantılarımız</p>
+                {/* <h3 className="text-lg font-semibold">USP</h3> */}
+                <p>Öğrencilerimize bilişim alanında staj imkanı sağlandı</p>
             </div>
         </div>
     </div>

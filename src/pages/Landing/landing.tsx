@@ -34,6 +34,7 @@ const LandingPage = () => {
   };
 
   const handleJobsClick = () => navigate('/jobs');
+  const handleCoursesClick = () => navigate('/courses');
 
   return (
     <>
@@ -61,7 +62,7 @@ const LandingPage = () => {
       <div className="container mx-auto py-10">
         <h2 className="text-3xl font-bold text-center mb-8">Courses</h2>
         <div className="flex flex-wrap justify-center gap-8">
-          {[...Array(3)].map((_, index) => (
+          {/* {[...Array(3)].map((_, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-md w-full sm:w-72">
               <h3 className="text-xl font-semibold mb-2">Course Name</h3>
               <p className="mb-4">
@@ -72,17 +73,17 @@ const LandingPage = () => {
                 <span>563+ Positive Reviews</span>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
         <div className="text-center mt-8">
-          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg focus:outline-none focus:ring" onClick={userType === 'student' ? handleJobsClick : handleLoginClick}>See All Classes</button>
+          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg focus:outline-none focus:ring" onClick={handleCoursesClick}>See All Classes</button>
         </div>
       </div>
 
       <div className="container mx-auto py-10">
         <h2 className="text-3xl font-bold text-center mb-8">Jobs</h2>
         <div className="flex flex-wrap justify-center gap-8">
-          {[...Array(3)].map((_, index) => (
+          {/* {[...Array(3)].map((_, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-md w-full sm:w-72">
               <h3 className="text-xl font-semibold mb-2">Job Title</h3>
               <p className="mb-4">
@@ -93,10 +94,11 @@ const LandingPage = () => {
                 <span>563+ Applications Submitted</span>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
         <div className="text-center mt-8">
-          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring" onClick={userType === 'student' ? handleJobsClick : handleLoginClick}>See All Jobs</button>
+          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring" onClick={handleJobsClick} >See All Jobs</button>
+          {/* onClick={userType === 'student' ? handleJobsClick : handleLoginClick} */}
         </div>
       </div>
 

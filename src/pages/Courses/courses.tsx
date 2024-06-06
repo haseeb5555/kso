@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
-import Nav from "@/components/stuNav";
+import StuNav from "@/components/stuNav";
+import Nav from "@/components/simpleNav";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const Courses = () => {
     const [courses, setCourses] = useState([]);
     const [category, setCategory] = useState("Python");
+    const [userType, setUserType] = useState(null); // null, 'student', or 'company'
     const navigate = useNavigate();
 
     const fetchCourses = async (category) => {
@@ -24,7 +26,18 @@ const Courses = () => {
     };
 
     useEffect(() => {
-        console.log(`useEffect triggered with category: ${category}`);
+        const checkUserType = async () => {
+            try {
+                const response = await axios.get('https://backend.foworks.com.tr/auth/check-session', { withCredentials: true });
+                const { userType } = response.data; // Assuming the server returns { userType: 'student' } or { userType: 'company' }
+                setUserType(userType);
+            } catch (error) {
+                console.error('Error checking session:', error);
+                setUserType(null); // No session or error occurred
+            }
+        };
+
+        checkUserType();
         fetchCourses(category);
     }, [category]);
 
@@ -38,7 +51,8 @@ const Courses = () => {
 
     return (
         <>
-            <Nav />
+            {userType === 'student' && <StuNav />}
+            {userType === null && <Nav />}
             <img className="mt-4 mx-auto" alt="" src="/header-copy-2@2x.png" />
         <div className="min-h-screen ">
             <div className="text-center py-8">

@@ -22,17 +22,26 @@ const CourseInfoPage = () => {
         fetchCourseInfo();
     }, [courseId]);
 
-    const handleEnroll = async (courseId:any) => {
+    const handleEnroll = async (courseId) => {
         try {
+          // Check if the user is logged in by making an authenticated request
+          const checkLoginResponse = await axios.get('https://backend.foworks.com.tr/auth/check', { withCredentials: true });
+          
+          if (checkLoginResponse.data.loggedIn) {
+            // User is logged in, proceed with enrollment
             const response = await axios.post(`https://backend.foworks.com.tr/courseEnrollement/enroll/${courseId}`, {}, {
-                withCredentials: true,
+              withCredentials: true, // Send cookies along with the request
             });
             alert('Successfully enrolled for the course!');
+          } else {
+            // User is not logged in, redirect to login page
+            navigate('/login');
+          }
         } catch (error) {
-            console.error("Error enrolling for course:", error);
-            alert('Failed to enroll for the course. Please try again.');
+          console.error("Error enrolling for course:", error);
+          alert('Failed to enroll for the course. Please try again.');
         }
-    };
+      };
 
     if (!courseInfo) {
         return <div>Loading...</div>;
@@ -64,7 +73,7 @@ const CourseInfoPage = () => {
                         className="mt-4 px-6 py-2 bg-[#D9D9D9] text-black rounded"
                         onClick={() => handleEnroll(courseId)}
                     >
-                        Sign up
+                       Enroll
                     </button>
                 </div>
                 <div className="w-full bg-gray-200 py-8">
