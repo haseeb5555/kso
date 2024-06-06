@@ -40,7 +40,7 @@ const ContactUs = () => {
 
         <img className="w-full mt-5" alt="" src="/header-copy-2@2x.png" />
         <div className="rectangle-parent34 h-full">
-          <img className="group-child133" src="/contactBanner.png" alt="Banner Image" />
+          <img className="group-child133 px-40 w-full" src="/contactBanner.png" alt="Banner Image" />
 
         </div>
         <div className="relative max-w-4xl mx-auto p-4 text-black mt-[800px] ">
