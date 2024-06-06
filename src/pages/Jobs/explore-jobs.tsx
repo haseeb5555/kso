@@ -37,7 +37,7 @@ const ExploreJobs = () => {
    <Nav/>
    <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
     <div className="min-h-screen flex justify-center items-center ">
-      <div className="container mx-auto p-4 flex justify-center items-center flex-col">
+      <div className="container mx-auto -mt-80 flex justify-center items-center flex-col">
         <h3 className="text-2xl font-bold mb-4">Explore Jobs</h3>
          <div className="flex flex-wrap justify-center mt-10 space-x-2 space-y-2">
                     {['Python', 'Database', 'Artificial Intelligence', 'Graphic Design'].map((cat) => (
