@@ -38,10 +38,12 @@ const LandingPage = () => {
   return (
     <>
     <div className=" min-h-screen">
+
     {userType === 'student' && <StuNav />}
       {userType === 'company' && <CompNav />}
       {userType === 'teacher' && <TeaNav />}
       {userType === null && <Nav />}
+      <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
 
       <div className="flex justify-center items-center py-10">
         <img className="w-full max-w-screen-lg" src="/banner.png" alt="Banner Image" />
@@ -98,26 +100,18 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="rectangle-parent1 max-sm:mt-10 max-sm:relative max-sm:flex max-sm:flex-wrap mt-[1000px]">
-        <div className="group-child" />
-        <div className="group-child16" />
-        <div className="lorem-ipsum-dolor-container">
-          <p className="p">
-          Eğitim kıvılcımla ateş yakmaktır. Boş bir kabı doldurmak değildir.
-          </p>
-          <p className="p">&nbsp;</p>
-          <p className="p">
-            <i>-Sokrates</i>
-          </p>
-        </div>
-        {/* <div className="testimonials">Testimonials</div> */}
-        <div className="ellipse-div" />
-      </div>
-    </div>
-    <div className='mt-80 max-sm:mt-0'>
-
+      <div className="w-full bg-gray-100 py-8">
+                    <div className="text-center ">
+                        
+                        <div className="mt-4 max-w-lg mx-auto bg-white p-4 shadow-lg rounded">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p className="mt-2 italic">Serkit</p>
+                        </div>
+                    </div>
+                </div>
     </div>
     <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />
+
     <Footer />
     </>
   );

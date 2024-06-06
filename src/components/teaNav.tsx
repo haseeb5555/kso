@@ -79,7 +79,7 @@ const TeaNav = () => {
                     </a>
                   ))}
                   <a
-                   onClick={handleLogout}
+                     onClick={handleLogout}
                     className={`w-[110px] border ${buttonVariants({
                       variant: "secondary",
                     })}`}

@@ -51,7 +51,7 @@ const AboutUs = () => {
       )
     }
     <img className="w-full" src="/header-copy-2@2x.png" />
-    <div className="aboutus px-20">
+    <div className="aboutus px-20 ">
 
 
       
@@ -148,7 +148,7 @@ const AboutUs = () => {
       </div>
       </div>
       <img
-        className="w-full"
+        className="w-full "
         alt=""
         src="/footerbanner2-copy-1@2x.png"
       />
