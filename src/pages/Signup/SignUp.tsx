@@ -34,6 +34,7 @@ const Signup = () => {
           resume: Yup.mixed().required('Resume is required'),
           disability: Yup.string().required('Disability status is required'),
           consent: Yup.boolean().oneOf([true], 'You must consent to data processing').required('Consent is required'),
+          mailconsent: Yup.boolean().oneOf([true], 'You must consent to data processing').required('Consent is required'),
         });
       case 'teacher':
         return Yup.object({
@@ -182,7 +183,7 @@ const Signup = () => {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Name"
+                  placeholder="Ad"
                   value={formik.values.name}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -195,7 +196,7 @@ const Signup = () => {
                   type="text"
                   id="surname"
                   name="surname"
-                  placeholder="Surname"
+                  placeholder="Soyad"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -208,7 +209,7 @@ const Signup = () => {
                   type="text"
                   id="idNumber"
                   name="idNumber"
-                  placeholder="T.C. Identity or Foreign Nationality ID Number"
+                  placeholder="T.C. kimlik veya yabancı uyruklu kimlik numarası"
                   value={formik.values.idNumber}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -223,9 +224,9 @@ const Signup = () => {
                   value={formik.values.gender}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}>
-                  <option value="" label="Select your gender" />
-                  <option value="male" label="Male" />
-                  <option value="female" label="Female" />
+                  <option value="" label="Cinsiyet" />
+                  <option value="male" label="Erkek" />
+                  <option value="female" label="Kadın" />
                 </select>
                 {formik.touched.gender && formik.errors.gender ? <div>{formik.errors.gender}</div> : null}
               </div>
@@ -261,7 +262,7 @@ const Signup = () => {
                   type="password"
                   id="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Şifre"
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -276,9 +277,9 @@ const Signup = () => {
                   value={formik.values.educationLevel}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}>
-                  <option value="" label="Select your education level" />
-                  <option value="highSchool" label="High School" />
-                  <option value="associate" label="Associate Degree" />
+                  <option value="" label="Öğrenim durumu" />
+                  <option value="highSchool" label="Lise mezunu" />
+                  <option value="associate" label="Ön Lisans" />
                   <option value="bachelor" label="Bachelor's Degree" />
                   <option value="master" label="Master's Degree" />
                   <option value="phd" label="PhD" />
@@ -294,9 +295,9 @@ const Signup = () => {
                   value={formik.values.jobSeekingStatus}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}>
-                  <option value="" label="Are you looking for a job?" />
-                  <option value="yes" label="Yes" />
-                  <option value="no" label="No" />
+                  <option value="" label="Aktif iş arayışınız mevcut mu?" />
+                  <option value="yes" label="Evet, iş arıyorum." />
+                  <option value="no" label="Hayır" />
                 </select>
                 {formik.touched.jobSeekingStatus && formik.errors.jobSeekingStatus ? <div>{formik.errors.jobSeekingStatus}</div> : null}
               </div>
@@ -340,7 +341,21 @@ const Signup = () => {
                     checked={formik.values.consent}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur} />
-                  <span>I consent to the processing of my personal data</span>
+                  <span>Verilerimin işlenmesini onaylıyorum</span>
+                </label>
+                {formik.touched.consent && formik.errors.consent ? <div>{formik.errors.consent}</div> : null}
+              </div>
+              <div className="mb-4">
+                <label className="inline-flex items-center">
+                  <input
+                    className="mr-2"
+                    type="checkbox"
+                    id="mailconsent"
+                    name="mailconsent"
+                    checked={formik.values.consent}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur} />
+                  <span>- Mail ile bilgilendirilmek istiyorum. </span>
                 </label>
                 {formik.touched.consent && formik.errors.consent ? <div>{formik.errors.consent}</div> : null}
               </div>
@@ -356,7 +371,7 @@ const Signup = () => {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Name"
+                  placeholder="Ad"
                   value={formik.values.name}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -369,7 +384,7 @@ const Signup = () => {
                   type="text"
                   id="surname"
                   name="surname"
-                  placeholder="Surname"
+                  placeholder="Soyad"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -382,7 +397,7 @@ const Signup = () => {
                   type="text"
                   id="subject"
                   name="subject"
-                  placeholder="Subject"
+                  placeholder="Branş/Alan"
                   value={formik.values.subject}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -408,7 +423,7 @@ const Signup = () => {
                   type="password"
                   id="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Şifre"
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -425,7 +440,7 @@ const Signup = () => {
                     checked={formik.values.consent}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur} />
-                  <span>I consent to the processing of my personal data</span>
+                  <span>Verilerimin işlenmesini onaylıyorum</span>
                 </label>
                 {formik.touched.consent && formik.errors.consent ? <div>{formik.errors.consent}</div> : null}
               </div>
@@ -454,7 +469,7 @@ const Signup = () => {
                   type="text"
                   id="industry"
                   name="industry"
-                  placeholder="Industry"
+                  placeholder="Firma adı"
                   value={formik.values.industry}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -480,7 +495,7 @@ const Signup = () => {
                   type="password"
                   id="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Şifre"
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur} />
@@ -495,7 +510,7 @@ const Signup = () => {
                   value={formik.values.companySize}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}>
-                  <option value="" label="Select your company size" />
+                  <option value="" label="İş ilanı kategorisi" />
                   <option value="1-10" label="1-10 employees" />
                   <option value="11-50" label="11-50 employees" />
                   <option value="51-200" label="51-200 employees" />
@@ -516,7 +531,7 @@ const Signup = () => {
                     checked={formik.values.consent}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur} />
-                  <span>I consent to the processing of my personal data</span>
+                  <span>Verilerimin işlenmesini onaylıyorum</span>
                 </label>
                 {formik.touched.consent && formik.errors.consent ? <div>{formik.errors.consent}</div> : null}
               </div>

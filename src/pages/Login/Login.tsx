@@ -102,10 +102,10 @@ const Login = () => {
           />
         </div>
         <div className="l_rectangle-wrapper5">
-          <button className="l_group-child11" type="button" onClick={handleSignupClick}>Sign Up</button>
+          <button className="l_group-child11" type="button" onClick={handleSignupClick}>Kayıt ol</button>
         </div>
         <div className="l_rectangle-wrapper6">
-          <button className="l_group-child11" type="submit">Login</button>
+          <button className="l_group-child11" type="submit">Giriş</button>
         </div>
       </form>
     </div>
