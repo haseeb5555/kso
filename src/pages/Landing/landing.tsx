@@ -108,7 +108,7 @@ const LandingPage = () => {
           <div className="text-center ">
 
             <div className="mt-4 max-w-lg mx-auto bg-white p-4 shadow-lg rounded">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>İşin geleceğine güvenle yol alacağız</p>
               <p className="mt-2 italic">Serkit</p>
             </div>
           </div>
