@@ -55,7 +55,7 @@ const LandingPage = () => {
           <button className="w-[300px] bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring" 
           onClick={handleJobsClick} >İş ilanları</button>
           </div>
-          <img className="w-full max-w-[600px] rounded-2xl" src="/image2.png" alt="Banner Image" />
+          <img className="w-full max-w-[600px] rounded-2xl" src="/ana.jpeg" alt="Banner Image" />
         </div>
       </div>
       <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />

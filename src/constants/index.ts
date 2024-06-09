@@ -4,7 +4,7 @@ export const stunavlinks = [
     { label: 'Proje Hakkında', path: '/aboutus' },
     { label: 'İş imkanları', path: '/jobs' },
     { label: 'Dersler', path: '/courses' },
-    { label: 'Etkinlik', path: '/etkinlik' },
+    { label: 'Haberler', path: '/haberler' },
     { label: 'Bize ulaşın', path: '/contactus' },
   ] as const
 
@@ -13,7 +13,7 @@ export const stunavlinks = [
     { label: 'Ana Sayfa', path: '/' },
     { label: 'Profil', path: '/CompanyProfile' },
     { label: 'Proje Hakkında', path: '/aboutus' },
-    { label: 'Etkinlik', path: '/etkinlik' },
+    { label: 'Haberler', path: '/haberler' },
     { label: 'Bize Ulaşın', path: '/contactus' },
   ];
 
@@ -21,7 +21,7 @@ export const stunavlinks = [
     { label: 'Ana Sayfa', path: '/' },
     { label: 'Profil', path: '/TeacherProfile' },
     { label: 'Proje Hakkında', path: '/aboutus' },
-    { label: 'Etkinlik', path: '/etkinlik' },
+    { label: 'Haberler', path: '/haberler' },
     { label: 'İletişim', path: '/contactus' },
   ];
 
@@ -30,6 +30,6 @@ export const stunavlinks = [
     { label: 'Proje Hakkında', path: '/aboutus' },
     { label: 'İş imkanları', path: '/jobs' },
     { label: 'Dersler', path: '/courses' },
-    { label: 'Etkinlik', path: '/etkinlik' },
+    { label: 'Haberler', path: '/haberler' },
     { label: 'İletişim', path: '/contactus' },
   ];

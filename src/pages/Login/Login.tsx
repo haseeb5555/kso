@@ -71,7 +71,7 @@ const Login = () => {
     <div className="l_login">
       <div className="l_login-child" />
       {/* <label className="l_logo">Logo</label> */}
-      <img className="l_logo" src="/logo.png"></img>
+      <img className="l_logo" src="/image18.png"></img>
       <form className="l_login-parent" onSubmit={handleSubmit}>
         <label className="l_login1">Giriş</label>
         <div className="l_frame-child" />

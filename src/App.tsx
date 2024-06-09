@@ -40,7 +40,7 @@ function App() {
       <Route path="/coursedetail/:courseId" element={<DetailCoursePage />} />
       <Route path="/courseInfoPage/:courseId" element={<CourseInfoPage />} />
       <Route path="/footer" element={<Footer />} />
-      <Route path="/etkinlik" element={<Etkinlik />} />
+      <Route path="/haberler" element={<Etkinlik />} />
     </Routes>
   )
 }
