@@ -47,6 +47,7 @@ const LandingPage = () => {
         <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
 
         <div className="flex justify-center items-center py-10 gap-60 max-sm:gap-20 max-sm:flex-col">
+          <img className="w-full max-w-[600px] rounded-2xl" src="/ana.jpeg" alt="Banner Image" />
           <div className='flex flex-col gap-4 '>
 
           <button className="w-[300px] bg-[#D9D9D9] text-black px-4 py-2 rounded-lg focus:outline-none focus:ring" 
@@ -55,10 +56,9 @@ const LandingPage = () => {
           <button className="w-[300px] bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring" 
           onClick={handleJobsClick} >İş ilanları</button>
           </div>
-          <img className="w-full max-w-[600px] rounded-2xl" src="/ana.jpeg" alt="Banner Image" />
         </div>
       </div>
-      <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />
+  
 
       <Footer />
     </>

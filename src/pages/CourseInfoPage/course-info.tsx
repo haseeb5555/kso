@@ -90,7 +90,7 @@ const CourseInfoPage = () => {
 
             </div>
 
-            <img src="/footerbanner2-copy-1@2x.png" alt="Footer Banner" className="mt-5 w-full" />
+           
             <Footer />
         </>
     );

@@ -84,7 +84,7 @@ const Courses = () => {
                 <h3 className="text-xl font-semibold">{category}</h3>
             </div>
 
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center mb-8">
                 {courses.length ? (
                     courses.map((course, index) => (
                         <div key={course.id} className="bg-white m-2 p-4 rounded-lg shadow-lg max-w-xs">
@@ -106,7 +106,7 @@ const Courses = () => {
 
         
         </div>
-        <img className="mt-4 mx-auto" alt="" src="/footerbanner2-copy-1@2x.png" />
+        
         <Footer />
         </>
     );

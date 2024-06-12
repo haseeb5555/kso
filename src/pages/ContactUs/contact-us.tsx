@@ -32,7 +32,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <div className="contactus">
+      <div className="">
         {userType === 'student' && <Nav />}
         {userType === 'company' && <CompNav />}
         {userType === 'teacher' && <TeaNav />}
@@ -135,13 +135,9 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-      <img
-        className="w-full mt-[120px]"
-        alt=""
-        src="/footerbanner2-copy-1@2x.png"
-      />
-      <Footer />
+    
       </div>
+      <Footer />
     </>
   );
 };
