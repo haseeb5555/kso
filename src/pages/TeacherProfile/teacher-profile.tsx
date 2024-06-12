@@ -89,7 +89,7 @@ const TeacherProfile = () => {
                 </div>
              
             </div>
-            <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />
+          
         </div>
            <Footer/>
         </>

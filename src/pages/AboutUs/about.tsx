@@ -57,16 +57,17 @@ const AboutUs = () => {
      
 
         <p>
-        <strong>Ekim 2023 tarihinde Kocaeli Sanayi Odası tarafından imzalanan Doğu Marmara’da Geleceğin İşlerine Uyum Projesi, T.C. Çalışma ve Sosyal Güvenlik Bakanlığı tarafından sağlanan Cinsiyet Eşitliği </strong> Odağında Geleceğin İnsana Yakışır İşleri Yaklaşımının Desteklenmesi Hibe Programı kapsamında desteklenmektedir. Proje çerçevesinde Kocaeli ilinde toplumsal cinsiyet eşitliğinin gözetilerek, genç ve dezavantajlı grupların istihdamının önündeki engellerin kaldırılması amacıyla bilişim sektöründe nitelikli personel yetiştirilmesi hedeflenmektedir.<br/> 
+        <strong>
+      Ekim 2023 tarihinde Kocaeli Sanayi Odası tarafından imzalanan Doğu Marmara’da Geleceğin İşlerine Uyum Projesi, T.C. Çalışma ve Sosyal Güvenlik Bakanlığı tarafından sağlanan Cinsiyet Eşitliği  Odağında Geleceğin İnsana Yakışır İşleri Yaklaşımının Desteklenmesi Hibe Programı kapsamında desteklenmektedir. Proje çerçevesinde Kocaeli ilinde toplumsal cinsiyet eşitliğinin gözetilerek, genç ve dezavantajlı grupların istihdamının önündeki engellerin kaldırılması amacıyla bilişim sektöründe nitelikli personel yetiştirilmesi hedeflenmektedir.<br/> 
         -Proje Paydaşlarımız:<br/>
         İzmit Mesleki ve Teknik Anadolu Lisesi (eş faydalanıcı)<br/>
-      <strong>Bizimköy Engelliler Üretim Merkezi</strong>  <br/>
-       <strong>Kocaeli Valiliği İl Göç İdaresi</strong> <br/>
+    Bizimköy Engelliler Üretim Merkezi  <br/>
+      Kocaeli Valiliği İl Göç İdaresi <br/>
         Türk Kızılayı Toplum Merkezi Kocaeli Şubesi<br/>
-       <strong>Veribis</strong> <br/>
-        <strong>Bimser</strong><br/>
-       <strong>Nacsoft Yazılım</strong> <br/>
-        <strong>KOÜ Teknopark A.Ş.</strong></p>
+      Veribis <br/>
+      Bimser<br/>
+      Nacsoft Yazılım <br/>
+      KOÜ Teknopark A.Ş.</strong></p>
           <img className="w-[55%] max-sm:w-full rounded-2xl" src="/images/green/projeLogos.png"></img>
         </div>
 
@@ -105,19 +106,15 @@ const AboutUs = () => {
           </div>
           {/* <div className="our-usps">Güçlü yönlerimiz</div> */}
         </div>
-        <div className="relative">
-          <p className="text-white font-bold text-2xl absolute z-10 text-center top-60 left-[350px] max-sm:top-28 max-sm:left-4" >“İşin geleceğine güvenle yol alacağız”</p>
-          <img className="w-full h-[500px] max-sm:h-full -z-10" src="/images/blue/brain.png" alt="Banner Image" />
+        <div className="relative justify-center items-center flex mb-8">
+          <p className="text-white font-bold text-4xl absolute z-10 text-center top-60 left-[350px] max-sm:top-28 max-sm:left-4" >“İşin geleceğine güvenle yol alacağız”</p>
+          <img className="w-[800px] h-[500px] max-sm:h-full -z-10" src="/images/blue/brain.png" alt="Banner Image" />
         </div>
         
 
   
       </div>
-      <img
-        className="w-full "
-        alt=""
-        src="/footerbanner2-copy-1@2x.png"
-      />
+   
       <Footer />
     </>
   );
