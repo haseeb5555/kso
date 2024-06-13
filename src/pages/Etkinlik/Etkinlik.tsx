@@ -40,32 +40,9 @@ const Etkinlik = () => {
         {userType === 'teacher' && <TeaNav />}
         {userType === null && <SimpleNav />}
     <img className="w-full" alt="header banner" src="/header-copy-2@2x.png" />
-    <section className="max-w-[1440px] px-20 py-12 flex flex-col  justify-center items-center gap-16 max-sm:px-4">
-      <Carousel
-        plugins={[
-          Autoplay({
-            delay: 2000,
-          }),
-        ]}
-      >
-        <CarouselContent>
-          {Array.from({ length: 13 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <div className="flex justify-center items-center">
-                {/* <Card> */}
-                {/* <CardContent className="flex aspect-square items-center justify-center p-6"> */}
-                <img
-                  src={`/images/image${index ===0 ?index + 2:index+1}.jpg`}
-                  className="rounded-2xl aspect-square w-[900px] h-[400px] max-sm:w-full"
-                />
-                {/* </CardContent> */}
-                {/* </Card> */}
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-      <div className="flex flex-col gap-4 justify-center items-center border shadow-xl border-[#0e4194] px-20 py-12 rounded-lg max-sm:px-8 max-sm:py-6">
+    <section className="max-w-[1440px] px-20 py-12 flex flex-col  justify-center items-center gap-16 max-sm:px-4 mx-auto">
+     
+      <div className="flex flex-col gap-4 justify-center text-justify items-center border shadow-xl border-[#0e4194] px-20 py-12 rounded-lg max-sm:px-8 max-sm:py-6">
       <h1 className="font-bold text-lg">Yeşil Bilişim- Endüstri 4.0 Eğitimi</h1>
         <img src="/images/green/image1.png" className="w-80 rounded-lg" />
         <img src="/images/image14.jpg" className="w-[800px] rounded-lg" />
@@ -128,11 +105,11 @@ Doğu Marmara’da Geleceğin İşlerine Uyum Projesinin İmzaları Atıldı
 </h1>
         <img src="/images/image13.jpg" className="w-[800px] rounded-lg" />
         <p className="w-[800px] max-sm:w-full ">Mesleki eğitimin yanında yenilikçi iş süreçlerine uyumu da önemseyen KSO, T.C. Çalışma ve Sosyal Güvenlik Bakanlığı’nın ‘Cinsiyet Eşitliği Odağında Geleceğin İnsana Yakışır İşleri Yaklaşımının Desteklenmesi Hibe Programı’ kapsamında hazırladığı “Doğu Marmara’da Geleceğin İşlerine Uyum” projesine hibe desteği almaya hak kazandı. Projenin imza töreni; Kocaeli Sanayi Odası Başkanı Ayhan Zeytinoğlu, Kocaeli Sanayi Odası Genel Sekreteri Memet Barış Turabi ve Kocaeli Sanayi Odası İş Geliştirme Sorumlusu Aynur Hacıfettahoğlu’nun katılımları ile Ankara’da gerçekleştirildi. İmzaların ardından projenin hazırlık çalışmaları da başladı. Kocaeli Sanayi Odası, proje kapsamında sivil toplum diyaloğunu güçlendirmeyi ve çevreci yaklaşımı yaygınlaştırmayı hedefliyor. </p>
-      </div>
       <div>
         <h1 className="font-bold text-lg">KOCAELİ’YE FAYDALI PROJE</h1>
         <p className="w-[800px] max-sm:w-full ">KSO Başkanı Ayhan Zeytinoğlu, “Dünya değişiyor ve dönüşüyor. Yeni dünya düzenin yolu yeşil ve dijital dönüşümden geçiyor. Kocaeli Sanayi Odası olarak değişen bu iş süreçlerine uyumu önemsiyoruz. Kocaeli’de bilişim sektöründe nitelikli personel yetiştirmek, dezavantajlı grupların mesleki katılımını ve adaptasyonunu sağlamak adına başlatacağımız projenin şehrimize ve bölgemize fayda getireceğine inanıyoruz” dedi.
         </p>
+      </div>
       </div>
     </section>
     <Footer />

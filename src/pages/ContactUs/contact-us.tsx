@@ -32,7 +32,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <div className="">
+      <div className="mx-auto">
         {userType === 'student' && <Nav />}
         {userType === 'company' && <CompNav />}
         {userType === 'teacher' && <TeaNav />}
@@ -40,7 +40,7 @@ const ContactUs = () => {
 
 
         <img className="w-full mt-5" alt="" src="/header-copy-2@2x.png" />
-        <div className="mx-20 max-sm:mx-2 ">
+        <div className="mx-20 max-sm:mx-4">
          <MapEmbed />
 
         </div>

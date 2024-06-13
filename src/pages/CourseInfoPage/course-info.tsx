@@ -76,15 +76,7 @@ const CourseInfoPage = () => {
                        Kayıt ol
                     </button>
                 </div>
-                <div className="w-full bg-gray-200 py-8">
-                    <div className="text-center">
-                        <h2 className="text-xl font-bold">Testimonials</h2>
-                        <div className="mt-4 max-w-lg mx-auto bg-white p-4 shadow-lg rounded">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <p className="mt-2 italic">John Doe</p>
-                        </div>
-                    </div>
-                </div>
+              
 
 
 
