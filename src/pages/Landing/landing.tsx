@@ -54,7 +54,7 @@ const LandingPage = () => {
      
 
         <div className="flex justify-center items-center py-10 gap-16 max-sm:gap-20 max-sm:flex-col ">
-          <img className="w-full max-w-[500px] rounded-2xl h-[350px]  max-sm:w-[340px] max-sm:h-full mb-20 max-sm:mb-0"  src="/ana.jpeg" alt="Banner Image" />
+          <img className="w-full max-w-[500px] rounded-2xl h-[300px]  max-sm:w-[340px] max-sm:h-full  max-sm:mb-0"  src="/ana.jpeg" alt="Banner Image" />
           <div className='flex flex-col gap-4 justify-center items-center '>
           <div className='flex gap-4'>
     
@@ -79,7 +79,7 @@ const LandingPage = () => {
                 {/* <CardContent className="flex aspect-square items-center justify-center p-6"> */}
                 <img
                   onClick={()=>navigate('/haberler')}
-                  src={`/images/image${index ===0 ?index + 2:index+1}.jpg`}
+                  src={`/images/slider/image${index+1}.jpg`}
                   className="rounded-2xl  "
                 />
                 {/* </CardContent> */}
