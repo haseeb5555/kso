@@ -16,6 +16,7 @@ import { Menu } from "lucide-react";
 import { buttonVariants } from "./ui/button";
 
 import { simpleNavLinks } from "@/constants";
+import { Link } from "react-router-dom";
 
 const SimpleNav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -52,14 +53,14 @@ const SimpleNav = () => {
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {simpleNavLinks.map(({label,path }) => (
-                    <a
+                    <Link
                       key={label}
-                      href={path}
+                      to={path}
                       onClick={() => setIsOpen(false)}
                       className={buttonVariants({ variant: "ghost" })}
                     >
                       {label}
-                    </a>
+                    </Link>
                   ))}
                   <a
                      href="/login"
@@ -78,15 +79,15 @@ const SimpleNav = () => {
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
             {simpleNavLinks.map((route, i) => (
-              <a
-                href={route.path}
+              <Link
+                to={route.path}
                 key={i}
                 className={`text-[17px] ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
                 {route.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
