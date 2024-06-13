@@ -1,84 +1,111 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const [alertMessage, setAlertMessage] = useState('');
-  const [role, setRole] = useState('');
+  const [alertMessage, setAlertMessage] = useState("");
+  const [role, setRole] = useState("");
 
   const handleRoleChange = (event) => {
     const { value } = event.target;
     setRole(value);
-    formik.setFieldValue('role', value);
+    formik.setFieldValue("role", value);
   };
-
   const getValidationSchema = (role) => {
     switch (role) {
-      case 'student':
+      case "student":
         return Yup.object({
-          role: Yup.string().required('Role is required'),
-          name: Yup.string().max(15, 'Must be 15 characters or less').required('Name is required'),
-          surname: Yup.string().max(15, 'Must be 15 characters or less').required('Surname is required'),
-          idNumber: Yup.string().required('T.C. identity or foreign nationality identification number is required'),
-          gender: Yup.string().required('Gender is required'),
+          role: Yup.string().required("Rolünüzü seçin"),
+          name: Yup.string()
+            .max(15, "En fazla 15 karakter olmalı")
+            .required("Bu alan zorunludur"),
+          surname: Yup.string()
+            .max(15, "En fazla 15 karakter olmalı")
+            .required("Bu alan zorunludur"),
+          idNumber: Yup.string().required("Bu alan zorunludur"),
+          gender: Yup.string().required("Bu alan zorunludur"),
           dateOfBirth: Yup.date()
-            .min(new Date(1989, 0, 1), 'Date of birth must be after January 1, 1989')
-            .max(new Date(2008, 0, 1), 'Date of birth must be before January 1, 2008')
-            .required('Date of Birth is required'),
-          email: Yup.string().email('Invalid email format').required('Email is required'),
-          password: Yup.string().required('Password is required'),
-          educationLevel: Yup.string().required('Education level is required'),
-          jobSeekingStatus: Yup.string().required('Job seeking status is required'),
-          // resume: Yup.string().required('Resume is required'),
-          disability: Yup.string().required('Disability status is required'),
-          consent: Yup.boolean().oneOf([true], 'You must consent to data processing').required('Consent is required'),
+            .min(
+              new Date(1989, 0, 1),
+              "Doğum tarihi 1 Ocak 1989'dan sonra olmalı"
+            )
+            .max(
+              new Date(2008, 0, 1),
+              "Doğum tarihi 1 Ocak 2008'den önce olmalı"
+            )
+            .required("Bu alan zorunludur"),
+          email: Yup.string()
+            .email("Geçersiz email formatı")
+            .required("Bu alan zorunludur"),
+          password: Yup.string()
+            .max(8, "Şifre en fazla 8 karakter olmalı")
+            .required("Bu alan zorunludur"),
+          educationLevel: Yup.string().required("Bu alan zorunludur"),
+          jobSeekingStatus: Yup.string().required("Bu alan zorunludur"),
+          resume: Yup.mixed().required("Bu alan zorunludur"),
+          disability: Yup.string().required("Bu alan zorunludur"),
+          consent: Yup.boolean()
+            .oneOf([true], "Bu alan zorunludur")
+            .required("Bu alan zorunludur"),
         });
-      case 'teacher':
+      case "teacher":
         return Yup.object({
-          role: Yup.string().required('Role is required'),
-          name: Yup.string().required('Name is required'),
-          surname: Yup.string().required('Surname is required'),
-          subject: Yup.string().required('Subject is required'),
-          email: Yup.string().email('Invalid email format').required('Email is required'),
-          password: Yup.string().required('Password is required'),
-          consent: Yup.boolean().oneOf([true], 'You must consent to data processing').required('Consent is required'),
+          role: Yup.string().required("Rolünüzü seçin"),
+          name: Yup.string().required("Bu alan zorunludur"),
+          surname: Yup.string().required("Bu alan zorunludur"),
+          subject: Yup.string().required("Bu alan zorunludur"),
+          email: Yup.string()
+            .email("Geçersiz email formatı")
+            .required("Bu alan zorunludur"),
+          password: Yup.string()
+            .max(8, "Şifre en fazla 8 karakter olmalı")
+            .required("Bu alan zorunludur"),
+          consent: Yup.boolean()
+            .oneOf([true], "Bu alan zorunludur")
+            .required("Bu alan zorunludur"),
         });
-      case 'company':
+      case "company":
         return Yup.object({
-          role: Yup.string().required('Role is required'),
-          name: Yup.string().required('Name is required'),
-          surname: Yup.string().required('Surname is required'),
-          companyName: Yup.string().required('Company name is required'),
-          email: Yup.string().email('Invalid email format').required('Email is required'),
-          password: Yup.string().required('Password is required'),
-          consent: Yup.boolean().oneOf([true], 'You must consent to data processing').required('Consent is required'),
+          role: Yup.string().required("Rolünüzü seçin"),
+          name: Yup.string().required("Bu alan zorunludur"),
+          surname: Yup.string().required("Bu alan zorunludur"),
+          companyName: Yup.string().required("Bu alan zorunludur"),
+          email: Yup.string()
+            .email("Geçersiz email formatı")
+            .required("Bu alan zorunludur"),
+          password: Yup.string()
+            .max(8, "Şifre en fazla 8 karakter olmalı")
+            .required("Bu alan zorunludur"),
+          consent: Yup.boolean()
+            .oneOf([true], "Bu alan zorunludur")
+            .required("Bu alan zorunludur"),
         });
       default:
         return Yup.object({
-          role: Yup.string().required('Role is required'),
+          role: Yup.string().required("Rolünüzü seçin"),
         });
     }
   };
 
   const formik = useFormik({
     initialValues: {
-      role: '',
-      name: '',
-      surname: '',
-      idNumber: '',
-      gender: '',
-      dateOfBirth: '',
-      email: '',
-      password: '',
-      educationLevel: '',
-      jobSeekingStatus: '',
-      resume: '',
-      disability: '',
+      role: "",
+      name: "",
+      surname: "",
+      idNumber: "",
+      gender: "",
+      dateOfBirth: "",
+      email: "",
+      password: "",
+      educationLevel: "",
+      jobSeekingStatus: "",
+      resume: null,
+      disability: "",
       consent: false,
-      subject: '',
-      companyName: '',
+      subject: "",
+      companyName: "",
     },
     validationSchema: getValidationSchema(role),
       onSubmit: async (values) => {
@@ -92,28 +119,30 @@ const Signup = () => {
           }
         }
 
-        const response = await fetch('http://localhost:3001/auth/register', {
-          method: 'POST',
+        const response = await fetch("http://localhost:3001/auth/register", {
+          method: "POST",
           body: formData,
-          credentials: 'include',
+          credentials: "include",
         });
 
         if (!response.ok) {
           const errorData = await response.json();
           if (response.status === 402) {
-            setAlertMessage('SignUp Failed! A user with this email already exists.');
-            alert('SignUp Failed! A user with this email already exists.');
+            setAlertMessage(
+              "SignUp Failed! A user with this email already exists."
+            );
+            alert("SignUp Failed! A user with this email already exists.");
           } else {
-            setAlertMessage('SignUp Failed! Please try again.');
-            alert('SignUp Failed! Please try again.');
+            setAlertMessage("SignUp Failed! Please try again.");
+            alert("SignUp Failed! Please try again.");
           }
         } else {
-          alert('SignUp Successful.');
-          navigate('/login');
+          alert("SignUp Successful.");
+          navigate("/login");
         }
       } catch (error) {
-        console.error('Error:', error.message);
-        alert('SignUp Failed! An error occurred. Please try again.');
+        console.error("Error:", error.message);
+        alert("SignUp Failed! An error occurred. Please try again.");
       }
     },
   });
@@ -136,7 +165,9 @@ const Signup = () => {
           <h1 className="text-2xl font-bold mb-6 text-center">Kayıt ol</h1>
 
           <div className="mb-4">
-            <label className="block text-gray-700 font-semibold mb-2">Define your role</label>
+            <label className="block text-gray-700 font-semibold mb-2">
+              Rolünüzü seçin
+            </label>
             <div className="flex justify-between">
               <div>
                 <input
@@ -177,9 +208,9 @@ const Signup = () => {
             </div>
           </div>
 
-          {role === 'student' && (
+          {role === "student" && (
             <>
-              <h2 className="text-xl font-semibold mb-4">Student Information</h2>
+              <h2 className="text-xl font-semibold mb-4">Öğrenci Bilgisi</h2>
               <div className="mb-4">
                 <input
                   className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
@@ -189,8 +220,11 @@ const Signup = () => {
                   placeholder="Ad"
                   value={formik.values.name}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.name && formik.errors.name ? <div>{formik.errors.name}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.name && formik.errors.name ? (
+                  <div>{formik.errors.name}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -202,8 +236,11 @@ const Signup = () => {
                   placeholder="Soyad"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.surname && formik.errors.surname ? <div>{formik.errors.surname}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.surname && formik.errors.surname ? (
+                  <div>{formik.errors.surname}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -215,8 +252,11 @@ const Signup = () => {
                   placeholder="T.C. kimlik veya yabancı uyruklu kimlik numarası"
                   value={formik.values.idNumber}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.idNumber && formik.errors.idNumber ? <div>{formik.errors.idNumber}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.idNumber && formik.errors.idNumber ? (
+                  <div>{formik.errors.idNumber}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -226,12 +266,15 @@ const Signup = () => {
                   name="gender"
                   value={formik.values.gender}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}>
+                  onBlur={formik.handleBlur}
+                >
                   <option value="" label="Cinsiyet" />
                   <option value="male" label="Erkek" />
                   <option value="female" label="Kadın" />
                 </select>
-                {formik.touched.gender && formik.errors.gender ? <div>{formik.errors.gender}</div> : null}
+                {formik.touched.gender && formik.errors.gender ? (
+                  <div>{formik.errors.gender}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -243,8 +286,11 @@ const Signup = () => {
                   placeholder="Doğum Tarihi"
                   value={formik.values.dateOfBirth}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.dateOfBirth && formik.errors.dateOfBirth ? <div>{formik.errors.dateOfBirth}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.dateOfBirth && formik.errors.dateOfBirth ? (
+                  <div>{formik.errors.dateOfBirth}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -256,8 +302,11 @@ const Signup = () => {
                   placeholder="Email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.email && formik.errors.email ? (
+                  <div>{formik.errors.email}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -269,8 +318,11 @@ const Signup = () => {
                   placeholder="Password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.password && formik.errors.password ? (
+                  <div>{formik.errors.password}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -280,15 +332,36 @@ const Signup = () => {
                   name="educationLevel"
                   value={formik.values.educationLevel}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}>
-                  <option value="" label="Eğitim Durumu" />
-                  <option value="highschool" label="Lise" />
-                  <option value="associate" label="Önlisans" />
-                  <option value="bachelor" label="Lisans" />
-                  <option value="master" label="Yüksek Lisans" />
-                  <option value="phd" label="Doktora" />
+                  onBlur={formik.handleBlur}
+                >
+                  <option value="" label="Öğrenim durumu" />
+                  <option
+                    value="primarySchoolGraduate"
+                    label="İlkokul mezunu"
+                  />
+                  <option
+                    value="middleSchoolGraduate"
+                    label="Ortaokul mezunu"
+                  />
+                  <option
+                    value="vocationalSchoolStudent"
+                    label="Meslek lisesi öğrencisi"
+                  />
+                  <option value="highSchoolGraduate" label="Lise mezunu" />
+                  <option value="associate" label="Ön Lisans" />
+                  <option
+                    value="universityStudent"
+                    label="Üniversite öğrencisi"
+                  />
+                  <option
+                    value="universityGraduate"
+                    label="Üniversite mezunu"
+                  />
                 </select>
-                {formik.touched.educationLevel && formik.errors.educationLevel ? <div>{formik.errors.educationLevel}</div> : null}
+                {formik.touched.educationLevel &&
+                formik.errors.educationLevel ? (
+                  <div>{formik.errors.educationLevel}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -298,25 +371,44 @@ const Signup = () => {
                   name="jobSeekingStatus"
                   value={formik.values.jobSeekingStatus}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}>
-                  <option value="" label="İş Arama Durumu" />
-                  <option value="unemployed" label="İşsiz" />
-                  <option value="employed" label="Çalışıyor" />
+                  onBlur={formik.handleBlur}
+                >
+                  <option value="" label="Aktif iş arayışınız mevcut mu?" />
+                  <option value="yes" label="Evet, iş arıyorum." />
+                  <option
+                    value="yes"
+                    label="Evet, staj arıyorum."
+                  />
+                  <option value="no" label="Hayır" />
                 </select>
-                {formik.touched.jobSeekingStatus && formik.errors.jobSeekingStatus ? <div>{formik.errors.jobSeekingStatus}</div> : null}
+                {formik.touched.jobSeekingStatus &&
+                formik.errors.jobSeekingStatus ? (
+                  <div>{formik.errors.jobSeekingStatus}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
+                <label
+                  htmlFor="resume"
+                  className="block text-gray-700 font-semibold mb-2"
+                >
+                  CV yükle
+                </label>
                 <input
                   className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
                   type="file"
                   id="resume"
                   name="resume"
                   onChange={(event) => {
-                    formik.setFieldValue('resume', event.currentTarget.files[0]);
+                    formik.setFieldValue(
+                      "resume",
+                      event.currentTarget.files[0]
+                    );
                   }}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.resume && formik.errors.resume ? <div>{formik.errors.resume}</div> : null}
+                />
+                {formik.touched.resume && formik.errors.resume ? (
+                  <div>{formik.errors.resume}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -326,34 +418,59 @@ const Signup = () => {
                   name="disability"
                   value={formik.values.disability}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}>
-                  <option value="" label="Engel Durumu" />
-                  <option value="none" label="Engelsiz" />
-                  <option value="mild" label="Hafif Engelli" />
-                  <option value="moderate" label="Orta Engelli" />
-                  <option value="severe" label="Ağır Engelli" />
+                  onBlur={formik.handleBlur}
+                >
+                  <option value="" label="Bir engel durumunuz var mı?" />
+                  <option value="yes" label="Evet" />
+                  <option value="no" label="Hayır" />
                 </select>
-                {formik.touched.disability && formik.errors.disability ? <div>{formik.errors.disability}</div> : null}
+                {formik.touched.disability && formik.errors.disability ? (
+                  <div>{formik.errors.disability}</div>
+                ) : null}
               </div>
-                  <div className="mb-4">
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              name="consent"
-              checked={formik.values.consent}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            <span className="ml-2">I agree to the terms and conditions</span>
-          </label>
-          {formik.touched.consent && formik.errors.consent ? <div>{formik.errors.consent}</div> : null}
-        </div>
+
+              <div className="mb-4">
+                <label className="inline-flex items-center">
+                  <input
+                    className="mr-2"
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    checked={formik.values.consent}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                  <span>Verilerimin işlenmesini onaylıyorum</span>
+                </label>
+                {formik.touched.consent && formik.errors.consent ? (
+                  <div>{formik.errors.consent}</div>
+                ) : null}
+              </div>
+              <div className="mb-4">
+                <label className="inline-flex items-center">
+                  <input
+                    className="mr-2"
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    checked={formik.values.consent}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                  <span>Mail ile bilgilendirilmek istiyorum. </span>
+                </label>
+                {formik.touched.consent && formik.errors.consent ? (
+                  <div>{formik.errors.consent}</div>
+                ) : null}
+              </div>
             </>
           )}
 
-          {role === 'teacher' && (
+          {role === "teacher" && (
             <>
-              <h2 className="text-xl font-semibold mb-4">Teacher Information</h2>
+              <h2 className="text-xl font-semibold mb-4">
+              Öğretmen Bilgisi
+              </h2>
               <div className="mb-4">
                 <input
                   className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
@@ -363,8 +480,11 @@ const Signup = () => {
                   placeholder="Ad"
                   value={formik.values.name}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.name && formik.errors.name ? <div>{formik.errors.name}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.name && formik.errors.name ? (
+                  <div>{formik.errors.name}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -376,8 +496,11 @@ const Signup = () => {
                   placeholder="Soyad"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.surname && formik.errors.surname ? <div>{formik.errors.surname}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.surname && formik.errors.surname ? (
+                  <div>{formik.errors.surname}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -389,8 +512,11 @@ const Signup = () => {
                   placeholder="Konu"
                   value={formik.values.subject}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.subject && formik.errors.subject ? <div>{formik.errors.subject}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.subject && formik.errors.subject ? (
+                  <div>{formik.errors.subject}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -402,8 +528,11 @@ const Signup = () => {
                   placeholder="Email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.email && formik.errors.email ? (
+                  <div>{formik.errors.email}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -415,29 +544,38 @@ const Signup = () => {
                   placeholder="Password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.password && formik.errors.password ? (
+                  <div>{formik.errors.password}</div>
+                ) : null}
               </div>
-                <div className="mb-4">
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              name="consent"
-              checked={formik.values.consent}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            <span className="ml-2">I agree to the terms and conditions</span>
-          </label>
-          {formik.touched.consent && formik.errors.consent ? <div>{formik.errors.consent}</div> : null}
-        </div>
-         
+
+              <div className="mb-4">
+                <label className="inline-flex items-center">
+                  <input
+                    className="mr-2"
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    checked={formik.values.consent}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                  <span>Verilerimin işlenmesini onaylıyorum</span>
+                </label>
+                {formik.touched.consent && formik.errors.consent ? (
+                  <div>{formik.errors.consent}</div>
+                ) : null}
+              </div>
             </>
           )}
 
-          {role === 'company' && (
+          {role === "company" && (
             <>
-              <h2 className="text-xl font-semibold mb-4">Company Information</h2>
+              <h2 className="text-xl font-semibold mb-4">
+              Şirket Bilgisi
+              </h2>
               <div className="mb-4">
                 <input
                   className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
@@ -447,8 +585,11 @@ const Signup = () => {
                   placeholder="Ad"
                   value={formik.values.name}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.name && formik.errors.name ? <div>{formik.errors.name}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.name && formik.errors.name ? (
+                  <div>{formik.errors.name}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -460,21 +601,27 @@ const Signup = () => {
                   placeholder="Soyad"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.surname && formik.errors.surname ? <div>{formik.errors.surname}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.name && formik.errors.name ? (
+                  <div>{formik.errors.name}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
                 <input
                   className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
                   type="text"
-                  id="companyName"
-                  name="companyName"
-                  placeholder="Şirket İsmi"
-                  value={formik.values.companyName}
+                  id="industry"
+                  name="industry"
+                  placeholder="Firma adı"
+                  value={formik.values.industry}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.companyName && formik.errors.companyName ? <div>{formik.errors.companyName}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.industry && formik.errors.industry ? (
+                  <div>{formik.errors.industry}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -486,8 +633,11 @@ const Signup = () => {
                   placeholder="Email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.email && formik.errors.email ? (
+                  <div>{formik.errors.email}</div>
+                ) : null}
               </div>
 
               <div className="mb-4">
@@ -499,30 +649,59 @@ const Signup = () => {
                   placeholder="Password"
                   value={formik.values.password}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur} />
-                {formik.touched.password && formik.errors.password ? <div>{formik.errors.password}</div> : null}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.password && formik.errors.password ? (
+                  <div>{formik.errors.password}</div>
+                ) : null}
               </div>
-                <div className="mb-4">
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              name="consent"
-              checked={formik.values.consent}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            <span className="ml-2">I agree to the terms and conditions</span>
-          </label>
-          {formik.touched.consent && formik.errors.consent ? <div>{formik.errors.consent}</div> : null}
-        </div>
+
+              <div className="mb-4">
+                <input
+                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                  id="companySize"
+                  name="companySize"
+                  placeholder="İş ilanı kategorisi"
+                  value={formik.values.companySize}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                />
+            
+                
+              
+                {formik.touched.companySize && formik.errors.companySize ? (
+                  <div>{formik.errors.companySize}</div>
+                ) : null}
+              </div>
+
+              <div className="mb-4">
+                <label className="inline-flex items-center">
+                  <input
+                    className="mr-2"
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    checked={formik.values.consent}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                  <span>Verilerimin işlenmesini onaylıyorum</span>
+                </label>
+                {formik.touched.consent && formik.errors.consent ? (
+                  <div>{formik.errors.consent}</div>
+                ) : null}
+              </div>
             </>
           )}
 
-          <button
-            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-            type="submit">
-            Submit
-          </button>
+          <div className="text-center">
+            <button
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              type="submit"
+            >
+              Kayıt ol
+            </button>
+          </div>
         </form>
       </div>
     </div>
@@ -717,10 +896,8 @@ export default Signup;
 //               onBlur={formik.handleBlur} />
 //           </div>
 //             </div>
-          
-//           <div className='w-full flex flex-col'>
 
-          
+//           <div className='w-full flex flex-col'>
 
 //           <div className="mb-4">
 //             <input
@@ -746,7 +923,7 @@ export default Signup;
 //               onBlur={formik.handleBlur}
 //             />
 //           </div>
-        
+
 //           <div className="mb-4">
 //             <input
 //               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
@@ -773,7 +950,7 @@ export default Signup;
 //           </div>
 //           </div>
 //           <h2 className="text-xl font-semibold mb-4">Email & Password</h2>
-        
+
 //           <div className="mb-4">
 //             <input
 //               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"

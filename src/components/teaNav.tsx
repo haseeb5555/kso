@@ -17,7 +17,7 @@ import { buttonVariants } from "./ui/button";
 
 import { teanavlinks } from "@/constants";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TeaNav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -70,14 +70,14 @@ const TeaNav = () => {
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {teanavlinks.map(({label,path }) => (
-                    <a
+                    <Link
                       key={label}
-                      href={path}
+                      to={path}
                       onClick={() => setIsOpen(false)}
                       className={buttonVariants({ variant: "ghost" })}
                     >
                       {label}
-                    </a>
+                    </Link>
                   ))}
                   <a
                      onClick={handleLogout}
@@ -96,15 +96,15 @@ const TeaNav = () => {
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
             {teanavlinks.map((route, i) => (
-              <a
-                href={route.path}
+              <Link
+                to={route.path}
                 key={i}
                 className={`text-[17px] ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
                 {route.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

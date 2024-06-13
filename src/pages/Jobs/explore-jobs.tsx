@@ -63,7 +63,7 @@ const ExploreJobs = () => {
      {userType === 'student' && <StuNav />}
       {userType === null && <Nav />}
    <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
-    <div className="min-h-screen flex justify-center items-center ">
+    <div className="min-h-screen flex justify-center items-center mx-auto">
       <div className="container mx-auto -mt-80 flex justify-center items-center flex-col">
         <h3 className="text-2xl font-bold mb-4">İş imkanlarını keşfet 
         </h3>
@@ -110,7 +110,6 @@ const ExploreJobs = () => {
       </div>
       
     </div>
-    <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />
      <Footer/>
     </>
   );

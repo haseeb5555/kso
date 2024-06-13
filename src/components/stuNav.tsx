@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 
 import { Menu } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { buttonVariants } from "./ui/button";
 import axios from 'axios';
 
@@ -71,24 +71,24 @@ const Nav = () => {
                 </SheetHeader>
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {stunavlinks.map(({label,path }) => (
-                    <a
+                    <Link
                       key={label}
-                      href={path}
+                      to={path}
                       onClick={() => setIsOpen(false)}
                       className={buttonVariants({ variant: "ghost" })}
                     >
                       {label}
-                    </a>
+                    </Link>
                   ))}
-                  <a
-                    href="/login"
+                  <Link
+                    to="/login"
                     className={`w-[110px] border ${buttonVariants({
                       variant: "secondary",
                     })}`}
                   >
                     {/* <GitHubLogoIcon className="mr-2 w-5 h-5" /> */}
                     Giriş Yap
-                  </a>
+                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -97,15 +97,15 @@ const Nav = () => {
           {/* desktop */}
           <nav className="hidden md:flex gap-2">
             {stunavlinks.map((route, i) => (
-              <a
-                href={route.path}
+              <Link
+                to={route.path}
                 key={i}
                 className={`text-[17px] ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
                 {route.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
