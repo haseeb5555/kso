@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function EditCourse() {
   const [selectedCategory, setSelectedCategory] = useState("Python");
@@ -139,7 +140,7 @@ export default function EditCourse() {
             </div>
           </div>
         </div>
-        <div className="md:w-2/3 p-4">
+        <ScrollArea className="h-[500px] w-full rounded-md md:w-2/3 p-4 ">
           <h2 className="text-lg font-bold mb-4">Sınıflar</h2>
           {classes.map((cls) => (
             <Collapsible key={cls.id} className="space-y-4 mb-4">
@@ -225,8 +226,8 @@ export default function EditCourse() {
               Güncelle
             </Button>
           </div>
+        </ScrollArea>
         </div>
-      </div>
       <Footer />
     </>
   );

@@ -98,7 +98,7 @@ export default function AddCourse() {
             </div>
           </div>
         </div>
-        <ScrollArea className="h-[520px] w-full rounded-md md:w-2/3 p-4 ">
+        <ScrollArea className="h-[500px] w-full rounded-md md:w-2/3 p-4 ">
 
           <h2 className="text-lg font-bold mb-4">Sınıflar</h2>
           {classes.map((cls) => (
