@@ -117,7 +117,7 @@ const TeacherProfile = () => {
                 <div>
                     <div className="flex flex-col justify-center items-center">
                         <div className="flex justify-center items-center gap-4 max-sm:mb-0 max-sm:mt-10">
-                            <h1 className="text-2xl font-bold mb-5 ">Offering Courses</h1>
+                            <h1 className="text-2xl font-bold mb-5 ">kurslar sunmak</h1>
                             <button className="bg-transparent mb-2 border border-black rounded-full cursor-pointer text-black" onClick={() => navigate('/addCourse')}>
                             <PlusIcon size={24} className=""  />
                             </button>
@@ -147,7 +147,7 @@ const TeacherProfile = () => {
                             ))}
                         </div>
                         <div className="flex justify-between items-center">
-                            <h1 className="text-2xl font-bold mb-5">Old Courses</h1>
+                            <h1 className="text-2xl font-bold mb-5">Eski Kurslar</h1>
                             {/* <div className="mt-5 flex gap-2 items-center cursor-pointer">
                                 <span className="text-blue-500 ">Ekle</span>
                                 <img className="w-5 h-5" alt="add icon" src="/vector3.svg" />

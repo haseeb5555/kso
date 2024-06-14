@@ -68,7 +68,7 @@ const ExploreJobs = () => {
         <h3 className="text-2xl font-bold mb-4">İş imkanlarını keşfet 
         </h3>
          <div className="flex flex-wrap justify-center mt-10 space-x-2 space-y-2">
-                    {['Python', 'Database', 'Artificial Intelligence', 'Graphic Design'].map((cat) => (
+                    {/* {['Python', 'Database', 'Artificial Intelligence', 'Graphic Design'].map((cat) => (
                         <div key={cat} className="flex items-center space-x-2">
                             <input
                                 type="radio"
@@ -86,7 +86,7 @@ const ExploreJobs = () => {
                                 {cat}
                             </label>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
         <h1 className="text-xl font-semibold mb-4 mt-10">{selectedCategory}</h1>
         {jobs.length ? (

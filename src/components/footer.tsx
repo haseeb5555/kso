@@ -11,16 +11,16 @@ const Footer = () => {
                     </div>
                     <p className="mt-2 text-center">Bu sitenin içeriğinden yalnızca Kocaeli Sanayi Odası ve İzmit Mesleki ve Teknik Anadolu Lisesi sorumludur ve bu içerik hiçbir şekilde Avrupa Birliği veya Türkiye Cumhuriyeti'nin görüş ve tutumunu yansıtmamaktadır</p>
                   </div>
-                  <img src="/images/yellow/1.PNG" alt="" className="h-80  -mt-16" />
+                  <img src="/images/yellow/1.PNG" alt="" className="h-80  -mt-[75px]" />
             </div>
        
           <div className="h-[320px] max-sm:w-full bg-[#09295C] flex justify-center items-center">
 
             <div className="mt-4 md:mt-0 ">
                 <div className="text-center md:text-right md:mr-20">
-                    <p>Bize ulaşın</p>
+                    <p className="font-bold text-lg">Bize ulaşın</p>
                     <p>&nbsp;</p>
-                    <p>kso@kosano.org.tr</p>
+                    <p>proje@kosana.org.tr</p>
                     <p>262 315 80 00</p>
                     <p>&nbsp;</p>
                     <p>Fuar İçi 41040 İzmit/KOCAELİ</p>

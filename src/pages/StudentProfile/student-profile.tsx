@@ -136,7 +136,7 @@ const StudentProfile = () => {
                                 <span className="font-bold">Adres:</span> {student.address}
                             </p>
                             <div className="flex items-center">
-                                <span className="font-bold">Password:</span> {maskedPassword(student.password)}
+                                <span className="font-bold">Şifre :</span> {maskedPassword(student.password)}
                                 <img className="w-4 ml-2 cursor-pointer" alt="profile icon" src="/vector1.svg" onClick={handleChangePassword} />
                             </div>
                         </div>
@@ -183,7 +183,7 @@ const StudentProfile = () => {
                                         className="bg-blue-500 text-white py-2 px-4 rounded"
                                         onClick={() => handleStatusClick(job.id)}
                                     >
-                                        Status
+                                        Durum
                                     </button>
                                 </div>
                             ))}

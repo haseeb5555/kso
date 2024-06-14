@@ -55,7 +55,7 @@ const AboutUs = () => {
 
         <div className="flex gap-16 justify-start items-start mt-10 max-sm:flex-col">
      
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 text-justify">
 
         <p>
   Ekim 2023 tarihinde Kocaeli Sanayi Odası tarafından imzalanan Doğu Marmara’da Geleceğin İşlerine Uyum Projesi, T.C. Çalışma ve Sosyal Güvenlik Bakanlığı tarafından sağlanan Cinsiyet Eşitliği Odağında Geleceğin İnsana Yakışır İşleri Yaklaşımının Desteklenmesi Hibe Programı kapsamında desteklenmektedir. Proje çerçevesinde Kocaeli ilinde toplumsal cinsiyet eşitliğinin gözetilerek, genç ve dezavantajlı grupların istihdamının önündeki engellerin kaldırılması amacıyla bilişim sektöründe nitelikli personel yetiştirilmesi hedeflenmektedir.
