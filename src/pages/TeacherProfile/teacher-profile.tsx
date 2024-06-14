@@ -3,7 +3,8 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import TeaNav from "@/components/teaNav";
 import Footer from "@/components/footer";
-import { EditIcon } from "lucide-react";
+import { EditIcon, PlusIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const TeacherProfile = () => {
     const [teacher, setTeacher] = useState({
@@ -115,8 +116,11 @@ const TeacherProfile = () => {
                 </div>
                 <div>
                     <div className="flex flex-col justify-center items-center">
-                        <div className="flex justify-between items-center">
-                            <h1 className="text-2xl font-bold mb-5">Offering Courses</h1>
+                        <div className="flex justify-center items-center gap-4 max-sm:mb-0 max-sm:mt-10">
+                            <h1 className="text-2xl font-bold mb-5 ">Offering Courses</h1>
+                            <button className="bg-transparent mb-2 border border-black rounded-full cursor-pointer text-black" onClick={() => navigate('/addCourse')}>
+                            <PlusIcon size={24} className=""  />
+                            </button>
                         </div>
                         <div className="mt-20 mb-20 flex justify-center items-center gap-16 max-sm:flex-col flex-wrap ">
                             {courses.map((course, index) => (
@@ -157,9 +161,16 @@ const TeacherProfile = () => {
                                     <p className="mb-2 text-sm ml-4">
                                         {course.description}
                                     </p>
-                                    <button className="ml-4 bg-gray-200 text-black py-2 px-4 rounded w-[100px]">
+                                    <div className="flex justify-between items-center gap-4 px-4">
+
+                                    <button className="w-full bg-gray-200 text-black py-2 px-4 rounded-2xl ">
                                         Görüntüle
                                     </button>
+                                    <button className="w-full bg-blue-700 text-white py-2 px-4 rounded-2xl ">
+                                     
+                                        {course.enrolledStudents}&nbsp;<span>Öğrenci</span>
+                                    </button>
+                                    </div>
                                     <button onClick={() => navigate(`/editCourse`)} className="absolute top-2 right-2">
                                      <EditIcon size={24} />
                                     </button>
