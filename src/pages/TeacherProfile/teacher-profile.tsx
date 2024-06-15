@@ -13,34 +13,25 @@ const TeacherProfile = () => {
         email: "",
         address: "",
     });
-    const [courses, setCourses] = useState([
-        // dummy data
-        {
-            id: 1,
-            title: "Python",
-            description: "Python is a programming language that lets you work quickly and integrate systems more effectively.",
-            enrolledStudents: 560,
-        },
-        {
-            id: 2,
-            title: "JavaScript",
-            description: "JavaScript is a programming language that lets you work quickly and integrate systems more effectively.",
-            enrolledStudents: 50,
-        },
-        {
-            id: 3,
-            title: "React",
-            description: "React is a JavaScript library for building user interfaces. React makes it painless to create interactive UIs.",
-            enrolledStudents: 260,
-        }
+    const [courses, setCourses] = useState([]);
 
-    ]);
+    const fetchCourses = async () => {
+        try {
+            const response = await axios.get("https://backend.foworks.com.tr/course/getAddedCourses", {
+                withCredentials: true,
+            });
+
+            setCourses(response.data);
+        } catch (error) {
+            console.error("Error fetching Added course:", error);
+        }
+    };
     const [oldCourses, setOldCourses] = useState([{
         id: 1,
         title: "Python",
         description: "Python is a programming language that lets you work quickly and integrate systems more effectively.",
         enrolledStudents: 960,
-    }, 
+    },
     {
         id: 2,
         title: "JavaScript",
@@ -54,12 +45,10 @@ const TeacherProfile = () => {
         description: "React is a JavaScript library for building user interfaces. React makes it painless to create interactive UIs.",
         enrolledStudents: 560,
     },
-  
-    
-
-]);
 
 
+
+    ]);
 
     const navigate = useNavigate();
 
@@ -77,9 +66,10 @@ const TeacherProfile = () => {
 
     useEffect(() => {
         fetchTeacher();
+        fetchCourses();
     }, []);
 
-    if(!teacher) return null;
+    if (!teacher) return null;
 
     return (
         <>
@@ -95,15 +85,15 @@ const TeacherProfile = () => {
                     </div>
                     <div className="w-full flex justify-between gap-16 max-sm:flex-col">
                         <div className="text-lg">
-                            <p>
+                            {/* <p>
                                 <span className="font-bold">İletişim:</span> {teacher.phone}
-                            </p>
+                            </p> */}
                             <p>
                                 <span className="font-bold">Email:</span> {teacher.email}
                             </p>
-                            <p>
+                            {/* <p>
                                 <span className="font-bold">Adres:</span> {teacher.address}
-                            </p>
+                            </p> */}
                         </div>
                         <div>
                             <div className="w-full flex justify-between">
@@ -119,30 +109,30 @@ const TeacherProfile = () => {
                         <div className="flex justify-center items-center gap-4 max-sm:mb-0 max-sm:mt-10">
                             <h1 className="text-2xl font-bold mb-5 ">kurslar sunmak</h1>
                             <button className="bg-transparent mb-2 border border-black rounded-full cursor-pointer text-black" onClick={() => navigate('/addCourse')}>
-                            <PlusIcon size={24} className=""  />
+                                <PlusIcon size={24} className="" />
                             </button>
                         </div>
                         <div className="mt-20 mb-20 flex justify-center items-center gap-16 max-sm:flex-col flex-wrap ">
                             {courses.map((course, index) => (
                                 <div key={index} className="relative w-[300px] border flex flex-col  pb-5 rounded-3xl gap-2 ">
-                                    <div className="bg-gray-200 px-20 py-20 border border-black rounded-3xl"/>
+                                    <div className="bg-gray-200 px-20 py-20 border border-black rounded-3xl" />
                                     <h3 className="text-lg font-bold mb-2 ml-4">{course.title}</h3>
                                     <p className="mb-2 text-sm ml-4">
                                         {course.description}
                                     </p>
                                     <div className="flex justify-between items-center gap-4 px-4">
 
-                                    <button className="w-full bg-gray-200 text-black py-2 px-4 rounded-2xl ">
-                                        Görüntüle
-                                    </button>
-                                    <button className="w-full bg-blue-700 text-white py-2 px-4 rounded-2xl ">
+                                        <button onClick={() => navigate(`/editCourse?id=${course.id}`)} className="w-full bg-gray-200 text-black py-2 px-4 rounded-2xl">
+                                            Görüntüle
+                                        </button>
+                                        {/* <button className="w-full bg-blue-700 text-white py-2 px-4 rounded-2xl ">
                                      
                                         {course.enrolledStudents}&nbsp;<span>Öğrenci</span>
-                                    </button>
+                                    </button> */}
                                     </div>
-                                    <button onClick={() => navigate(`/editCourse`)} className="absolute top-2 right-2">
+                                    {/* <button onClick={() => navigate(`/editCourse`)} className="absolute top-2 right-2">
                                      <EditIcon size={24} />
-                                    </button>
+                                    </button> */}
                                 </div>
                             ))}
                         </div>
@@ -156,32 +146,32 @@ const TeacherProfile = () => {
                         <div className="mt-20 mb-20 flex justify-center items-center gap-16 max-sm:flex-col flex-wrap ">
                             {oldCourses.map((course, index) => (
                                 <div key={index} className="relative w-[300px] border flex flex-col  pb-5 rounded-3xl gap-2 ">
-                                    <div className="bg-gray-200 px-20 py-20 border border-black rounded-3xl"/>
+                                    <div className="bg-gray-200 px-20 py-20 border border-black rounded-3xl" />
                                     <h3 className="text-lg font-bold mb-2 ml-4">{course.title}</h3>
                                     <p className="mb-2 text-sm ml-4">
                                         {course.description}
                                     </p>
                                     <div className="flex justify-between items-center gap-4 px-4">
 
-                                    <button className="w-full bg-gray-200 text-black py-2 px-4 rounded-2xl ">
-                                        Görüntüle
-                                    </button>
-                                    <button className="w-full bg-blue-700 text-white py-2 px-4 rounded-2xl ">
+                                        <button className="w-full bg-gray-200 text-black py-2 px-4 rounded-2xl ">
+                                            Görüntüle
+                                        </button>
+                                        {/* <button className="w-full bg-blue-700 text-white py-2 px-4 rounded-2xl ">
                                      
                                         {course.enrolledStudents}&nbsp;<span>Öğrenci</span>
-                                    </button>
+                                    </button> */}
                                     </div>
-                                    <button onClick={() => navigate(`/editCourse`)} className="absolute top-2 right-2">
+                                    {/* <button onClick={() => navigate(`/editCourse`)} className="absolute top-2 right-2">
                                      <EditIcon size={24} />
-                                    </button>
+                                    </button> */}
                                 </div>
                             ))}
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

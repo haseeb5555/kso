@@ -1,33 +1,93 @@
-import Footer from "@/components/footer";
-import TeaNav from "@/components/teaNav";
-import { UploadIcon, PlusIcon, ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { UploadIcon, PlusIcon, ChevronDownIcon } from "lucide-react";
+import TeaNav from "@/components/teaNav";
+import Footer from "@/components/footer";
 
 export default function AddCourse() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Python");
-  const [classes, setClasses] = useState([{ id: 1 }]);
+  const [classes, setClasses] = useState([{ id: 1, className: "", classDesc: "", classMediaURL: "", classMediaFile: null }]);
 
-  const handleCategoryChange = (event: any) => {
+  const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
 
+  const handleClassFieldChange = (id, field, value) => {
+    const updatedClasses = classes.map(cls => {
+      if (cls.id === id) {
+        return { ...cls, [field]: value };
+      }
+      return cls;
+    });
+    setClasses(updatedClasses);
+  };
+
   const addClass = () => {
-    const newClass = { id: classes.length + 1 };
+    const newClass = { id: classes.length + 1, className: "", classDesc: "", classMediaURL: "", classMediaFile: null };
     setClasses([...classes, newClass]);
   };
 
-  const removeClass = (id: number) => {
-    const newClasses = classes.filter((cls) => cls.id !== id);
+  const removeClass = (id) => {
+    const newClasses = classes.filter(cls => cls.id !== id);
     setClasses(newClasses);
   };
 
-  const handleFileUpload = (event: any, classId: number) => {
-    console.log(`Class ${classId} file selected:`, event.target.files[0]);
+  const handleFileUpload = (event, classId) => {
+    const file = event.target.files[0];
+    const updatedClasses = classes.map(cls => {
+      if (cls.id === classId) {
+        return { ...cls, classMediaFile: file };
+      }
+      return cls;
+    });
+    setClasses(updatedClasses);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("category", selectedCategory);
+    formData.append("description", description);
+    formData.append("classes", JSON.stringify(classes.map(cls => ({
+      title: cls.className,
+      description: cls.classDesc,
+      videoLink: cls.classMediaURL
+    }))));
+
+    classes.forEach((cls, index) => {
+      if (cls.classMediaFile) {
+        formData.append(`pdfFiles`, cls.classMediaFile);
+      }
+    });
+
+    try {
+      const response = await fetch("https://backend.foworks.com.tr/course/add", {
+        method: "POST",
+        body: formData,
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(errorText);
+      }
+
+      const data = await response.json();
+      console.log("Course added successfully:", data);
+      // Handle success, maybe redirect or show a success message
+    } catch (error) {
+      console.error("Error adding course:", error);
+      alert(`Error adding course: ${error.message}`);
+      // Handle error, show error message to the user
+    }
   };
 
   return (
@@ -42,11 +102,13 @@ export default function AddCourse() {
             <Input
               type="text"
               id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
               placeholder="Kurs Başlığı"
             />
           </div>
           <div className="flex gap-1 flex-wrap mb-4">
-            {['Python', 'Database', 'Graphic Design', 'AI',"ML"].map((cat) => (
+            {['Python', 'Database', 'Graphic Design', 'AI', 'ML'].map((cat) => (
               <div key={cat} className="flex items-center space-x-2 space-y-2">
                 <input
                   type="radio"
@@ -72,30 +134,12 @@ export default function AddCourse() {
             </label>
             <textarea
               id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               className="w-full border border-gray-300 rounded px-3 py-2"
               placeholder="Kurs Açıklaması"
               rows={4}
             />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="courseMedia" className="block font-bold text-lg mb-2">
-              Kurs Medyası
-            </label>
-            <div className="relative">
-              <input
-                type="file"
-                id="courseMedia"
-                className="hidden"
-                onChange={(e) => handleFileUpload(e, -1)}
-              />
-              <label
-                htmlFor="courseMedia"
-                className="flex items-center justify-center cursor-pointer border hover:bg-blue-700 hover:text-white border-gray-300 rounded px-3 py-2 bg-[#D9D9D9]"
-              >
-                <UploadIcon size={24} className="mr-2" />
-                Dosya Seç
-              </label>
-            </div>
           </div>
         </div>
         <ScrollArea className="h-[500px] w-full rounded-md md:w-2/3 p-4 ">
@@ -118,6 +162,8 @@ export default function AddCourse() {
                   <Input
                     type="text"
                     id={`className-${cls.id}`}
+                    value={cls.className}
+                    onChange={(e) => handleClassFieldChange(cls.id, "className", e.target.value)}
                     placeholder="Sınıf Adı"
                   />
                 </div>
@@ -125,6 +171,8 @@ export default function AddCourse() {
                   <Label htmlFor={`classDesc-${cls.id}`} className="font-bold text-lg">Sınıf Açıklaması</Label>
                   <textarea
                     id={`classDesc-${cls.id}`}
+                    value={cls.classDesc}
+                    onChange={(e) => handleClassFieldChange(cls.id, "classDesc", e.target.value)}
                     className="w-full border border-gray-300 rounded px-3 py-2"
                     placeholder="Sınıf Açıklaması"
                     rows={4}
@@ -132,26 +180,25 @@ export default function AddCourse() {
                 </div>
                 <div className="mb-4">
                   <Label htmlFor={`classMedia-${cls.id}`} className="font-bold text-lg">Sınıf Medyası URL</Label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      id={`classMedia-${cls.id}`}
-                      placeholder="URL"
-                    />
-                 
-                  </div>
+                  <Input
+                    type="text"
+                    id={`classMedia-${cls.id}`}
+                    value={cls.classMediaURL}
+                    onChange={(e) => handleClassFieldChange(cls.id, "classMediaURL", e.target.value)}
+                    placeholder="URL"
+                  />
                 </div>
                 <div className="mb-4">
-                  <Label htmlFor={`classMedia-${cls.id}`} className="font-bold text-lg">Sınıf Document</Label>
+                  <Label htmlFor={`classMediaFile-${cls.id}`} className="font-bold text-lg">Sınıf Document</Label>
                   <div className="relative">
                     <input
                       type="file"
-                      id={`classMedia-${cls.id}`}
+                      id={`classMediaFile-${cls.id}`}
                       className="hidden"
                       onChange={(e) => handleFileUpload(e, cls.id)}
                     />
                     <label
-                      htmlFor={`classMedia-${cls.id}`}
+                      htmlFor={`classMediaFile-${cls.id}`}
                       className="flex items-center justify-center cursor-pointer border hover:bg-blue-700 hover:text-white border-gray-300 rounded px-3 py-2 bg-[#D9D9D9]"
                     >
                       <UploadIcon size={24} className="mr-2" />
@@ -170,7 +217,7 @@ export default function AddCourse() {
             Başka Bir Sınıf Ekle
           </Button>
           <div className="mt-4 flex justify-center items-center">
-            <Button type="submit" variant="default" className="w-full bg-[#D9D9D9] text-black font-bold py-2 px-4 rounded lg:w-[40%] hover:bg-blue-700 hover:text-white">
+            <Button type="button" onClick={handleSubmit} className="w-full bg-[#D9D9D9] text-black font-bold py-2 px-4 rounded lg:w-[40%] hover:bg-blue-700 hover:text-white">
               Gönder
             </Button>
           </div>
