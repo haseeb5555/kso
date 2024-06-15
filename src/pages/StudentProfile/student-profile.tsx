@@ -139,10 +139,10 @@ const StudentProfile = () => {
                                 <img className="w-4 ml-2 cursor-pointer" alt="profile icon" src="/vector1.svg" onClick={handleChangePassword} />
                             </div>
                             <div className="w-full flex justify-between">
-                                <label className="block mb-2 text-lg font-bold">Resume</label>
+                                <label className="block mb-2 text-lg font-bold">Özgeçmiş</label>
                                 {student.resume && (
                                     <a href={`https://backend.foworks.com.tr/${student.resume}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
-                                        Open Resume
+                                        Özgeçmiş Görüntüle
                                     </a>
                                 )}
                             </div>
