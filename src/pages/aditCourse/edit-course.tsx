@@ -7,29 +7,52 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useParams } from "react-router-dom";
+import axios from 'axios';
 
 export default function EditCourse() {
+  const { id } = useParams(); // Fetching 'id' from URL params
   const [selectedCategory, setSelectedCategory] = useState("Python");
   const [classes, setClasses] = useState([{ id: 1, name: "", description: "", media: null, document: null }]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  useEffect(() => {
-    const fetchedData = {
-      title: "Existing Course Title",
-      category: "Python",
-      description: "Existing course description",
-      classes: [
-        { id: 1, name: "Existing Class 1", description: "Existing description 1", media: null, document: null },
-        { id: 2, name: "Existing Class 2", description: "Existing description 2", media: null, document: null }
-      ]
-    };
+  // useEffect(() => {
+  //   const fetchedData = {
+  //     title: "Existing Course Title",
+  //     category: "Python",
+  //     description: "Existing course description",
+  //     classes: [
+  //       { id: 1, name: "Existing Class 1", description: "Existing description 1", media: null, document: null },
+  //       { id: 2, name: "Existing Class 2", description: "Existing description 2", media: null, document: null }
+  //     ]
+  //   };
 
-    setTitle(fetchedData.title);
-    setSelectedCategory(fetchedData.category);
-    setDescription(fetchedData.description);
-    setClasses(fetchedData.classes);
-  }, []);
+  //   setTitle(fetchedData.title);
+  //   setSelectedCategory(fetchedData.category);
+  //   setDescription(fetchedData.description);
+  //   setClasses(fetchedData.classes);
+  // }, []);
+
+  const fetchCourses = async () => {
+    try {
+      const response = await axios.get(`https://backend.foworks.com.tr/course/get/${id}`, {
+        withCredentials: true,
+      });
+
+      setTitle(response.data.title);
+      setSelectedCategory(response.data.category);
+      setDescription(response.data.description);
+      setClasses(response.data.classes);
+    } catch (error) {
+      console.error("Error fetching course details:", error);
+      setError(error); // Set error state to display to the user
+    }
+  };
+
+  useEffect(() => {
+    fetchCourses();
+  }, [id]);
 
   const handleCategoryChange = (event: any) => {
     setSelectedCategory(event.target.value);
@@ -56,17 +79,45 @@ export default function EditCourse() {
     handleClassChange(id, key, file);
   };
 
-  const handleSubmit = () => {
+  // const handleSubmit = () => {
 
-    const courseData = {
-      title,
-      category: selectedCategory,
-      description,
-      classes
-    };
+  //   const courseData = {
+  //     title,
+  //     category: selectedCategory,
+  //     description,
+  //     classes
+  //   };
 
-    console.log("Submitting course data:", courseData);
+  //   console.log("Submitting course data:", courseData);
+  // };
+
+  const handleSubmit = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('category', selectedCategory);
+      formData.append('description', description);
+      formData.append('classes', JSON.stringify(classes));
+
+      classes.forEach(cls => {
+        formData.append(`media-${cls.id}`, cls.media);
+        formData.append(`document-${cls.id}`, cls.document);
+      });
+
+      const response = await axios.post(`https://backend.foworks.com.tr/course/edit/${id}`, formData, {
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      console.log('Server response:', response.data);
+      // Optionally handle success or navigate away
+    } catch (error) {
+      console.error('Error submitting course data:', error);
+      setError(error); // Set error state to display to the user
+    }
   };
+
 
   return (
     <>
