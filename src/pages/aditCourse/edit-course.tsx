@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 
 export default function EditCourse() {
@@ -16,6 +16,7 @@ export default function EditCourse() {
   const [classes, setClasses] = useState([{ id: 1, name: "", description: "", media: null, document: null }]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
   // useEffect(() => {
   //   const fetchedData = {
@@ -74,9 +75,15 @@ export default function EditCourse() {
     );
   };
 
-  const handleFileUpload = (event: any, id: number, key: string) => {
+  const handleFileUpload = (event, classId) => {
     const file = event.target.files[0];
-    handleClassChange(id, key, file);
+    const updatedClasses = classes.map(cls => {
+      if (cls.id === classId) {
+        return { ...cls, classMediaFile: file };
+      }
+      return cls;
+    });
+    setClasses(updatedClasses);
   };
 
   // const handleSubmit = () => {
@@ -99,10 +106,16 @@ export default function EditCourse() {
       formData.append('description', description);
       formData.append('classes', JSON.stringify(classes));
 
-      classes.forEach(cls => {
-        formData.append(`media-${cls.id}`, cls.media);
-        formData.append(`document-${cls.id}`, cls.document);
-      });
+      // classes.forEach(cls => {
+      //   formData.append(`media-${cls.id}`, cls.media);
+      //   formData.append(`document-${cls.id}`, cls.document);
+      // });
+      
+    classes.forEach((cls, index) => {
+      if (cls.classMediaFile) {
+        formData.append(`pdfFiles`, cls.classMediaFile);
+      }
+    });
 
       const response = await axios.post(`https://backend.foworks.com.tr/course/edit/${id}`, formData, {
         withCredentials: true,
@@ -111,6 +124,13 @@ export default function EditCourse() {
         }
       });
       console.log('Server response:', response.data);
+      if (response.status === 200) {
+        // Optionally handle success or navigate away
+        alert("Kurs başarıyla güncellendi")
+        navigate("/TeacherProfile")
+
+      }
+
       // Optionally handle success or navigate away
     } catch (error) {
       console.error('Error submitting course data:', error);
@@ -170,26 +190,7 @@ export default function EditCourse() {
               rows={4}
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="courseMedia" className="block font-bold text-lg mb-2">
-              Kurs Medyası
-            </label>
-            <div className="relative">
-              <input
-                type="file"
-                id="courseMedia"
-                className="hidden"
-                // Add logic for handling course media file if needed
-              />
-              <label
-                htmlFor="courseMedia"
-                className="flex items-center justify-center cursor-pointer border hover:bg-blue-700 hover:text-white border-gray-300 rounded px-3 py-2 bg-[#D9D9D9]"
-              >
-                <UploadIcon size={24} className="mr-2" />
-                Dosya Seç
-              </label>
-            </div>
-          </div>
+      
         </div>
         <ScrollArea className="h-[500px] w-full rounded-md md:w-2/3 p-4 ">
           <h2 className="text-lg font-bold mb-4">Sınıflar</h2>
@@ -210,8 +211,8 @@ export default function EditCourse() {
                   <Input
                     type="text"
                     id={`className-${cls.id}`}
-                    value={cls.name}
-                    onChange={(e) => handleClassChange(cls.id, "name", e.target.value)}
+                    value={cls.title}
+                    onChange={(e) => handleClassChange(cls.id, "title", e.target.value)}
                     placeholder="Sınıf Adı"
                   />
                 </div>
@@ -230,31 +231,29 @@ export default function EditCourse() {
                   <Label htmlFor={`classMedia-${cls.id}`} className="font-bold text-lg">Sınıf Medyası</Label>
                   <div className="relative">
                     <input
-                      type="file"
+                      type="text"
+                      value={
+                        cls.videoLink
+                        }
                       id={`classMedia-${cls.id}`}
-                      className="hidden"
-                      onChange={(e) => handleFileUpload(e, cls.id, "media")}
+                     className="w-full border border-gray-300 rounded px-3 py-2"
+                      onChange={(e) => handleClassChange(cls.id, "videoLink", e.target.value)}
                     />
-                    <label
-                      htmlFor={`classMedia-${cls.id}`}
-                      className="flex items-center justify-center cursor-pointer border hover:bg-blue-700 hover:text-white border-gray-300 rounded px-3 py-2 bg-[#D9D9D9]"
-                    >
-                      <UploadIcon size={24} className="mr-2" />
-                      Dosya Seç
-                    </label>
+                  
                   </div>
                 </div>
                 <div className="mb-4">
-                  <Label htmlFor={`classDocument-${cls.id}`} className="font-bold text-lg">Sınıf Dokümanı</Label>
+                  <Label htmlFor={`classMediaFile-${cls.id}`} className="font-bold text-lg">Sınıf Dokümanı</Label>
                   <div className="relative">
                     <input
                       type="file"
-                      id={`classDocument-${cls.id}`}
+                      id={`classMediaFile-${cls.id}`}
+                      // value={cls.pdfFile}
                       className="hidden"
-                      onChange={(e) => handleFileUpload(e, cls.id, "document")}
+                      onChange={(e) => handleFileUpload(e, cls.id)}
                     />
                     <label
-                      htmlFor={`classDocument-${cls.id}`}
+                      htmlFor={`classMediaFile-${cls.id}`}
                       className="flex items-center justify-center cursor-pointer border border-gray-300 hover:bg-blue-700 hover:text-white rounded px-3 py-2 bg-[#D9D9D9]"
                     >
                       <UploadIcon size={24} className="mr-2" />
