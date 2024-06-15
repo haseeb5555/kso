@@ -32,7 +32,7 @@ function App() {
       <Route path="/CompanyProfile" element={<CompanyProfile />} />
       <Route path="/TeacherProfile" element={<TeacherProfile />} />
       <Route path="/addCourse" element={<AddCourse />} />
-      <Route path="/editCourse" element={<EditCourse />} />
+      <Route path="/editCourse/:id" element={<EditCourse />} />
       <Route path="/" element={<LandingPage />} />
  
       <Route path="/aboutus" element={<AboutUs />} />

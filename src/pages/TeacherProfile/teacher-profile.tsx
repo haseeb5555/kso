@@ -122,7 +122,7 @@ const TeacherProfile = () => {
                                     </p>
                                     <div className="flex justify-between items-center gap-4 px-4">
 
-                                        <button onClick={() => navigate(`/editCourse?id=${course.id}`)} className="w-full bg-gray-200 text-black py-2 px-4 rounded-2xl">
+                                        <button onClick={() => navigate(`/editCourse/${course.id}`)} className="w-full bg-gray-200 text-black py-2 px-4 rounded-2xl">
                                             Görüntüle
                                         </button>
                                         {/* <button className="w-full bg-blue-700 text-white py-2 px-4 rounded-2xl ">
