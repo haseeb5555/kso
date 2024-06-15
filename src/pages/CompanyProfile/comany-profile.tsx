@@ -70,13 +70,13 @@ const CompanyProfile = () => {
                     <div className="w-full flex justify-between  gap-16 max-sm:flex-col" >
                         <div className="text-lg">
                             <p>
-                                <span className="font-bold">İletişim:</span> {company.phone}
+                                {/* <span className="font-bold">İletişim:</span> {company.phone} */}
                             </p>
                             <p>
                                 <span className="font-bold">Email:</span> {company.email}
                             </p>
                             <p>
-                                <span className="font-bold">Adres:</span> {company.address}
+                                {/* <span className="font-bold">Adres:</span> {company.address} */}
                             </p>
                         </div>
                         <div>

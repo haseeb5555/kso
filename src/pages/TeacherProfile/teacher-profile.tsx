@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 
 const TeacherProfile = () => {
     const [teacher, setTeacher] = useState({
+        name: "",
         phone: "",
         email: "",
         address: "",
@@ -32,7 +33,7 @@ const TeacherProfile = () => {
             <TeaNav  />
             <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
         <div className="mx-20 ">
-            <h1 className="text-2xl font-bold mt-5">Merhaba</h1>
+            <h1 className="text-2xl font-bold mt-5">Merhaba {teacher.name}</h1>
             <div className="my-5 flex flex-col md:flex-row items-start md:items-center">
                 <div className="flex items-center mb-5 md:mb-0 md:mr-5">
                     <div className="w-80 h-80 bg-gray-200 rounded-full flex items-center justify-center  max-sm:ml-28">
@@ -43,13 +44,13 @@ const TeacherProfile = () => {
             <div className="w-full flex justify-between  gap-16 max-sm:flex-col" >
                <div className="text-lg">
                     <p>
-                        <span className="font-bold">İletişim:</span> {teacher.phone}
+                        {/* <span className="font-bold">İletişim:</span> {teacher.phone} */}
                     </p>
                     <p>
                         <span className="font-bold">Email:</span> {teacher.email}
                     </p>
                     <p>
-                        <span className="font-bold">Adres:</span> {teacher.address}
+                        {/* <span className="font-bold">Adres:</span> {teacher.address} */}
                     </p>
                 </div>
                 <div>
