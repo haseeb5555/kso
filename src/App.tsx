@@ -18,6 +18,8 @@ import StudentProfile from "./pages/StudentProfile/student-profile"
 import TeacherProfile from "./pages/TeacherProfile/teacher-profile"
 import AddJob from "./pages/addjob/add-job"
 import Etkinlik from "./pages/Etkinlik/Etkinlik"
+import AddCourse from "./pages/addCourse/add-course"
+import EditCourse from "./pages/aditCourse/edit-course"
 
 function App() {
 
@@ -29,8 +31,8 @@ function App() {
       <Route path="/StudentProfile" element={<StudentProfile />} />
       <Route path="/CompanyProfile" element={<CompanyProfile />} />
       <Route path="/TeacherProfile" element={<TeacherProfile />} />
-
-
+      <Route path="/addCourse" element={<AddCourse />} />
+      <Route path="/editCourse" element={<EditCourse />} />
       <Route path="/" element={<LandingPage />} />
  
       <Route path="/aboutus" element={<AboutUs />} />

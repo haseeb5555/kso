@@ -53,10 +53,10 @@ const AddJob = () => {
                 className="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl flex flex-col "
                 onSubmit={formik.handleSubmit}
             >
-                <h1 className="text-2xl font-bold mb-4 text-center">Add Job</h1>
+                <h1 className="text-2xl font-bold mb-4 text-center">İş İlanı Aç</h1>
 
                 <div className="mb-4">
-                    <label className="block text-gray-700">Job Title</label>
+                    <label className="block text-gray-700">İş Ünvanı</label>
                     <input
                         className="mt-1 p-2 border rounded w-full"
                         type="text"
@@ -71,7 +71,7 @@ const AddJob = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label className="block text-gray-700">Job Category</label>
+                    {/* <label className="block text-gray-700">Job Category</label>
                     <div className="flex flex-wrap gap-2">
                         {['Python', 'Database', 'Artificial Intelligence', 'Graphic Design'].map((category) => (
                             <label key={category} className="flex items-center">
@@ -86,11 +86,11 @@ const AddJob = () => {
                                 {category}
                             </label>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="mb-4">
-                    <label className="block text-gray-700">Job Description</label>
+                    <label className="block text-gray-700">İş Tanımı</label>
                     <textarea
                         className="mt-1 p-2 border rounded w-full"
                         name="description"
@@ -104,7 +104,7 @@ const AddJob = () => {
                     className=" bg-[#D9D9D9] p-2 rounded mt-4 w-[100px] text-black align-middle "
                     type="submit"
                 >
-                    Submit
+                    Gönder
                 </button>
             </form>
         </div>

@@ -108,7 +108,7 @@ const TeaNav = () => {
             ))}
           </nav>
 
-          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring" onClick={handleLogout}>
+          <button className="bg-[#D9D9D9] text-black px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring max-sm:hidden" onClick={handleLogout}>
             {/* <a
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             > */}

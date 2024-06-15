@@ -58,7 +58,7 @@ const Courses = () => {
             <div className="text-center py-8">
                 <h3 className="text-2xl font-bold">Dersleri keşfet </h3>
                 <div className="flex flex-wrap justify-center mt-4 space-x-2 space-y-2">
-                    {['Python', 'Database', 'Artificial Intelligence', 'Graphic Design'].map((cat) => (
+                    {/* {['Python', 'Database', 'Artificial Intelligence', 'Graphic Design'].map((cat) => (
                         <div key={cat} className="flex items-center space-x-2">
                             <input
                                 type="radio"
@@ -76,7 +76,7 @@ const Courses = () => {
                                 {cat}
                             </label>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
 
