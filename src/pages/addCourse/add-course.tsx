@@ -131,21 +131,14 @@ export default function AddCourse() {
                   />
                 </div>
                 <div className="mb-4">
-                  <Label htmlFor={`classMedia-${cls.id}`} className="font-bold text-lg">Sınıf Medyası</Label>
+                  <Label htmlFor={`classMedia-${cls.id}`} className="font-bold text-lg">Sınıf Medyası URL</Label>
                   <div className="relative">
                     <input
-                      type="file"
+                      type="text"
                       id={`classMedia-${cls.id}`}
-                      className="hidden"
-                      onChange={(e) => handleFileUpload(e, cls.id)}
+                      placeholder="URL"
                     />
-                    <label
-                      htmlFor={`classMedia-${cls.id}`}
-                      className="flex items-center justify-center cursor-pointer border hover:bg-blue-700 hover:text-white border-gray-300 rounded px-3 py-2 bg-[#D9D9D9]"
-                    >
-                      <UploadIcon size={24} className="mr-2" />
-                      Dosya Seç
-                    </label>
+                 
                   </div>
                 </div>
                 <div className="mb-4">
