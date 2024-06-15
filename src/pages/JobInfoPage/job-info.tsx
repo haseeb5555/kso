@@ -14,6 +14,18 @@ const JobInfoPage = () => {
   const [userType, setUserType] = useState(null); // null, 'student', or 'company'
 
   useEffect(() => {
+
+    const checkUserType = async () => {
+      try {
+        const response = await axios.get('https://backend.foworks.com.tr/auth/check-session', { withCredentials: true });
+        const { userType } = response.data; // Assuming the server returns { userType: 'student' } or { userType: 'company' }
+        setUserType(userType);
+      } catch (error) {
+        console.error('Error checking session:', error);
+        setUserType(null); // No session or error occurred
+      }
+    };
+
     const fetchJobInfo = async () => {
       try {
         const response = await axios.get(`https://backend.foworks.com.tr/job/getJob/${jobId}`);
@@ -34,6 +46,7 @@ const JobInfoPage = () => {
     };
 
     fetchJobInfo();
+    checkUserType();
   }, [jobId]);
 
   const handleApply = async (jobId) => {
@@ -42,8 +55,8 @@ const JobInfoPage = () => {
        // Check if the user is logged in by making an authenticated request
        const checkLoginResponse = await axios.get('https://backend.foworks.com.tr/auth/check', { withCredentials: true });
       
-       if (!checkLoginResponse) {
-      const response = await axios.post(`https://backend.foworks.com.tr/enrollement/enroll/${jobId}`, {}, {
+      if (checkLoginResponse.data.loggedIn) {
+      const response = await axios.post(`https://backend.foworks.com.tr/enrollment/enroll/${jobId}`, {}, {
         withCredentials: true, // Send cookies along with the request
       });
       alert('Successfully applied for the job!');

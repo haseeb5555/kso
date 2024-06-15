@@ -8,10 +8,9 @@ import Nav from "@/components/stuNav";
 const StudentProfile = () => {
     const [student, setStudent] = useState({
         name: "",
-        phone: "",
         email: "",
-        address: "",
         password: "",
+        resume: ""
     });
     const [enrolledJobs, setEnrolledJobs] = useState([]);
     const [enrolledCourses, setEnrolledCourses] = useState([]);
@@ -33,7 +32,7 @@ const StudentProfile = () => {
 
     const fetchEnrolledJobs = async () => {
         try {
-            const response = await axios.get("https://backend.foworks.com.tr/enrollement/getAll", {
+            const response = await axios.get("https://backend.foworks.com.tr/enrollment/getAll", {
                 withCredentials: true,
             });
             if (Array.isArray(response.data)) {
@@ -71,7 +70,7 @@ const StudentProfile = () => {
 
     const handleStatusClick = async (jobId: any) => {
         try {
-            const response = await axios.get(`https://backend.foworks.com.tr/enrollement/getEnrollment/${jobId}`, {
+            const response = await axios.get(`https://backend.foworks.com.tr/enrollment/getEnrollment/${jobId}`, {
                 withCredentials: true,
             });
             const enrollment = response.data;
@@ -126,18 +125,26 @@ const StudentProfile = () => {
                     </div>
                     <div className="w-full flex justify-between  gap-16 max-sm:flex-col" >
                         <div className="text-lg">
-                            <p>
+                            {/* <p>
                                 <span className="font-bold">İletişim:</span> {student.phone}
-                            </p>
+                            </p> */}
                             <p>
                                 <span className="font-bold">Email:</span> {student.email}
                             </p>
-                            <p>
+                            {/* <p>
                                 <span className="font-bold">Adres:</span> {student.address}
-                            </p>
+                            </p> */}
                             <div className="flex items-center">
                                 <span className="font-bold">Şifre :</span> {maskedPassword(student.password)}
                                 <img className="w-4 ml-2 cursor-pointer" alt="profile icon" src="/vector1.svg" onClick={handleChangePassword} />
+                            </div>
+                            <div className="w-full flex justify-between">
+                                <label className="block mb-2 text-lg font-bold">Resume</label>
+                                {student.resume && (
+                                    <a href={`https://backend.foworks.com.tr/${student.resume}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+                                        Open Resume
+                                    </a>
+                                )}
                             </div>
                         </div>
                         <div>
