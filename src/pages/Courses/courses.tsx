@@ -15,7 +15,7 @@ const Courses = () => {
     const fetchCourses = async (category) => {
         try {
             console.log(`Fetching courses for category: ${category}`);
-            const response = await axios.get(`https://backend.foworks.com.tr/course/getAll/${category}`, {
+            const response = await axios.get(`http://localhost:3001/course/getAll/${category}`, {
                 withCredentials: true,
             });
             console.log('Courses fetched:', response.data);
@@ -28,7 +28,7 @@ const Courses = () => {
     useEffect(() => {
         const checkUserType = async () => {
             try {
-                const response = await axios.get('https://backend.foworks.com.tr/auth/check-session', { withCredentials: true });
+                const response = await axios.get('http://localhost:3001/auth/check-session', { withCredentials: true });
                 const { userType } = response.data; // Assuming the server returns { userType: 'student' } or { userType: 'company' }
                 setUserType(userType);
             } catch (error) {

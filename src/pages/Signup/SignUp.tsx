@@ -121,7 +121,7 @@ const Signup = () => {
           }
         });
 
-        const response = await fetch("https://backend.foworks.com.tr/auth/register", {
+        const response = await fetch("http://localhost:3001/auth/register", {
           method: "POST",
           body: formData,
           credentials: "include",

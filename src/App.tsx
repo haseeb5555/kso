@@ -20,6 +20,7 @@ import AddJob from "./pages/addjob/add-job"
 import Etkinlik from "./pages/Etkinlik/Etkinlik"
 import AddCourse from "./pages/addCourse/add-course"
 import EditCourse from "./pages/aditCourse/edit-course"
+import Exam from "./pages/exam/exam"
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
       <Route path="/CompanyProfile" element={<CompanyProfile />} />
       <Route path="/TeacherProfile" element={<TeacherProfile />} />
       <Route path="/addCourse" element={<AddCourse />} />
+      <Route path="/exam" element={<Exam />} />
       <Route path="/editCourse/:id" element={<EditCourse />} />
       <Route path="/" element={<LandingPage />} />
  

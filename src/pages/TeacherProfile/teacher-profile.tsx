@@ -5,6 +5,7 @@ import TeaNav from "@/components/teaNav";
 import Footer from "@/components/footer";
 import { EditIcon, PlusIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AddExam from "@/components/add-exam";
 
 const TeacherProfile = () => {
     const [teacher, setTeacher] = useState({
@@ -14,10 +15,11 @@ const TeacherProfile = () => {
         address: "",
     });
     const [courses, setCourses] = useState([]);
+    
 
     const fetchCourses = async () => {
         try {
-            const response = await axios.get("https://backend.foworks.com.tr/course/getAddedCourses", {
+            const response = await axios.get("http://localhost:3001/course/getAddedCourses", {
                 withCredentials: true,
             });
 
@@ -54,7 +56,7 @@ const TeacherProfile = () => {
 
     const fetchTeacher = async () => {
         try {
-            const response = await axios.get("https://backend.foworks.com.tr/teacher/get", {
+            const response = await axios.get("http://localhost:3001/teacher/get", {
                 withCredentials: true,
             });
             setTeacher(response.data);
@@ -106,6 +108,7 @@ const TeacherProfile = () => {
                 </div>
                 <div>
                     <div className="flex flex-col justify-center items-center">
+                        <AddExam />
                         <div className="flex justify-center items-center gap-4 max-sm:mb-0 max-sm:mt-10">
                             <h1 className="text-2xl font-bold mb-5 ">kurslar sunmak</h1>
                             <button className="bg-transparent mb-2 border border-black rounded-full cursor-pointer text-black" onClick={() => navigate('/addCourse')}>

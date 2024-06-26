@@ -20,7 +20,7 @@ const StudentProfile = () => {
         try {
             // should send a request to the backend to get the student details with session cookie but it not sending the session cookie
             // s%3AzEJON_xdLq68Q72e3MsloRaDwS6OelGp.2vcRMytWAT4VRXlHun%2FJ3Fx1j894wkT3LC2tqEmPVjA
-            const response = await axios.get("https://backend.foworks.com.tr/student/get", {
+            const response = await axios.get("http://localhost:3001/student/get", {
                 withCredentials: true,
             });
 
@@ -32,7 +32,7 @@ const StudentProfile = () => {
 
     const fetchEnrolledJobs = async () => {
         try {
-            const response = await axios.get("https://backend.foworks.com.tr/enrollment/getAll", {
+            const response = await axios.get("http://localhost:3001/enrollment/getAll", {
                 withCredentials: true,
             });
             if (Array.isArray(response.data)) {
@@ -48,7 +48,7 @@ const StudentProfile = () => {
 
     const fetchEnrolledCourses = async () => {
         try {
-            const response = await axios.get("https://backend.foworks.com.tr/courseEnrollement/getAll", {
+            const response = await axios.get("http://localhost:3001/courseEnrollement/getAll", {
                 withCredentials: true,
             });
             if (Array.isArray(response.data)) {
@@ -70,7 +70,7 @@ const StudentProfile = () => {
 
     const handleStatusClick = async (jobId: any) => {
         try {
-            const response = await axios.get(`https://backend.foworks.com.tr/enrollment/getEnrollment/${jobId}`, {
+            const response = await axios.get(`http://localhost:3001/enrollment/getEnrollment/${jobId}`, {
                 withCredentials: true,
             });
             const enrollment = response.data;
@@ -85,7 +85,7 @@ const StudentProfile = () => {
         const newPassword = prompt("Enter your new password:");
         if (newPassword) {
             try {
-                const response = await axios.put("https://backend.foworks.com.tr/student/update", 
+                const response = await axios.put("http://localhost:3001/student/update", 
                 { password: newPassword }, {
                     withCredentials: true,
                 });
@@ -141,7 +141,7 @@ const StudentProfile = () => {
                             <div className="w-full flex justify-between">
                                 <label className="block mb-2 text-lg font-bold">Özgeçmiş</label>
                                 {student.resume && (
-                                    <a href={`https://backend.foworks.com.tr/${student.resume}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+                                    <a href={`http://localhost:3001/${student.resume}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
                                         Özgeçmiş Görüntüle
                                     </a>
                                 )}

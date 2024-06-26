@@ -13,7 +13,7 @@ const CourseInfoPage = () => {
     useEffect(() => {
         const fetchCourseInfo = async () => {
             try {
-                const response = await axios.get(`https://backend.foworks.com.tr/course/get/${courseId}`);
+                const response = await axios.get(`http://localhost:3001/course/get/${courseId}`);
                 setCourseInfo(response.data);
             } catch (error) {
                 console.error("Error fetching course info:", error);
@@ -25,11 +25,11 @@ const CourseInfoPage = () => {
     const handleEnroll = async (courseId) => {
         try {
           // Check if the user is logged in by making an authenticated request
-          const checkLoginResponse = await axios.get('https://backend.foworks.com.tr/auth/check', { withCredentials: true });
+          const checkLoginResponse = await axios.get('http://localhost:3001/auth/check', { withCredentials: true });
           
           if (checkLoginResponse.data.loggedIn) {
             // User is logged in, proceed with enrollment
-            const response = await axios.post(`https://backend.foworks.com.tr/courseEnrollement/enroll/${courseId}`, {}, {
+            const response = await axios.post(`http://localhost:3001/courseEnrollement/enroll/${courseId}`, {}, {
               withCredentials: true, // Send cookies along with the request
             });
             alert('Successfully enrolled for the course!');

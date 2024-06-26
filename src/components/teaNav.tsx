@@ -24,7 +24,7 @@ const TeaNav = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      const response = await axios.post("https://backend.foworks.com.tr/auth/logout", {}, {
+      const response = await axios.post("http://localhost:3001/auth/logout", {}, {
         withCredentials: true, // Send cookies along with the request
       });
       console.log(response.data); // Debugging: Check the response from the server
