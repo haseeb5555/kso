@@ -162,7 +162,7 @@ export default function AddCourse() {
     );
 
     formData.append(
-      "questions",
+      "test",
       JSON.stringify({
         questions: questions,
       })
