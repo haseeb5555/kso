@@ -2,7 +2,7 @@ import SimpleNav from "@/components/simpleNav";
 import Nav from "@/components/stuNav";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Footer from "../components/footer";
 import { Download } from "lucide-react";
 
@@ -11,12 +11,15 @@ const DetailCoursePage = () => {
     const { courseId } = useParams();
     const [courseInfo, setCourseInfo] = useState(null);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Function to fetch course details by courseId
         const fetchCourseInfo = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/course/get/${courseId}`);
+                const response = await axios.get(`http://localhost:3001/course/get/${courseId}`, {
+                    withCredentials: true,
+                  });
                 setCourseInfo(response.data);
             } catch (error) {
                 console.error("Error fetching course info:", error);
@@ -66,7 +69,10 @@ const DetailCoursePage = () => {
     
         return embedUrl;
     };
-    
+
+    const handleExamNavigation = () => {
+        navigate('/exam', { state: { test: courseInfo.test } });
+    };   
 
 
 
@@ -113,6 +119,14 @@ const DetailCoursePage = () => {
                         </div>
                     </div>
                 ))}
+                 <div className="text-center my-4">
+                        <button
+                            className="px-6 py-2 bg-blue-500 text-white rounded"
+                            onClick={handleExamNavigation}
+                        >
+                            Go to Exam
+                        </button>
+                    </div>
             </div>
         </div>
         <img className="w-full mt-5" alt="footer banner" src="/footerbanner2-copy-1@2x.png" />

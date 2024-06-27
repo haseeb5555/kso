@@ -146,6 +146,11 @@ export default function AddCourse() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Filter out any empty questions
+  const filteredQuestions = questions.filter((question) => {
+    return question.text.trim() !== "" && question.options.some((option) => option.trim() !== "");
+  });
+
     const formData = new FormData();
     formData.append("title", title);
     formData.append("category", selectedCategory);
@@ -164,7 +169,11 @@ export default function AddCourse() {
     formData.append(
       "test",
       JSON.stringify({
-        questions: questions,
+        questions: filteredQuestions.map((question) => ({
+          text: question.text,
+          options: question.options,
+          correctAnswer: question.correctAnswer,
+        })),
       })
     );
 
@@ -187,7 +196,7 @@ export default function AddCourse() {
       }
 
       const data = await response.json();
-      console.log("Course added successfully:", data);
+      alert("Course added successfully:", data);
       // Handle success, maybe redirect or show a success message
     } catch (error) {
       console.error("Error adding course:", error);
@@ -214,7 +223,7 @@ export default function AddCourse() {
             />
           </div>
           <div className="flex gap-1 flex-wrap mb-4">
-            {["Python", "Database", "Graphic Design", "AI", "ML"].map((cat) => (
+            {["Python", "Database", "Graphic Design", "Artificial Intelligence"].map((cat) => (
               <div key={cat} className="flex items-center space-x-2 space-y-2">
                 <input
                   type="radio"

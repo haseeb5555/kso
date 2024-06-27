@@ -10,17 +10,19 @@ const CourseInfoPage = () => {
     console.log('courseId:', courseId);
     const [courseInfo, setCourseInfo] = useState(null);
 
+    const fetchCourseInfo = async () => {
+        try {
+            const response = await axios.get(`http://localhost:3001/course/get/${courseId}`, {
+                withCredentials: true,
+              });
+            setCourseInfo(response.data);
+        } catch (error) {
+            console.error("Error fetching course info:", error);
+        }
+    };
+
     useEffect(() => {
-        const fetchCourseInfo = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3001/course/get/${courseId}`, {
-                    withCredentials: true,
-                  });
-                setCourseInfo(response.data);
-            } catch (error) {
-                console.error("Error fetching course info:", error);
-            }
-        };
+      
         fetchCourseInfo();
     }, [courseId]);
 
