@@ -37,13 +37,36 @@ const DetailCoursePage = () => {
     }
 
     const getYoutubeEmbedUrl = (url) => {
-        const videoId = url.split('v=')[1];
-        const ampersandPosition = videoId.indexOf('&');
-        if (ampersandPosition !== -1) {
-            return `https://www.youtube.com/embed/${videoId.substring(0, ampersandPosition)}`;
+        if (!url) {
+            return ''; // Return an empty string or handle appropriately
         }
-        return `https://www.youtube.com/embed/${videoId}`;
+    
+        let videoId = '';
+        let embedUrl = '';
+    
+        // Check if it's a YouTube link
+        if (url.includes('youtube.com') || url.includes('youtu.be')) {
+            // Extract video ID from different YouTube URL formats
+            if (url.includes('youtube.com')) {
+                videoId = url.split('v=')[1];
+                const ampersandPosition = videoId.indexOf('&');
+                if (ampersandPosition !== -1) {
+                    videoId = videoId.substring(0, ampersandPosition);
+                }
+            } else if (url.includes('youtu.be')) {
+                videoId = url.split('/').pop();
+            }
+    
+            // Construct YouTube embed URL
+            embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        } else {
+            // Handle other video platforms or unrecognized links
+            embedUrl = ''; // Return an empty string or handle as needed
+        }
+    
+        return embedUrl;
     };
+    
 
 
 

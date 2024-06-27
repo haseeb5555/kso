@@ -1,31 +1,54 @@
-
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { UploadIcon, PlusIcon, ChevronDownIcon } from "lucide-react";
 import TeaNav from "@/components/teaNav";
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useState } from "react"
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useState } from "react";
 import Footer from "@/components/footer";
 
 export default function AddCourse() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Python");
-  const [classes, setClasses] = useState([{ id: 1, className: "", classDesc: "", classMediaURL: "", classMediaFile: null }]);
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [quizTitle, setQuizTitle] = useState("")
+  const [classes, setClasses] = useState([
+    {
+      id: 1,
+      className: "",
+      classDesc: "",
+      classMediaURL: "",
+      classMediaFile: null,
+    },
+  ]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [quizTitle, setQuizTitle] = useState("");
   const [questions, setQuestions] = useState([
     {
       text: "",
       options: ["", "", "", "", ""],
       correctAnswer: 0,
     },
-  ])
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+  ]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const addQuestion = () => {
     setQuestions([
@@ -35,53 +58,56 @@ export default function AddCourse() {
         options: ["", "", "", "", ""],
         correctAnswer: 0,
       },
-    ])
-    setCurrentQuestionIndex(questions.length)
-  }
+    ]);
+    setCurrentQuestionIndex(questions.length);
+  };
 
   const updateQuestionText = (index: number, text: string) => {
-    const updatedQuestions = [...questions]
-    updatedQuestions[index].text = text
-    setQuestions(updatedQuestions)
-  }
+    const updatedQuestions = [...questions];
+    updatedQuestions[index].text = text;
+    setQuestions(updatedQuestions);
+  };
 
-  const updateQuestionOption = (questionIndex: number, optionIndex: number, option: any) => {
-    const updatedQuestions = [...questions]
-    updatedQuestions[questionIndex].options[optionIndex] = option
-    setQuestions(updatedQuestions)
-  }
+  const updateQuestionOption = (
+    questionIndex: number,
+    optionIndex: number,
+    option: any
+  ) => {
+    const updatedQuestions = [...questions];
+    updatedQuestions[questionIndex].options[optionIndex] = option;
+    setQuestions(updatedQuestions);
+  };
 
   const updateCorrectAnswer = (questionIndex: number, answer: any) => {
-    const updatedQuestions = [...questions]
-    updatedQuestions[questionIndex].correctAnswer = answer
-    setQuestions(updatedQuestions)
-  }
+    const updatedQuestions = [...questions];
+    updatedQuestions[questionIndex].correctAnswer = answer;
+    setQuestions(updatedQuestions);
+  };
 
   const saveQuiz = () => {
-    console.log("Quiz Title:", quizTitle)
-    console.log("Questions:", questions)
-    setIsModalOpen(false)
-  }
+    console.log("Quiz Title:", quizTitle);
+    console.log("Questions:", questions);
+    setIsModalOpen(false);
+  };
 
   const nextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1)
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
-  }
+  };
 
   const prevQuestion = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1)
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
-  }
-
+  };
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
 
   const handleClassFieldChange = (id, field, value) => {
-    const updatedClasses = classes.map(cls => {
+    const updatedClasses = classes.map((cls) => {
       if (cls.id === id) {
         return { ...cls, [field]: value };
       }
@@ -91,18 +117,24 @@ export default function AddCourse() {
   };
 
   const addClass = () => {
-    const newClass = { id: classes.length + 1, className: "", classDesc: "", classMediaURL: "", classMediaFile: null };
+    const newClass = {
+      id: classes.length + 1,
+      className: "",
+      classDesc: "",
+      classMediaURL: "",
+      classMediaFile: null,
+    };
     setClasses([...classes, newClass]);
   };
 
   const removeClass = (id) => {
-    const newClasses = classes.filter(cls => cls.id !== id);
+    const newClasses = classes.filter((cls) => cls.id !== id);
     setClasses(newClasses);
   };
 
   const handleFileUpload = (event, classId) => {
     const file = event.target.files[0];
-    const updatedClasses = classes.map(cls => {
+    const updatedClasses = classes.map((cls) => {
       if (cls.id === classId) {
         return { ...cls, classMediaFile: file };
       }
@@ -118,15 +150,23 @@ export default function AddCourse() {
     formData.append("title", title);
     formData.append("category", selectedCategory);
     formData.append("description", description);
-    formData.append("classes", JSON.stringify(classes.map(cls => ({
-      title: cls.className,
-      description: cls.classDesc,
-      videoLink: cls.classMediaURL
-    }))));
+    formData.append(
+      "classes",
+      JSON.stringify(
+        classes.map((cls) => ({
+          title: cls.className,
+          description: cls.classDesc,
+          videoLink: cls.classMediaURL,
+        }))
+      )
+    );
 
-    formData.append("questions", JSON.stringify({
-      questions: questions,
-    }));
+    formData.append(
+      "questions",
+      JSON.stringify({
+        questions: questions,
+      })
+    );
 
     classes.forEach((cls, index) => {
       if (cls.classMediaFile) {
@@ -138,7 +178,7 @@ export default function AddCourse() {
       const response = await fetch("http://localhost:3001/course/add", {
         method: "POST",
         body: formData,
-        credentials: 'include',
+        credentials: "include",
       });
 
       if (!response.ok) {
@@ -174,7 +214,7 @@ export default function AddCourse() {
             />
           </div>
           <div className="flex gap-1 flex-wrap mb-4">
-            {['Python', 'Database', 'Graphic Design', 'AI', 'ML'].map((cat) => (
+            {["Python", "Database", "Graphic Design", "AI", "ML"].map((cat) => (
               <div key={cat} className="flex items-center space-x-2 space-y-2">
                 <input
                   type="radio"
@@ -187,7 +227,11 @@ export default function AddCourse() {
                 />
                 <label
                   htmlFor={cat}
-                  className={`px-4 py-2 border rounded cursor-pointer ${selectedCategory === cat ? 'bg-[#D9D9D9] text-black' : 'bg-white text-black'}`}
+                  className={`px-4 py-2 border rounded cursor-pointer ${
+                    selectedCategory === cat
+                      ? "bg-[#D9D9D9] text-black"
+                      : "bg-white text-black"
+                  }`}
                 >
                   {cat}
                 </label>
@@ -195,7 +239,10 @@ export default function AddCourse() {
             ))}
           </div>
           <div className="mb-4">
-            <label htmlFor="description" className="block font-bold text-lg mb-2">
+            <label
+              htmlFor="description"
+              className="block font-bold text-lg mb-2"
+            >
               Kurs Açıklaması
             </label>
             <textarea
@@ -209,7 +256,6 @@ export default function AddCourse() {
           </div>
         </div>
         <ScrollArea className="h-[500px] w-full rounded-md md:w-2/3 p-4 ">
-
           <h2 className="text-lg font-bold mb-4">Sınıflar</h2>
           {classes.map((cls) => (
             <Collapsible key={cls.id} className="space-y-12 mb-4">
@@ -224,39 +270,77 @@ export default function AddCourse() {
               </div>
               <CollapsibleContent className="grid gap-4">
                 <div className="mb-4">
-                  <Label htmlFor={`className-${cls.id}`} className="font-bold text-lg">Sınıf Adı</Label>
+                  <Label
+                    htmlFor={`className-${cls.id}`}
+                    className="font-bold text-lg"
+                  >
+                    Sınıf Adı
+                  </Label>
                   <Input
                     type="text"
                     id={`className-${cls.id}`}
                     value={cls.className}
-                    onChange={(e) => handleClassFieldChange(cls.id, "className", e.target.value)}
+                    onChange={(e) =>
+                      handleClassFieldChange(
+                        cls.id,
+                        "className",
+                        e.target.value
+                      )
+                    }
                     placeholder="Sınıf Adı"
                   />
                 </div>
                 <div className="mb-4">
-                  <Label htmlFor={`classDesc-${cls.id}`} className="font-bold text-lg">Sınıf Açıklaması</Label>
+                  <Label
+                    htmlFor={`classDesc-${cls.id}`}
+                    className="font-bold text-lg"
+                  >
+                    Sınıf Açıklaması
+                  </Label>
                   <textarea
                     id={`classDesc-${cls.id}`}
                     value={cls.classDesc}
-                    onChange={(e) => handleClassFieldChange(cls.id, "classDesc", e.target.value)}
+                    onChange={(e) =>
+                      handleClassFieldChange(
+                        cls.id,
+                        "classDesc",
+                        e.target.value
+                      )
+                    }
                     className="w-full border border-gray-300 rounded px-3 py-2"
                     placeholder="Sınıf Açıklaması"
                     rows={4}
                   />
                 </div>
                 <div className="mb-4">
-                  <Label htmlFor={`classMedia-${cls.id}`} className="font-bold text-lg">Sınıf Medyası URL</Label>
+                  <Label
+                    htmlFor={`classMedia-${cls.id}`}
+                    className="font-bold text-lg"
+                  >
+                    Sınıf Medyası URL
+                  </Label>
                   <Input
                     type="text"
                     id={`classMedia-${cls.id}`}
                     value={cls.classMediaURL}
-                      className="w-full border border-gray-300 rounded px-3 py-2"
-                    onChange={(e) => handleClassFieldChange(cls.id, "classMediaURL", e.target.value)}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
+                    onChange={(e) =>
+                      handleClassFieldChange(
+                        cls.id,
+                        "classMediaURL",
+                        e.target.value
+                      )
+                    }
                     placeholder="URL"
                   />
                 </div>
                 <div className="mb-4">
-                  <Label htmlFor={`classMediaFile-${cls.id}`} className="font-bold text-lg">Sınıf Document</Label>
+                  <Label
+                    htmlFor={`classMediaFile-${cls.id}`}
+                    className="font-bold text-lg"
+                  >
+                    Sınıf Document
+                  </Label>
                   <div className="relative">
                     <input
                       type="file"
@@ -273,7 +357,12 @@ export default function AddCourse() {
                     </label>
                   </div>
                 </div>
-                <Button size="sm" variant="outline" onClick={() => removeClass(cls.id)} className="bg-[#D9D9D9] text-black">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => removeClass(cls.id)}
+                  className="bg-[#D9D9D9] text-black"
+                >
                   Sınıfı Kaldır
                 </Button>
               </CollapsibleContent>
@@ -283,73 +372,105 @@ export default function AddCourse() {
             <PlusIcon className="h-4 w-4 mr-2" />
             Başka Bir Sınıf Ekle
           </Button>
-          <>
-      <Button onClick={() => setIsModalOpen(true)}>Add Quiz</Button>
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[600px] ">
-          <DialogHeader>
-            <DialogTitle>Add New Quiz</DialogTitle>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div key={currentQuestionIndex} className="grid gap-4">
-              <div className="grid gap-2">
-                <Label htmlFor={`question-${currentQuestionIndex}`}>Question {currentQuestionIndex + 1}</Label>
-                <Input
-                  id={`question-${currentQuestionIndex}`}
-                  value={questions[currentQuestionIndex].text}
-                  onChange={(e) => updateQuestionText(currentQuestionIndex, e.target.value)}
-                />
-              </div>
-              <div className="grid gap-2">
-                <Label>Options</Label>
-                <div className="grid grid-cols-2 gap-2">
-                  {questions[currentQuestionIndex].options.map((option, optionIndex) => (
-                    <Input
-                      key={optionIndex}
-                      value={option}
-                      onChange={(e) => updateQuestionOption(currentQuestionIndex, optionIndex, e.target.value)}
-                    />
-                  ))}
+          <div className="mt-8">
+            <Button onClick={() => setIsModalOpen(true)} className="w-full">
+              <PlusIcon className="h-4 w-4 mr-2" />
+              Test Ekle
+            </Button>
+            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+              <DialogContent className="sm:max-w-[600px] ">
+                <DialogHeader>
+                  <DialogTitle>Yeni Test Ekle</DialogTitle>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div key={currentQuestionIndex} className="grid gap-4">
+                    <div className="grid gap-2">
+                      <Label htmlFor={`question-${currentQuestionIndex}`}>
+                        Soru {currentQuestionIndex + 1}
+                      </Label>
+                      <Input
+                        id={`question-${currentQuestionIndex}`}
+                        value={questions[currentQuestionIndex].text}
+                        onChange={(e) =>
+                          updateQuestionText(
+                            currentQuestionIndex,
+                            e.target.value
+                          )
+                        }
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <Label>Seçenekler</Label>
+                      <div className="grid grid-cols-2 gap-2">
+                        {questions[currentQuestionIndex].options.map(
+                          (option, optionIndex) => (
+                            <Input
+                              key={optionIndex}
+                              value={option}
+                              onChange={(e) =>
+                                updateQuestionOption(
+                                  currentQuestionIndex,
+                                  optionIndex,
+                                  e.target.value
+                                )
+                              }
+                            />
+                          )
+                        )}
+                      </div>
+                    </div>
+                    <div className="grid gap-2">
+                      <Label htmlFor={`correct-answer-${currentQuestionIndex}`}>
+                        Doğru cevap
+                      </Label>
+                      <Select
+                        id={`correct-answer-${currentQuestionIndex}`}
+                        value={questions[currentQuestionIndex].correctAnswer}
+                        onValueChange={(value: any) =>
+                          updateCorrectAnswer(currentQuestionIndex, value)
+                        }
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Doğru cevabı seç" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {[0, 1, 2, 3, 4].map((option) => (
+                            <SelectItem key={option} value={option}>
+                              Seçenek {option + 1}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                  <Button onClick={addQuestion}>Add Question</Button>
+                  <div className="flex justify-between mt-4">
+                    <Button
+                      onClick={prevQuestion}
+                      disabled={currentQuestionIndex === 0}
+                    >
+                      Önceki Soru
+                    </Button>
+                    <Button
+                      onClick={nextQuestion}
+                      disabled={currentQuestionIndex === questions.length - 1}
+                    >
+                      Sonraki soru
+                    </Button>
+                  </div>
                 </div>
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor={`correct-answer-${currentQuestionIndex}`}>Correct Answer</Label>
-                <Select
-                  id={`correct-answer-${currentQuestionIndex}`}
-                  value={questions[currentQuestionIndex].correctAnswer}
-                  onValueChange={(value: any) => updateCorrectAnswer(currentQuestionIndex, value)}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select correct answer" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {[0, 1, 2, 3, 4].map((option) => (
-                      <SelectItem key={option} value={option}>
-                        Option {option + 1}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-            <Button onClick={addQuestion}>Add Question</Button>
-            <div className="flex justify-between mt-4">
-              <Button onClick={prevQuestion} disabled={currentQuestionIndex === 0}>
-                Previous Question
-              </Button>
-              <Button onClick={nextQuestion} disabled={currentQuestionIndex === questions.length - 1}>
-                Next Question
-              </Button>
-            </div>
+                <DialogFooter>
+                  <Button onClick={saveQuiz}>Testi Kaydet</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </div>
-          <DialogFooter>
-            <Button onClick={saveQuiz}>Save Quiz</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    </>
           <div className="mt-4 flex justify-center items-center">
-            <Button type="button" onClick={handleSubmit} className="w-full bg-[#D9D9D9] text-black font-bold py-2 px-4 rounded lg:w-[40%] hover:bg-blue-700 hover:text-white">
+            <Button
+              type="button"
+              onClick={handleSubmit}
+              className="w-full bg-[#D9D9D9] text-black font-bold py-2 px-4 rounded lg:w-[40%] hover:bg-blue-700 hover:text-white"
+            >
               Gönder
             </Button>
           </div>
