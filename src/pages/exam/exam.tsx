@@ -146,14 +146,14 @@ export default function Exam() {
       {!showResults ? (
         <div className="bg-background p-8 rounded-lg shadow-lg w-full max-w-3xl">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Quiz</h1>
+            <h1 className="text-3xl font-bold mb-2">Test</h1>
             <p className="text-muted-foreground">
-              Answer the following {questions.length} multiple-choice questions.
+            Aşağıdaki {questions.length} çoktan seçmeli soruyu yanıtlayın
             </p>
           </div>
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4">
-              Question {currentQuestion + 1} of {questions.length}
+            Soru {currentQuestion + 1} ile ilgili {questions.length}
             </h2>
             <p className="text-lg mb-4">
               {questions[currentQuestion].question}
@@ -187,7 +187,7 @@ export default function Exam() {
               {score >= passingScore ? "Passed!" : "Failed"}
             </h1>
             <p className="text-muted-foreground">
-              You scored {score} out of {questions.length}.
+            {questions.length} üzerinden {score} puan aldınız.
             </p>
            {!passingScore &&
             <Button
@@ -197,7 +197,7 @@ export default function Exam() {
                 setSelectedAnswers([]);
               }}
             >
-              Try Again
+             Tekrar deneyin
             </Button>
 }
           </div>
@@ -219,7 +219,7 @@ export default function Exam() {
               </div>
                 </div>
               <Button className="w-full bg-blue-700 text-white hover:bg-blue-600" onClick={()=>{}}>
-                Back
+              Geri
               </Button>
             </>
           )}
