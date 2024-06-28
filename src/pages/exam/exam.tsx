@@ -16,22 +16,16 @@ export default function Exam() {
 
   useEffect(() => {
     if (location.state && location.state.test) {
-      console.log("Test data received:", location.state.test);
-      if (Array.isArray(location.state.test.questions)) {
-        const testQuestions = location.state.test.questions;
-        console.log("Setting questions:", testQuestions);
-        setQuestions(testQuestions);
-      } else {
-        console.error("Questions data is not an array:", location.state.test.questions);
+      try {
+        const parsedQuestions = JSON.parse(location.state.test);
+        if (parsedQuestions.questions) {
+          setQuestions(parsedQuestions.questions);
+        }
+      } catch (error) {
+        console.error("Failed to parse questions:", error);
       }
-    } else {
-      console.error("No test data found in location.state");
     }
   }, [location.state]);
-
-  useEffect(() => {
-    console.log("Questions state updated:", questions);
-  }, [questions]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -76,7 +70,7 @@ export default function Exam() {
         {!showResults ? (
           <div className="bg-background p-8 rounded-lg shadow-lg w-full max-w-3xl">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold mb-2">Test</h1>
+              <h1 className="text-3xl font-bold mb-2">Ölçek</h1>
               <p className="text-muted-foreground">
                 Aşağıdaki {questions.length} çoktan seçmeli soruyu yanıtlayın
               </p>
