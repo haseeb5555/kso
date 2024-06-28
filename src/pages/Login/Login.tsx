@@ -25,7 +25,7 @@ const Login = () => {
     }),
     onSubmit: async (values) => {
       try {
-        const response = await fetch('http://localhost:3001/auth/login', {
+        const response = await fetch(' https://backend.foworks.com.tr/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -33,6 +33,7 @@ const Login = () => {
           body: JSON.stringify(values),
           credentials: 'include',
         });
+       
         if (!response.ok) {
           const errorData = await response.json();
           alert("Invalid email and password");

@@ -17,7 +17,7 @@ const CompanyProfile = () => {
 
     const fetchCompany = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/company/get", {
+            const response = await axios.get(" https://backend.foworks.com.tr/company/get", {
                 withCredentials: true, // Send cookies along with the request
             });
             setCompany(response.data);
@@ -28,7 +28,7 @@ const CompanyProfile = () => {
 
     const fetchEnrolledjobs = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/job/getAddedJobs", {
+            const response = await axios.get(" https://backend.foworks.com.tr/job/getAddedJobs", {
                 withCredentials: true, // Send cookies along with the request
             });
             setAddedJobs(response.data);

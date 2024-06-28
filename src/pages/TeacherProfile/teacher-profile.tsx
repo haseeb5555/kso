@@ -20,7 +20,7 @@ const TeacherProfile = () => {
 
     const fetchCourses = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/course/getAddedCourses", {
+            const response = await axios.get(" https://backend.foworks.com.tr/course/getAddedCourses", {
                 withCredentials: true,
             });
 
@@ -58,7 +58,7 @@ const TeacherProfile = () => {
 
     const fetchTeacher = async () => {
         try {
-            const response = await axios.get("http://localhost:3001/teacher/get", {
+            const response = await axios.get(" https://backend.foworks.com.tr/teacher/get", {
                 withCredentials: true,
             });
             setTeacher(response.data);

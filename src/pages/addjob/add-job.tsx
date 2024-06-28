@@ -26,7 +26,7 @@ const AddJob = () => {
         onSubmit: async (values) => {
             console.log('values:', values);
             try {
-                const response = await axios.post('http://localhost:3001/job/add', values, {
+                const response = await axios.post(' https://backend.foworks.com.tr/job/add', values, {
                     withCredentials: true,
                 });
 
