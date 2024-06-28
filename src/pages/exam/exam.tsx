@@ -242,7 +242,7 @@ export default function Exam() {
             )}
             <div className="flex justify-end">
               <Button onClick={handleNextQuestion}>
-                {currentQuestion === questions.length - 1 ? "Finish" : "Next"}
+                {currentQuestion === questions.length - 1 ? "Sona ermek" : "Sonraki"}
               </Button>
             </div>
           </div>
