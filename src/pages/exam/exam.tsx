@@ -163,9 +163,12 @@ export default function Exam() {
   const width = window.innerWidth;
   const height = window.innerHeight;
 
+  console.log(location.state.test);  // Log the questions array
+
   useEffect(() => {
     if (location.state && location.state.test) {
       setQuestions(location.state.test);
+     
     }
   }, [location.state]);
 
@@ -211,7 +214,7 @@ export default function Exam() {
               Soru {currentQuestion + 1} ile ilgili {questions.length}
             </h2>
             <p className="text-lg mb-4">
-              {questions[currentQuestion].question}
+              {questions[currentQuestion].text}
             </p>
             <div className="grid grid-cols-2 gap-4">
               {questions[currentQuestion].options.map((option, index) => (

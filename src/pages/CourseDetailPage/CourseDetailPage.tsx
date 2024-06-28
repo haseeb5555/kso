@@ -3,7 +3,7 @@ import Nav from "@/components/stuNav";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
-import Footer from "../components/footer";
+import Footer from "../../components/footer";
 import { Download } from "lucide-react";
 
 const DetailCoursePage = () => {
