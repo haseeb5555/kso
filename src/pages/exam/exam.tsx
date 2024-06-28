@@ -188,13 +188,13 @@ export default function Exam() {
   console.log(questions);
   const calculateScore = () => {
     let score = 0;
-    questions.forEach((question, index) => {
+    questions?.questions?.forEach((question, index) => {
       if (selectedAnswers[index] === question.correctAnswer) {
         score++;
       }
     });
-    return score;
-  };
+    return score;
+  };
 
   const score = calculateScore();
   const passingScore = Math.floor(questions.length * 0.5);
