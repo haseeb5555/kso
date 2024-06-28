@@ -17,7 +17,7 @@ const JobInfoPage = () => {
 
     const checkUserType = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/auth/check-session', { withCredentials: true });
+        const response = await axios.get(' https://backend.foworks.com.tr/auth/check-session', { withCredentials: true });
         const { userType } = response.data; // Assuming the server returns { userType: 'student' } or { userType: 'company' }
         setUserType(userType);
       } catch (error) {
@@ -28,7 +28,7 @@ const JobInfoPage = () => {
 
     const fetchJobInfo = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/job/getJob/${jobId}`);
+        const response = await axios.get(` https://backend.foworks.com.tr/job/getJob/${jobId}`);
         setJobInfo(response.data);
         fetchCompanyInfo(response.data.appliedBy);
       } catch (error) {
@@ -38,7 +38,7 @@ const JobInfoPage = () => {
 
     const fetchCompanyInfo = async (email) => {
       try {
-        const response = await axios.get(`http://localhost:3001/company/get/${email}`);
+        const response = await axios.get(` https://backend.foworks.com.tr/company/get/${email}`);
         setCompanyInfo(response.data);
       } catch (error) {
         console.error("Error fetching company info:", error);
@@ -53,10 +53,10 @@ const JobInfoPage = () => {
     try {
 
        // Check if the user is logged in by making an authenticated request
-       const checkLoginResponse = await axios.get('http://localhost:3001/auth/check', { withCredentials: true });
+       const checkLoginResponse = await axios.get(' https://backend.foworks.com.tr/auth/check', { withCredentials: true });
       
       if (checkLoginResponse.data.loggedIn) {
-      const response = await axios.post(`http://localhost:3001/enrollment/enroll/${jobId}`, {}, {
+      const response = await axios.post(` https://backend.foworks.com.tr/enrollment/enroll/${jobId}`, {}, {
         withCredentials: true, // Send cookies along with the request
       });
       alert('Successfully applied for the job!');

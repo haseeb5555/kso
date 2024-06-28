@@ -147,6 +147,8 @@ import { Button } from "@/components/ui/button";
 import Confetti from "react-confetti";
 import { PartyPopperIcon } from "lucide-react";
 import { useLocation } from 'react-router-dom';
+import Nav from "@/components/stuNav";
+import Footer from "@/components/footer";
 
 interface Question {
   question: string;
@@ -162,7 +164,6 @@ export default function Exam() {
   const [showResults, setShowResults] = useState(false);
   const width = window.innerWidth;
   const height = window.innerHeight;
-
   useEffect(() => {
     if (location.state && location.state.test) {
       setQuestions(location.state.test);
@@ -183,6 +184,7 @@ export default function Exam() {
     }
   };
 
+  console.log(questions);
   const calculateScore = () => {
     let score = 0;
     questions.forEach((question, index) => {
@@ -197,6 +199,9 @@ export default function Exam() {
   const passingScore = Math.floor(questions.length * 0.5);
 
   return (
+    <>
+    <Nav />
+    <img className="w-full mt-5" alt="header banner" src="/header-copy-2@2x.png" />
     <div className="flex flex-col items-center justify-center min-h-screen bg-muted">
       {!showResults ? (
         <div className="bg-background p-8 rounded-lg shadow-lg w-full max-w-3xl">
@@ -211,10 +216,10 @@ export default function Exam() {
               Soru {currentQuestion + 1} ile ilgili {questions.length}
             </h2>
             <p className="text-lg mb-4">
-              {questions[currentQuestion].question}
+              {questions[currentQuestion]?.text}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {questions[currentQuestion].options.map((option, index) => (
+              {questions[currentQuestion]?.options?.map((option, index) => (
                 <button
                   key={index}
                   className={`bg-background border rounded-lg py-3 px-6 transition-colors hover:bg-accent hover:text-accent-foreground ${selectedAnswers[currentQuestion] === index
@@ -280,5 +285,7 @@ export default function Exam() {
         </div>
       )}
     </div>
+ <Footer />
+    </>
   );
 }

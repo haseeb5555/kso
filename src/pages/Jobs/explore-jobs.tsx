@@ -15,16 +15,16 @@ const ExploreJobs = () => {
     try {
 
       // Check if the user is logged in by making an authenticated request
-      const checkLoginResponse = await axios.get('http://localhost:3001/auth/check');
+      const checkLoginResponse = await axios.get(' https://backend.foworks.com.tr/auth/check');
 
       if (checkLoginResponse.data.loggedIn) {
-        const response = await axios.get(`http://localhost:3001/job/get/${category}`, {
+        const response = await axios.get(` https://backend.foworks.com.tr/job/get/${category}`, {
           withCredentials: true, // Send cookies along with the request
         });
         setJobs(response.data);
       }
       else {
-        const response = await axios.get(`http://localhost:3001/job/getAll/${category}`, {
+        const response = await axios.get(` https://backend.foworks.com.tr/job/getAll/${category}`, {
         });
         setJobs(response.data);
       }
@@ -37,7 +37,7 @@ const ExploreJobs = () => {
   useEffect(() => {
     const checkUserType = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/auth/check-session', { withCredentials: true });
+        const response = await axios.get(' https://backend.foworks.com.tr/auth/check-session', { withCredentials: true });
         const { userType } = response.data; // Assuming the server returns { userType: 'student' } or { userType: 'company' }
         setUserType(userType);
       } catch (error) {

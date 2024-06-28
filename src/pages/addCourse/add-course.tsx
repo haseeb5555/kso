@@ -184,7 +184,7 @@ export default function AddCourse() {
     });
 
     try {
-      const response = await fetch("http://localhost:3001/course/add", {
+      const response = await fetch(" https://backend.foworks.com.tr/course/add", {
         method: "POST",
         body: formData,
         credentials: "include",

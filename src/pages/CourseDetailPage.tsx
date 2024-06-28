@@ -17,7 +17,7 @@ const DetailCoursePage = () => {
         // Function to fetch course details by courseId
         const fetchCourseInfo = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/course/get/${courseId}`, {
+                const response = await axios.get(` https://backend.foworks.com.tr/course/get/${courseId}`, {
                     withCredentials: true,
                   });
                 setCourseInfo(response.data);
@@ -99,7 +99,7 @@ const DetailCoursePage = () => {
                             <div className="flex justify-between mt-40 max-sm:mt-8 ">
                               <h2 className="font-bold">Download Here </h2>
                             <a 
-                                href={`http://localhost:3001/${classItem.pdfFile}`}
+                                href={` https://backend.foworks.com.tr/${classItem.pdfFile}`}
                                 download
                             >
                             

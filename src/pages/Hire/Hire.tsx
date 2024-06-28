@@ -12,7 +12,7 @@ const VieweditJob = () => {
 
   const fetchApplications = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/enrollment/studentsEnrolled/${jobId}`, {
+      const response = await axios.get(` https://backend.foworks.com.tr/enrollment/studentsEnrolled/${jobId}`, {
         withCredentials: true, // Send cookies along with the request
       });
       setApplications(response.data);
@@ -23,7 +23,7 @@ const VieweditJob = () => {
 
   const fetchJobDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/job/getJob/${jobId}`, {
+      const response = await axios.get(` https://backend.foworks.com.tr/job/getJob/${jobId}`, {
         withCredentials: true, // Send cookies along with the request
       });
       setJobDetails(response.data);
@@ -36,7 +36,7 @@ const VieweditJob = () => {
     event.preventDefault(); // Prevent the default form submission behavior
 
     try {
-      const response = await axios.put(`http://localhost:3001/enrollment/hire/${studentId}`, {
+      const response = await axios.put(` https://backend.foworks.com.tr/enrollment/hire/${studentId}`, {
         withCredentials: true, // Send cookies along with the request
       });
       console.log(response.data); // Log the response for debugging
@@ -53,7 +53,7 @@ const VieweditJob = () => {
   }, [jobId]);
 
   const handleDownloadResume = (resumeUrl) => {
-    window.open(`http://localhost:3001/${resumeUrl}`, '_blank');
+    window.open(` https://backend.foworks.com.tr/${resumeUrl}`, '_blank');
   };
 
   return (

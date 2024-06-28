@@ -37,7 +37,7 @@ export default function EditCourse() {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/course/get/${id}`, {
+      const response = await axios.get(` https://backend.foworks.com.tr/course/get/${id}`, {
         withCredentials: true,
       });
 
@@ -117,7 +117,7 @@ export default function EditCourse() {
       }
     });
 
-      const response = await axios.post(`http://localhost:3001/course/edit/${id}`, formData, {
+      const response = await axios.post(` https://backend.foworks.com.tr/course/edit/${id}`, formData, {
         withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data'
