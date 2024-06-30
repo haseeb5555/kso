@@ -14,6 +14,10 @@ import MapEmbed from "@/components/MapEmbed";
 const ContactUs = () => {
   const [userType, setUserType] = useState(null); // null, 'student', or 'company'
   const navigate = useNavigate();
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     const checkUserType = async () => {
@@ -29,6 +33,22 @@ const ContactUs = () => {
 
     checkUserType();
   }, []);
+
+
+  const handleSubmit = async () => {
+    try {
+      await axios.post('https://backend.foworks.com.tr/contact', {
+        name,
+        phone,
+        email,
+        message,
+      });
+      alert('Mesajınız başarıyla gönderildi.');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Mesaj gönderilirken bir hata oluştu.');
+    }
+  }
 
   return (
     <>
@@ -65,6 +85,7 @@ const ContactUs = () => {
                   id="name"
                   type="text"
                   placeholder="İsim"
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
@@ -78,6 +99,7 @@ const ContactUs = () => {
                     id="phone"
                     type="text"
                     placeholder="Telefon numarası"
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 <div className="w-full md:w-1/2 px-3">
@@ -89,6 +111,7 @@ const ContactUs = () => {
                     id="email"
                     type="email"
                     placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
@@ -105,6 +128,7 @@ const ContactUs = () => {
                   id="message"
                   placeholder="Mesaj"
                   rows={4}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
             </div>
@@ -112,6 +136,7 @@ const ContactUs = () => {
               <button
                 className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
+                onClick={handleSubmit}
               >
                 Gönder
               </button>
