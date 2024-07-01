@@ -99,20 +99,20 @@ const TeacherProfile = () => {
                                 <span className="font-bold">Adres:</span> {teacher.address}
                             </p> */}
                         </div>
-                        <div>
+                        {/* <div>
                             <div className="w-full flex justify-between">
                                 <label className="block mb-2 text-lg font-bold">Hakkında</label>
                                 <img className="w-4" alt="profile icon" src="/vector1.svg" />
                             </div>
                             <textarea className="w-[400px] max-sm:w-full p-2 border rounded h-24" readOnly />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div>
                     <div className="flex flex-col justify-center items-center">
                         {/* <AddExam /> */}
                         <div className="flex justify-center items-center gap-4 max-sm:mb-0 max-sm:mt-10">
-                            <h1 className="text-2xl font-bold mb-5 ">kurslar sunmak</h1>
+                            <h1 className="text-2xl font-bold mb-5 ">kurslar</h1>
                             <button className="bg-transparent mb-2 border border-black rounded-full cursor-pointer text-black" onClick={() => navigate('/addCourse')}>
                                 <PlusIcon size={24} className="" />
                             </button>

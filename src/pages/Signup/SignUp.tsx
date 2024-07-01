@@ -52,22 +52,22 @@ const Signup = () => {
             .oneOf([true], "Bu alan zorunludur")
             .required("Bu alan zorunludur"),
         });
-      case "teacher":
-        return Yup.object({
-          role: Yup.string().required("Rolünüzü seçin"),
-          name: Yup.string().required("Bu alan zorunludur"),
-          surname: Yup.string().required("Bu alan zorunludur"),
-          subject: Yup.string().required("Bu alan zorunludur"),
-          email: Yup.string()
-            .email("Geçersiz email formatı")
-            .required("Bu alan zorunludur"),
-          password: Yup.string()
-            .max(8, "Şifre en fazla 8 karakter olmalı")
-            .required("Bu alan zorunludur"),
-          consent: Yup.boolean()
-            .oneOf([true], "Bu alan zorunludur")
-            .required("Bu alan zorunludur"),
-        });
+      // case "teacher":
+      //   return Yup.object({
+      //     role: Yup.string().required("Rolünüzü seçin"),
+      //     name: Yup.string().required("Bu alan zorunludur"),
+      //     surname: Yup.string().required("Bu alan zorunludur"),
+      //     subject: Yup.string().required("Bu alan zorunludur"),
+      //     email: Yup.string()
+      //       .email("Geçersiz email formatı")
+      //       .required("Bu alan zorunludur"),
+      //     password: Yup.string()
+      //       .max(8, "Şifre en fazla 8 karakter olmalı")
+      //       .required("Bu alan zorunludur"),
+      //     consent: Yup.boolean()
+      //       .oneOf([true], "Bu alan zorunludur")
+      //       .required("Bu alan zorunludur"),
+      //   });
       case "company":
         return Yup.object({
           role: Yup.string().required("Rolünüzü seçin"),
@@ -121,7 +121,7 @@ const Signup = () => {
           }
         });
 
-        const response = await fetch(" https://backend.foworks.com.tr/auth/register", {
+        const response = await fetch("https://backend.foworks.com.tr/auth/register", {
           method: "POST",
           body: formData,
           credentials: "include",
@@ -196,7 +196,7 @@ const Signup = () => {
                 <label htmlFor="company">Şirket</label>
               </div>
               <div>
-                <input
+                {/* <input
                   className="mr-2"
                   type="radio"
                   id="teacher"
@@ -204,8 +204,8 @@ const Signup = () => {
                   value="teacher"
                   checked={role === "teacher"}
                   onChange={handleRoleChange}
-                />
-                <label htmlFor="teacher">Öğretmen</label>
+                /> */}
+                {/* <label htmlFor="teacher">Öğretmen</label> */}
               </div>
             </div>
           </div>

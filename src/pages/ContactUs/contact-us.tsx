@@ -37,7 +37,7 @@ const ContactUs = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('https://backend.foworks.com.tr/contact', {
+      await axios.post('https://backend.foworks.com.tr/mail/contact', {
         name,
         phone,
         email,

@@ -147,13 +147,13 @@ const StudentProfile = () => {
                                 )}
                             </div>
                         </div>
-                        <div>
+                        {/* <div>
                             <div className="w-full flex justify-between">
                                 <label className="block mb-2 text-lg font-bold">Hakkında</label>
                                 <img className="w-4 " alt="profile icon" src="/vector1.svg" />
                             </div>
                             <textarea className="w-[400px]  max-sm:w-full p-2 border rounded h-24" readOnly />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="mb-5">
